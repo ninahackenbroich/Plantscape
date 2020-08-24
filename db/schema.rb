@@ -10,10 +10,57 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_08_24_144759) do
+ActiveRecord::Schema.define(version: 2020_08_24_151030) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "bookings", force: :cascade do |t|
+    t.integer "number_of_plants"
+    t.string "key"
+    t.boolean "dusting_service", default: false
+    t.boolean "cutting_service", default: false
+    t.boolean "repotting_service", default: false
+    t.boolean "picture_service", default: false
+    t.float "price"
+    t.bigint "user_id", null: false
+    t.bigint "jungle_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["jungle_id"], name: "index_bookings_on_jungle_id"
+    t.index ["user_id"], name: "index_bookings_on_user_id"
+  end
+
+  create_table "jungleplants", force: :cascade do |t|
+    t.text "comments"
+    t.string "status"
+    t.bigint "jungle_id", null: false
+    t.bigint "plant_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["jungle_id"], name: "index_jungleplants_on_jungle_id"
+    t.index ["plant_id"], name: "index_jungleplants_on_plant_id"
+  end
+
+  create_table "jungles", force: :cascade do |t|
+    t.string "name"
+    t.string "address"
+    t.bigint "user_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["user_id"], name: "index_jungles_on_user_id"
+  end
+
+  create_table "plants", force: :cascade do |t|
+    t.string "name"
+    t.string "water"
+    t.string "light"
+    t.string "soil"
+    t.string "fertilizer"
+    t.string "repotting"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -27,4 +74,18 @@ ActiveRecord::Schema.define(version: 2020_08_24_144759) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  create_table "waterings", force: :cascade do |t|
+    t.date "date"
+    t.bigint "booking_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["booking_id"], name: "index_waterings_on_booking_id"
+  end
+
+  add_foreign_key "bookings", "jungles"
+  add_foreign_key "bookings", "users"
+  add_foreign_key "jungleplants", "jungles"
+  add_foreign_key "jungleplants", "plants"
+  add_foreign_key "jungles", "users"
+  add_foreign_key "waterings", "bookings"
 end
