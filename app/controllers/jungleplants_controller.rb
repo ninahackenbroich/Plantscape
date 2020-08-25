@@ -2,18 +2,15 @@ class JungleplantsController < ApplicationController
 
   def index
     @jungleplants = Jungleplant.all
-
   end
 
   def show
     authorize @jungleplant
-
   end
 
   def create
     @jungleplant = Jungleplant.new
     authorize @jungleplant
-
   end
 
   def new
@@ -23,8 +20,7 @@ class JungleplantsController < ApplicationController
 
   def edit
     authorize @jungleplant
-
-  new
+  end
 
   def update
     authorize @jungleplant
