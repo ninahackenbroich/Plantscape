@@ -1,6 +1,12 @@
 class Jungle < ApplicationRecord
-  belongs_to :booking, optional: true
+  #Raffa fixing associations with Santi
+  #the following were not correct
+  #belongs_to :booking, optional: true
+  #has_many :plants, through: :jungleplants
+
+  has_many :bookings
   belongs_to :user
+  has_many :jungleplants
   has_many :plants, through: :jungleplants
 
   #adding VALIDATION
