@@ -10,6 +10,6 @@ Rails.application.routes.draw do
 
 
   resources :bookings, only:[:new, :create, :show, :index, :destroy]
-  
+  resources :jungles, only:[:new, :create, :show, :index, :destroy]
 
 end
