@@ -31,6 +31,9 @@
   text-decoration: none;
 }
 
+.dropdown-menu {
+  border: none;
+}
 
 .nav-list {
   font-family: $headers-font;
@@ -55,8 +58,18 @@
 
 .dropdown-item {
   padding-left: 20px;
-  border: gray;
+  border: none;
   margin-bottom: 0px;
+  a {
+    color: $dark-green;
+    text-decoration: none;
+  }
+}
+
+.dropdown-item:hover {
+  padding-left: 20px;
+  margin-bottom: 0px;
+  background-color: $beige;
   a {
     color: $dark-green;
     text-decoration: none;
