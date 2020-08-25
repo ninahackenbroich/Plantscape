@@ -1,12 +1,64 @@
 .navbar-lewagon {
-  justify-content: space-between;
-  background: white;
+  // [...]
+  background-color: transparent;
+  transition: 0.5s background-color ease;
 }
 
-.navbar-lewagon .navbar-collapse {
-  flex-grow: 0;
+.navbar-lewagon-white {
+  background-color: white;
 }
 
-.navbar-lewagon .navbar-brand img {
-  width: 40px;
+
+.navbar {
+	list-style: none;
+  top: 0; /* Position the navbar at the top of the page */
+  width: 100%; /* Full width */
+  position: absolute;
+  z-index: 2;
+  &.transparent {
+    background-color: transparent !important;
+  }
+
+  &.normal {
+    background-color: white;
+    position: sticky;
+  }
+}
+
+.dropdown-toggle,
+.dropdown-toggle:hover {
+  color: $dark-green;
+  text-decoration: none;
+}
+
+
+.nav-list {
+  font-family: $headers-font;
+  a {
+    color: $dark-green;
+    padding-right: 20px;
+    margin-left: 30px;
+    padding-top: 0;
+    text-decoration: none;
+  }
+}
+
+.logo {
+  img {
+  height: 50px;
+  }
+}
+
+.minus-left {
+  left: -100px;
+}
+
+.dropdown-item {
+  padding-left: 20px;
+  border: gray;
+  margin-bottom: 0px;
+  a {
+    color: $dark-green;
+    text-decoration: none;
+  }
 }
