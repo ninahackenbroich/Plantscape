@@ -1,6 +1,6 @@
 class Booking < ApplicationRecord
   belongs_to :user
-  belongs_to :jungle
+  belongs_to :jungle, optional: true
   has_many :waterings, dependent: :destroy
   
   #adding VALIDATION
