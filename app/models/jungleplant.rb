@@ -1,6 +1,7 @@
 class Jungleplant < ApplicationRecord
-  has_many :plants
-  has_many :jungles
+  #Raffa fixing associations with Santi
+  belongs_to :plant
+  belongs_to :jungle
 
   #adding VALIDATION
   validates :comments, length: { maximum: 300,

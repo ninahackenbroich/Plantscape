@@ -1,4 +1,4 @@
-class JunglesPolicy < ApplicationPolicy
+class JunglePolicy < ApplicationPolicy
   class Scope < Scope
     def resolve
       scope.all
