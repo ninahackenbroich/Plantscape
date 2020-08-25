@@ -1,3 +1,13 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+
+<div class="banner">
+  <div class="home-text">
+    <br>
+    <h1 class="color-black">Plantscape</h1>
+    <br>
+    <h3 class="color-black margin-bottom">We take your plants on vacation while you are!</h3>
+    <%= link_to "Book me", new_booking_path, class: "btn yellow-button" %>
+  </div>
+</div>
+
 <%= render 'shared/card-plant-one' %>
+

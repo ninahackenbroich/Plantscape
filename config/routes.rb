@@ -7,4 +7,9 @@ Rails.application.routes.draw do
   #   	resources :plants, only:[:show, :index]
   #   end
   # end
+
+
+  resources :bookings, only:[:new, :create, :show, :index, :destroy]
+  resources :jungles, only:[:new, :create, :show, :index, :destroy]
+
 end
