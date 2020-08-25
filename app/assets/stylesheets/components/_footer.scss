@@ -1,0 +1,81 @@
+footer {
+  background-color: $dark-green;
+  padding: 30px;
+  margin-top: 0;
+  font-size: 0.9em;
+  height: 130px;
+  bottom: 0;
+  width: 100%;
+}
+
+footer-nav {
+  list-style: none;
+  float: left;
+}
+
+.social-icons {
+  list-style: none;
+  float: right;
+}
+
+.footer-nav li,
+.social-icons li {
+  display: inline-block;
+  margin-right: 20px;
+}
+
+footer-nav li:last-child,
+social-icons li:last-child {
+  margin-right: 0;
+}
+
+.footer-nav li a:link,
+.footer-nav li a:visited,
+.social-icons li a:link,
+.social-icons li a:visited {
+  text-decoration: none;
+  border: 0;
+  color: #ddd;
+  font-weight: 100;
+  transition: color 0.2s;
+}
+
+.footer-nav li a:hover,
+.footer-nav li a:active {
+  color: #ddd;
+}
+
+.copyright {
+  color: #ddd;
+  font-weight: 100;
+  text-align: center;
+}
+.social-icons li a:link,
+.social-icons li a:visited {
+  font-size: 1.6em;
+}
+
+.fa-github,
+.fa-twitter-square,
+.fa-linkedin {
+  transition: color 0.2s;
+}
+
+.fa-linkedin-in:hover{
+  color: #3b5998;
+  transform: scale(1.5)
+}
+
+.fa-twitter:hover{
+  color: #00aced;
+  transform: scale(1.5)
+}
+
+.fa-github:hover{
+  color: #8665AB;
+  transform: scale(1.5)
+}
+
+.social-icons {
+  margin-right: 30px;
+}
