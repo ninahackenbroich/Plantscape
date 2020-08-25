@@ -1,0 +1,17 @@
+.banner {
+  background-image: asset-url("monstera-light.jpg");
+  position: relative;
+  background-size: cover;
+  background-position: bottom;
+  height: 100vh;
+  padding-left: 50px;
+  padding-top: 10%;
+}
+
+.color-black {
+  color: $dark-green;
+}
+
+.margin-bottom {
+  margin-bottom: 50px;
+}
