@@ -1,7 +1,7 @@
 require "faker"
 
-# puts "Cleaning database..."
-# something.destroy_all
+puts "Cleaning database..."
+User.destroy_all
 
 puts "Creating a user"
 user1 = User.create!(
