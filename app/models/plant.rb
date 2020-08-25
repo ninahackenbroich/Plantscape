@@ -1,7 +1,7 @@
 class Plant < ApplicationRecord
   #Raffa fixing associations with Santi
-  has_many :jungle_plants
-  has_many :jungles, through: :jungle_plants
+  has_many :jungleplants
+  has_many :jungles, through: :jungleplants
 
   #adding VALIDATION
   validates :name, presence: true

@@ -6,7 +6,8 @@ class Jungle < ApplicationRecord
 
   has_many :bookings
   belongs_to :user
-  has_many :plants, through: :jungle_plants
+  has_many :jungleplants
+  has_many :plants, through: :jungleplants
 
   #adding VALIDATION
   validates :name, presence: true, length: { minimum: 4,

@@ -1,7 +1,7 @@
 class JungleplantsController < ApplicationController
 
   def index
-    @jungleplants = JunglePlant.all
+    @jungleplants = Jungleplant.all
 
   end
 
@@ -11,7 +11,7 @@ class JungleplantsController < ApplicationController
   end
 
   def create
-    @jungleplant = JunglePlant.new
+    @jungleplant = Jungleplant.new
     authorize @jungleplant
 
   end
