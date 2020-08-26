@@ -34,3 +34,33 @@ user4 = User.create!(
   last_name: "Dohmen",
   password: "123456",
   )
+
+puts "Creating plants"
+plant1 = Plant.create!(
+  name:
+  water: "once per week",
+  light:
+  soil:
+  fertilizer:
+  repotting:
+  )
+
+puts "Creating plants"
+plant1 = Plant.create!(
+  name:
+  water: "often",
+  light:
+  soil:
+  fertilizer:
+  repotting:
+  )
+
+puts "Creating plants"
+plant1 = Plant.create!(
+  name:
+  water: "rare",
+  light:
+  soil:
+  fertilizer:
+  repotting:
+  )

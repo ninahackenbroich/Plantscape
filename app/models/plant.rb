@@ -5,5 +5,7 @@ class Plant < ApplicationRecord
 
   #adding VALIDATION
   validates :name, presence: true
+  validates :water, presence: true, inclusion: { in: ["every day", "once per week", "rare"],
+    message: "dosen't accept %{value} as option" }
 
 end
