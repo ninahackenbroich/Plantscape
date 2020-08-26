@@ -9,6 +9,7 @@ class JunglesController < ApplicationController
   end
 
   def show
+    @jungle = policy_scope(Jungle)
     authorize @jungle
   end
 
@@ -16,6 +17,7 @@ class JunglesController < ApplicationController
     @jungle = Jungle.new
     authorize @jungle
   end
+  
 
   def create
     set_user
@@ -58,7 +60,7 @@ class JunglesController < ApplicationController
   end
 
   def set_jungle
-    @jungle = jungle.find(params[:id])
+    @jungle = Jungle.find(params[:id])
   end
 
   def jungle_params

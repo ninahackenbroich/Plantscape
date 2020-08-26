@@ -2,11 +2,7 @@
   <h1 class="text-center"><%= @jungle.name %></h1>
   <div class="container">
     <div> 
-      <% if @jungle.photo.attached? %>
-        <%= cl_image_tag @jungle.photo.key, height: 300, width: 200, crop: :fit %>
-      <% else %>
-        <%= image_tag("https://source.unsplash.com/random", alt:"image", width: 20, height: 300, crop: :fit, class: "card-img-top") %>
-      <% end %>
+      <%= image_tag("https://source.unsplash.com/random", alt:"image", width: 20, height: 300, crop: :fit, class: "card-img-top") %>
     </div> 
     <div>
         <h1><%= @jungle.name %></h1>
