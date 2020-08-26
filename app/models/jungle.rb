@@ -8,6 +8,7 @@ class Jungle < ApplicationRecord
   belongs_to :user
   has_many :jungleplants
   has_many :plants, through: :jungleplants
+  has_one_attached :photo
 
   #adding VALIDATION
   validates :name, presence: true, length: { minimum: 4,
