@@ -3,7 +3,6 @@ require "faker"
 puts "Cleaning database..."
 User.destroy_all
 Plant.destroy_all
-Jungle.destroy_all
 
 puts "Creating a user"
 user1 = User.create!(
@@ -38,13 +37,6 @@ user4 = User.create!(
   first_name:"Kim",
   last_name: "Dohmen",
   password: "123456",
-  )
-
-  puts "Creating a Jungle"
-  jungle_user1 = Jungle.create!(
-  name: "Nina's Jungle",
-  address:"Berlin, Seestraße 119",
-  user_id: 17,
   )
   
 
