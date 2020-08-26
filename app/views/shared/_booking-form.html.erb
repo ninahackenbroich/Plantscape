@@ -3,6 +3,7 @@
 
 		<div class="booking-question">
 			<%= f.input :number_of_plants, label: "How many plants do you have?", as: :range,wrapper_html: {class: "number_of_plants_question"}, input_html: { min: '1', max: '100', step:'any', class: "slider"}, collection: 10..100 %> 
+			<output class="number-plants">50</output>
 		</div>
 
 		<div class="booking-question">
@@ -24,5 +25,6 @@
 		<%= f.button :submit , "Book", id: "home-btn", class: "white-text"%>
 
 	</div>
+	
 <% end %>
 
