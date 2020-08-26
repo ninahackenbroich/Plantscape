@@ -27,7 +27,7 @@
 
 .dropdown-toggle,
 .dropdown-toggle:hover {
-  color: $dark-green;
+  color: black;
   text-decoration: none;
 }
 
@@ -35,10 +35,15 @@
   border: none;
 }
 
+.nav-link,
+.nav-link:hover {
+  color: black;
+}
+
 .nav-list {
   font-family: $headers-font;
   a {
-    color: $dark-green;
+    color: black;
     padding-right: 20px;
     margin-left: 30px;
     padding-top: 0;
@@ -61,7 +66,7 @@
   border: none;
   margin-bottom: 0px;
   a {
-    color: $dark-green;
+    color: black;
     text-decoration: none;
   }
 }
@@ -71,7 +76,7 @@
   margin-bottom: 0px;
   background-color: $beige;
   a {
-    color: $dark-green;
+    color: black;
     text-decoration: none;
   }
 }
