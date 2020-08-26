@@ -2,6 +2,7 @@ class JunglesController < ApplicationController
 
   def index
     @jungles = Jungle.all
+    authorize @jungle
   end
 
   def show
@@ -27,6 +28,14 @@ class JunglesController < ApplicationController
     else
       render :new
     end
+  end
+
+  def edit
+  	authorize @jungle
+  end
+
+  def update
+  	authorize @jungle
   end
 
   def destroy

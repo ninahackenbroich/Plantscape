@@ -9,6 +9,7 @@ user1 = User.create!(
   first_name:"Nina",
   last_name: "Hackenbroich",
   password: "123456",
+  admin: true,
   )
 
 puts "Creating a user"
@@ -17,6 +18,7 @@ user2 = User.create!(
   first_name:"Raffaele",
   last_name: "Triggiano",
   password: "123456",
+  admin: true,
   )
 
 puts "Creating a user"
@@ -25,6 +27,7 @@ user3 = User.create!(
   first_name:"Celine",
   last_name: "Chambre",
   password: "123456",
+  admin: true,
   )
 
 puts "Creating a user"
@@ -33,4 +36,12 @@ user4 = User.create!(
   first_name:"Kim",
   last_name: "Dohmen",
   password: "123456",
+  )
+
+
+  puts "Creating a Jungle"
+  jungle_user1 = Jungle.create!(
+  name: "Nina's Jungle",
+  address:"Berlin, Seestraße 119",
+  user_id: 14
   )
