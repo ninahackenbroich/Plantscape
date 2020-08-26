@@ -1,0 +1,28 @@
+<%= simple_form_for @booking do |f| %>
+	<div class="form-group text-left">
+
+		<div class="booking-question">
+			<%= f.input :number_of_plants, label: "How many plants do you have?", as: :range,wrapper_html: {class: "number_of_plants_question"}, input_html: { min: '1', max: '100', step:'any', class: "slider"}, collection: 10..100 %> 
+		</div>
+
+		<div class="booking-question">
+			<%= f.input :key, label: "Choose your watering days", placeholder: "" %>
+		</div>
+		
+		<div class="booking-question">
+			<%= f.input :key, label: "How do you want to handle your key house?", placeholder: "", collection: ["Spati", "Our office", "Other"] %>
+		<%= render "shared/card-key" %>
+		</div>
+
+		<div class="booking-question">
+			<%= f.input :dusting_service, label: "Dusting - Clean your plants", placeholder: "" %>
+			<%= f.input :dusting_service, label: "Cutting - Give your plants a harstyle", placeholder: "" %>
+			<%= f.input :dusting_service, label: "Repotting - Help your plants growing", placeholder: "" %>
+			<%= f.input :dusting_service, label: "Picture - Receive photo updates from your plants", placeholder: "" %>
+		</div>
+
+		<%= f.button :submit , "Book", id: "home-btn", class: "white-text"%>
+
+	</div>
+<% end %>
+

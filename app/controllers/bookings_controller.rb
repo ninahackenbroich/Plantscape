@@ -11,6 +11,8 @@ class BookingsController < ApplicationController
   end
 
   def create
+    console
+    booking_params[:number_of_plants] = booking_params[:number_of_plants].to_i
     @booking = Booking.new(booking_params)
     if @booking.save
       redirect_to @booking, notice: 'Booking was successfully created.'
@@ -35,6 +37,6 @@ class BookingsController < ApplicationController
   private
 
   def booking_params
-    params.require(:booking).permit(:key, :dusting_service, :cutting_service, :repotting_service, :picture_service, :price)
+    params.require(:booking).permit(:number_of_plants, :key, :dusting_service, :cutting_service, :repotting_service, :picture_service, :price)
   end
 end
