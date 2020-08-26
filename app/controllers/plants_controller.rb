@@ -4,6 +4,7 @@ class PlantsController < ApplicationController
   end
 
   def show
+    @plant = plant.find(params[:id])
   end
 
   def create
@@ -26,5 +27,10 @@ class PlantsController < ApplicationController
   def destroy
     authorize @plant
   end
-  
+
+  private
+
+  def plants_params
+    params.require(:plant).permit(:name, :water, :light, :soil, :fertilizer, :repotting)
+  end
 end
