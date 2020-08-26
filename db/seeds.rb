@@ -38,29 +38,29 @@ user4 = User.create!(
 puts "Creating plants"
 plant1 = Plant.create!(
   name:
-  water: "once per week",
-  light:
-  soil:
-  fertilizer:
-  repotting:
+  water: "Every day",
+  light: "Direct light",
+  soil: "Sand",
+  fertilizer: "Spring-Summer: Once every 2 weeks",
+  repotting: "Every 12 to 18 months: Repotting in a bigger pot",
   )
 
 puts "Creating plants"
 plant1 = Plant.create!(
   name:
-  water: "often",
-  light:
-  soil:
-  fertilizer:
-  repotting:
+  water: "Once per week",
+  light: "Shadow is better",
+  soil: "Silt",
+  fertilizer: "Spring-Summer: Once every week",
+  repotting: "Every 8 to 12 months: It likes medium pots",
   )
 
 puts "Creating plants"
 plant1 = Plant.create!(
   name:
-  water: "rare",
-  light:
-  soil:
-  fertilizer:
-  repotting:
+  water: "Rare",
+  light: "Everywhere",
+  soil: "Clay",
+  fertilizer: "Whole Year: Once every month",
+  repotting: "Avoid repotting",
   )
