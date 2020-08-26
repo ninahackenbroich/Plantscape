@@ -5,7 +5,14 @@ class DashboardPolicy < ApplicationPolicy
     end
   end
 
-  # def index?
-  #   true
-  # end
+  def index?
+    user_as_owner_or_admin?
+  end
+
+  private
+
+  def user_as_owner_or_admin?
+    user == record.user
+  end
+
 end

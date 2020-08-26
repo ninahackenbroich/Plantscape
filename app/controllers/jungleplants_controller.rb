@@ -1,4 +1,5 @@
 class JungleplantsController < ApplicationController
+  
 
   def index
     @jungleplants = Jungleplant.all

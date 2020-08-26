@@ -1,12 +1,14 @@
 class JunglesController < ApplicationController
+  before_action :set_jungle, only: [:show, :edit, :update, :destroy]
 
   def index
+    @jungles = policy_scope(Jungle)
+    @user = current_user
     @jungles = Jungle.all
-    authorize @jungle
+    authorize @jungles
   end
 
   def show
-    @jungle = jungle.find(params[:id])
     authorize @jungle
   end
 
@@ -35,11 +37,15 @@ class JunglesController < ApplicationController
   end
 
   def update
+    if @jungle.update(jungle_params)
+      redirect_to @jungle, notice: 'Your jungle was successfully updated.'
+    else
+      render :edit
+    end
   	authorize @jungle
   end
 
   def destroy
-    @jungle = jungle.find(params[:id])
     authorize @jungle
     @jungle.destroy!
     redirect_to jungles_path, notice: ' Your Jungle was successfully destroyed.'
@@ -49,6 +55,10 @@ class JunglesController < ApplicationController
 
   def set_user
     @user = current_user
+  end
+
+  def set_jungle
+    @jungle = jungle.find(params[:id])
   end
 
   def jungle_params
