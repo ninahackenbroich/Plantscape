@@ -5,9 +5,8 @@
 }
 
 .navbar-lewagon-white {
-  background-color: white;
+  background-color: $beige;
 }
-
 
 .navbar {
 	list-style: none;
@@ -20,7 +19,7 @@
   }
 
   &.normal {
-    background-color: white;
+    background-color: $beige;
     position: sticky;
   }
 }
