@@ -1,10 +1,50 @@
 //adding media queries
 
-@media (min-width:900px){.card-dynamic {height: 50%}}
-@media screen and (min-width: 500px) and (max-width: 899px) {
-  .card-dynamic {
-  height: 30%
+//@media (min-width:900px){.card-dynamic {height: 50%}}
+//@media screen and (min-width: 500px) and (max-width: 899px) {
+//  .card-dynamic {
+//  height: 30%
+//  }
+//}
+//@media (max-width:499px){.card-dynamic {height: 50%}}
+
+// adding scss class to cards
+
+.card-plant-style {
+  height: 100%;
+  /* margin-bottom: 100px; */
+  padding: 0px;
+  border-radius: 5px;
+  background: white;
+
+  .card-body {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  .card-text {
+    flex-grow: 1;
   }
 }
-@media (max-width:499px){.card-dynamic {height: 50%}}
 
+.card-plant-img{
+    overflow: hidden;
+    /* min-height: 200px; */
+    flex-shrink: 0;
+    width: 100%;
+    height: 400px;
+
+  img{
+    width: 100%;
+    object-fit: cover;
+  }
+}
+
+.card-plant-body{
+  height: 200px;
+}
+
+.card-plant-title{
+  height: 50%;
+}
