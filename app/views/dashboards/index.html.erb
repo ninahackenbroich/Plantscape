@@ -1,6 +1,25 @@
-
 <div class="dashboard-banner">
-  <%= cl_image_tag("pexels-visually-us-1494068_u3vxar", width: 400, height: 300, crop: :fill) %>
-  <h1>Hello, <%= current_user.first_name %></h1>
+  <div class ="dashboard-headings">
+    <h1>Your Jungle</h1>
+    <h3><%= current_user.first_name %>, your next vacations will start in 22 days!</h3>
+  </div>
 </div>
-
+<div class ="dashboard-bookings">
+  <h2>Upcoming Plantscapes</h2>
+  <div class="dashboard-calender">
+    <% if @bookings.blank? %>
+      <p>Oh your plants haven't planned any vacations!</p>
+      <%else %>
+        <% @bookings.each do |booki| %>
+          <p>
+            <%= booki.number_of_plants %>
+            <%= booki.waterings.date %>
+          </p>
+        <% end %>
+      <%end %>
+      <%= link_to " + new vacations", new_booking_path, class: "btn btn-lg yellow-button shadow px-5 py-3 mb-5" %>
+  </div>
+</div>
+<div class="dashboard-plantcollection">
+<%= @user.id %>
+</div>

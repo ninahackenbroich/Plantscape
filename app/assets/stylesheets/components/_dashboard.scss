@@ -1,0 +1,42 @@
+.dashboard-banner {
+  background-image: asset-url("banner-dashboard.jpg");
+  position: relative;
+  background-size: cover;
+  height: 80vh;
+  padding-left: 50px;
+  padding-top: 10%;
+  text-align: right;
+
+  .dashboard-headings {
+    padding-right: 80px;
+    opacity: 0.8;
+    color:$beige;
+
+    h1 {
+      font-size: 144px;
+    }
+
+    h3 {
+      text-align:center;
+      padding-top: 80px;
+    }
+  }
+}
+
+.dashboard-bookings{
+  position: relative;
+  background-size: cover;
+  height: 80vh;
+  padding-left: 50px;
+  padding-top: 10%;
+
+  h2{
+
+  }
+}
+
+.dashboard-calender {
+  p {
+    text-align:center;
+  }
+}
