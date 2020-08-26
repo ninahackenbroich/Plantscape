@@ -2,13 +2,13 @@
 	<div class="form-group text-left">
 
 		<div class="booking-question">
-			<%= f.input :number_of_plants, label: "How many plants do you have?", as: :range,wrapper_html: {class: "number_of_plants_question"}, input_html: { min: '1', max: '100', step:'any', class: "slider"}, collection: 10..100 %> 
+			<%= f.input :number_of_plants, label: "How many plants do you have?", as: :range,wrapper_html: {class: "question"}, input_html: { min: '1', max: '100', step:'any', class: "slider"}, collection: 10..100 %> 
 			<output class="number-plants">50</output>
 		</div>
 
 		<div class="booking-question">
-<!-- 			<%#= f.input :watering_dates, as: :string, label: "Choose your watering days", input_html: {class: "datepicker"} %>
- -->			<input type="text" name="watering_dates" class="datepicker d-none">
+			<p class="question">Choose your watering days *</p>
+			<input type="text" name="watering_dates" class="datepicker d-none">
 
 		</div>
 		
