@@ -45,7 +45,7 @@ class JungleplantsController < ApplicationController
   private 
 
   def set_jungle
-    @jungle = Jocktail.find(params[:jungle_id])
+    @jungle = Jungle.find(params[:jungle_id])
   end
 
   def jungleplant_params
