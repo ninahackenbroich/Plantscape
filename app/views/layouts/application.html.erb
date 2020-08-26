@@ -13,7 +13,7 @@
 
   <body>
     <div id="container">
-      <%= render "shared/navbar", background: params[:controller] == "pages" && params[:action] == "home" %>
+          <%= render "shared/navbar", background: params[:controller] == "pages" && params[:action] == "home" %>
       <%= render 'shared/flashes' %>
       <div style="min-height: 100vh;">
         <%= yield %>

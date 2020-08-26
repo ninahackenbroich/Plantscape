@@ -52,7 +52,7 @@
   height: 5px;
   cursor: pointer;
   background: lightgray;
-  border-radius: 4px;
+  border-radius: 10px;
 }
 
 .slider:focus::-webkit-slider-runnable-track {
@@ -64,7 +64,7 @@
   height: 5px;
   cursor: pointer;
   background: lightgray;
-  border-radius: 4px;
+  border-radius: 10px;
 }
 
 // .slider::-ms-track {
@@ -94,3 +94,23 @@
 // .slider:focus::-ms-fill-upper {
 //   background: #367ebd;
 // }
+
+
+
+
+.number-plants {
+  color: black;
+  padding: 4px 12px;
+  position: absolute;
+  border-radius: 4px;
+  left: 50%;
+  transform: translateX(-50%);
+  &::after {
+    content: "";
+    position: absolute;
+    width: 2px;
+    height: 2px;
+    top: -1px;
+    left: 50%;
+  }
+}

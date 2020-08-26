@@ -1,23 +1,26 @@
-.booking-new {
-	margin-top: 100px;
-}
 
 .booking-title {
+	margin-top: 120px;
+	margin-left: 320px;
 	font-size: 50px;
 	font-family: 'Cardo', "serif";
 	text-align: center;
+	position: fixed;
+    top: 0;
 }
 
 .booking-question {
-  height: 100vh;
-  text-align: center;
+	height: 100vh;
+	width: 700px;
+	margin: auto auto;
+	text-align: center;
 }
 
 .number_of_plants_question {
-
+	margin-top: 180px;
+	font-size: 20px;
 }
 
 .slider {
-	background: red;
+	margin-top: 80px;
 }
-
