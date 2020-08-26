@@ -10,6 +10,7 @@ class JunglesController < ApplicationController
   end
 
   def show
+    @jungle = policy_scope(Jungle)
     authorize @jungle
   end
 
@@ -17,6 +18,7 @@ class JunglesController < ApplicationController
     @jungle = Jungle.new
     authorize @jungle
   end
+  
 
   def create
     set_user
@@ -33,6 +35,19 @@ class JunglesController < ApplicationController
     end
   end
 
+  def edit
+  	authorize @jungle
+  end
+
+  def update
+    if @jungle.update(jungle_params)
+      redirect_to @jungle, notice: 'Your jungle was successfully updated.'
+    else
+      render :edit
+    end
+  	authorize @jungle
+  end
+
   def destroy
     authorize @jungle
     @jungle.destroy!
@@ -46,7 +61,6 @@ class JunglesController < ApplicationController
   end
 
   def set_jungle
-    @jungle = policy_scope(Jungle)
     @jungle = Jungle.find(params[:id])
   end
 

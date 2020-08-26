@@ -1,7 +1,9 @@
 class JungleplantsController < ApplicationController
+  before_action :set_cocktail, only:[:new, :create]
 
   def index
     @jungleplants = Jungleplant.all
+    authorize @jungleplants
   end
 
   def show
@@ -9,13 +11,22 @@ class JungleplantsController < ApplicationController
   end
 
   def create
-    @jungleplant = Jungleplant.new
+    @jungleplant = Jungleplant.create(jungleplant_params)
+    @jungeplant.jungle = @jungle
+    if @jungeplant.save
+      redirect_to jungle_path(@jungle)
+    else
+      render :new
+    end
     authorize @jungleplant
+    authorize @jungle
   end
 
   def new
+    @jungeplant = Jungleplant.new
+    @plants = Plant.all
     authorize @jungleplant
-
+    authorize @plants
   end
 
   def edit
@@ -30,6 +41,15 @@ class JungleplantsController < ApplicationController
   def destroy
     authorize @jungleplant
 
+  end
+  private 
+
+  def set_jungle
+    @jungle = Jungle.find(params[:jungle_id])
+  end
+
+  def jungleplant_params
+    params.require(:jungleplant).permit(:status, :comment)
   end
 
 end

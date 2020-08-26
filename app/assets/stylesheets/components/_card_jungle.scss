@@ -1,0 +1,17 @@
+.right-corner,
+.right-corner:hover {
+  position: absolute;
+  right: 3%; top: 5%;
+  border: none;
+  text-decoration: none;
+  a {
+    border: none;
+    text-decoration: none;
+  }
+}
+
+.color-beige,
+.color-beige:hover {
+  background-color: $beige;
+}
+
