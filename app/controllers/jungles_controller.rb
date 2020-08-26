@@ -10,7 +10,6 @@ class JunglesController < ApplicationController
   end
 
   def show
-    @jungle = policy_scope(Jungle)
     authorize @jungle
   end
 

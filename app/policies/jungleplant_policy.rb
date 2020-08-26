@@ -7,16 +7,16 @@ class JungleplantPolicy < ApplicationPolicy
  
 
   def new?
-  	user_as_owner_or_admin?
+  	true # user_as_owner_or_admin?
   end
 
   def create?
-  	user_as_owner_or_admin?
+  	true # user_as_owner_or_admin?
   end
 
   private
 
-  def user_as_owner_or_admin?
-    user == record.user
-  end
+  # def user_as_owner_or_admin?
+  #   user == record.user
+  # end
 end
