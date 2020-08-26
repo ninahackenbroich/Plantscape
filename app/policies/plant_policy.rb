@@ -6,36 +6,33 @@ class PlantPolicy < ApplicationPolicy
   end
 
   def show?
-    true
+    user_as_owner_or_admin?
   end
 
   def new?
-    true
+    user_as_owner_or_admin?
   end
 
   def create?
-    true
+    user_as_owner_or_admin?
   end
 
   def edit?
-  	true
-    # user_as_owner_or_admin?
+  	user_as_owner_or_admin?
   end
 
 
   def destroy?
-  	true
-    # user_as_owner_or_admin?
+  	user_as_owner_or_admin?
   end
 
   def update?
-  	true
-    # user_as_owner_or_admin?
+    user_as_owner_or_admin?
   end
 
-  # private
+  private
 
-  # def user_as_owner_or_admin?
-  #   user == record.user
-  # end
+  def user_as_owner_or_admin?
+    user == record.user
+  end
 end
