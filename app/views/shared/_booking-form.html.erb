@@ -7,7 +7,9 @@
 		</div>
 
 		<div class="booking-question">
-			<%= f.input :key, label: "Choose your watering days", placeholder: "" %>
+<!-- 			<%#= f.input :watering_dates, as: :string, label: "Choose your watering days", input_html: {class: "datepicker"} %>
+ -->			<input type="text" name="watering_dates" class="datepicker d-none">
+
 		</div>
 		
 		<div class="booking-question">
