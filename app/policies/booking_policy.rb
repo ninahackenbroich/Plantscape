@@ -6,22 +6,28 @@ class BookingPolicy < ApplicationPolicy
   end
 
   def index?
-    true
+    user_as_owner_or_admin?
   end
 
   def show?
-    true
+    user_as_owner_or_admin?
   end
 
   def new?
-  	true
+  	user_as_owner_or_admin?
   end
 
   def create?
-  	true
+  	user_as_owner_or_admin?
   end
 
   def destroy?
-    true
+    user_as_owner_or_admin?
+  end
+
+  private
+
+  def user_as_owner_or_admin?
+    user == record.user
   end
 end

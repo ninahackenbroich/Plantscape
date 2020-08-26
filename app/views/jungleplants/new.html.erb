@@ -1,0 +1,15 @@
+<h1>Add a plant to your Jungle</h1>
+
+<%= simple_form_for [@jungle, @jungleplant] do |f| %>
+  <%= f.label :plant, "Which plant do you want to add to you jungle?" %>
+  <%= f.association :plant, as: :check_boxes, collection: ["Monstera", "Ficus", "Palm"] %>
+  <br>
+  <%= f.label :comment, "Write your personal notes about this plant here..." %>
+  <%= f.text_field :comment %>
+  <br>
+  <%= f.label :status, "What is the plants actual status? Please choose." %>
+  <%= f.input :status, collection: ["Happy & Healthy", "Dusty, but fine", "Could be better", "Needs some care", "Almost dying"] %>
+  <br>
+  <%= f.submit "Add plant", class: "btn btn-sm yellow-button shadow px-5 py-3 mb-5 text-right", disable_with: 'Adding plant to your jungle...' %>
+  <br>
+<% end %>

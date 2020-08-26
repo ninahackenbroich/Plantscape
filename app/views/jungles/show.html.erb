@@ -1,0 +1,26 @@
+<div class="container">
+  <h1 class="text-center"><%= @jungle.name %></h1>
+  <div class="container">
+    <div> 
+      <%= image_tag("https://source.unsplash.com/random", alt:"image", width: 20, height: 300, crop: :fit, class: "card-img-top") %>
+    </div> 
+    <div>
+        <h1><%= @jungle.name %></h1>
+        <p><strong>All the plants in my jungle</strong></p>
+        <ul>
+          <% @jungle.jungleplants.each do |jp| %>
+            <li><%= jp.plant.name %>
+            <%= jp.status %> 
+            <%= jp.comment %> 
+            <%= link_to "🗑", plant_path(jp) , method: :delete %> 	
+            </li>
+          <% end %>
+        </ul>
+    </div>
+  </div>
+  <div class="container lower-buttons">
+    <%= link_to " + Add a plant ", new_jungle_jungleplant_path(@jungle), class: "btn btn-sm yellow-button shadow px-5 py-3 mb-5"%>
+    <br>
+    <%= link_to " Back ", jungles_path(@jungle), class: "btn btn-sm yellow-button shadow px-5 py-3 mb-5"%>
+  </div>
+</div>
