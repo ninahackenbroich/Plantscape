@@ -3,25 +3,27 @@
 
 		<div class="booking-question">
 			<%= f.input :number_of_plants, label: "How many plants do you have?", as: :range,wrapper_html: {class: "question"}, input_html: { min: '1', max: '100', step:'any', class: "slider"}, collection: 10..100 %> 
-			<output class="number-plants">50</output>
+			<output class="number-plants" id="number_of_plants">50</output>
 		</div>
 
 		<div class="booking-question">
 			<p class="question">Choose your watering days *</p>
-			<input type="text" name="watering_dates" class="datepicker d-none">
+			<input type="text" name="watering_dates" class="datepicker d-none" id="days">
 
 		</div>
 		
 		<div class="booking-question">
-			<%= f.radio_button :key, label: "How do you want to handle your key house?", placeholder: "", collection: ["Spati", "Our office", "Other"] %>
+			<%= f.radio_button :key, label: "How do you want to handle your house key?", placeholder: "", collection: ["Spati", "Our office", "Other"] %>
 		</div>
 
 		<div class="booking-question">
-			<%= f.input :dusting_service, label: "Dusting - Clean your plants", placeholder: "" %>
-			<%= f.input :dusting_service, label: "Cutting - Give your plants a harstyle", placeholder: "" %>
-			<%= f.input :dusting_service, label: "Repotting - Help your plants growing", placeholder: "" %>
-			<%= f.input :dusting_service, label: "Picture - Receive photo updates from your plants", placeholder: "" %>
+			<%= f.input :dusting_service, label: "Dusting - Clean your plants", placeholder: "", id: "dusting" %>
+			<%= f.input :dusting_service, label: "Cutting - Give your plants a harstyle", placeholder: "", id: "cutting" %>
+			<%= f.input :dusting_service, label: "Repotting - Help your plants growing", placeholder: "" , id: "repotting" %>
+			<%= f.input :dusting_service, label: "Picture - Receive photo updates from your plants", placeholder: "", id: "pictures" %>
 		</div>
+
+		<%= f.hidden_field :price, value: params[:requestval] %>
 
 		<%= f.button :submit , "Book", id: "home-btn", class: "white-text"%>
 
