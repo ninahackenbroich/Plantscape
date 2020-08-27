@@ -35,17 +35,17 @@ const initPrice = () => {
       console.log(e.currentTarget);
       let selectedDays = document.querySelectorAll('.selected');
       console.log(selectedDays.length);
-      let price = parseInt(base_price) * parseInt(selectedDays.length);
+      let price = (parseInt(base_price) * parseInt(selectedDays.length));
       console.log(price);
   });
 
-  const addons = document.querySelector('#watering-days-calendar');
-  console.log(calform);
-  calform.addEventListener('change', (e) => {
-    console.log(e.currentTarget);
-    let selectedDays = document.querySelectorAll('.selected');
-    console.log(selectedDays.length);
-    let price = parseInt(base_price) * parseInt(selectedDays.length);
+  const addon = document.querySelector('#addon-select');
+  console.log(addon);
+  addon.addEventListener('change', (e) => {
+    let addservice = document.querySelector('#booking_dusting_service');
+    console.log(addservice);
+    if 
+      let price = (parseInt(base_price) * parseInt(selectedDays.length)) + 10;
     console.log(price);
 });
 };
