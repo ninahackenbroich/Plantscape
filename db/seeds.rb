@@ -50,6 +50,8 @@ plant1 = Plant.create!(
   fertilizer: "Spring-Summer: Once every 2 weeks",
   repotting: "Every 12 to 18 months: Repotting in a bigger pot",
   )
+  image_plant = File.open("app/assets/images/Monstera_1.jpeg")
+  plant1.photo.attach(io: image_plant, filename: 'image.jpeg', content_type: 'image/jpeg')
 
 puts "Creating plants"
 plant2 = Plant.create!(
@@ -60,6 +62,8 @@ plant2 = Plant.create!(
   fertilizer: "Spring-Summer: Once every week",
   repotting: "Every 8 to 12 months: It likes medium pots",
   )
+  image_plant = File.open("app/assets/images/Ficus_1.jpg")
+  plant2.photo.attach(io: image_plant, filename: 'image.jpg', content_type: 'image/jpg')
 
 puts "Creating plants"
 plant3 = Plant.create!(
@@ -70,6 +74,8 @@ plant3 = Plant.create!(
   fertilizer: "Whole Year: Once every month",
   repotting: "Avoid repotting",
   )
+  image_plant = File.open("app/assets/images/Snakeplant_1.jpg")
+  plant3.photo.attach(io: image_plant, filename: 'image.jpg', content_type: 'image/jpg')
 
 puts "Creating plants"
 plant4 = Plant.create!(
@@ -80,6 +86,8 @@ plant4 = Plant.create!(
   fertilizer: "Whole Year: Once every month",
   repotting: "Avoid repotting",
   )
+  image_plant = File.open("app/assets/images/Hangingplant_1.jpg")
+  plant4.photo.attach(io: image_plant, filename: 'image.jpg', content_type: 'image/jpg')
 
 puts "Creating plants"
 plant5 = Plant.create!(
@@ -90,6 +98,8 @@ plant5 = Plant.create!(
   fertilizer: "Spring-Summer: Once every week",
   repotting: "Every 8 to 12 months: It likes medium pots",
   )
+  image_plant = File.open("app/assets/images/ChamaedoreaElegans_1.jpg")
+  plant5.photo.attach(io: image_plant, filename: 'image.jpg', content_type: 'image/jpg')
 
 puts "Creating plants"
 plant6 = Plant.create!(
@@ -100,3 +110,5 @@ plant6 = Plant.create!(
   fertilizer: "Spring-Summer: Once every 2 weeks",
   repotting: "Every 12 to 18 months: Repotting in a bigger pot",
   )
+  image_plant = File.open("app/assets/images/PeaceLily_4.jpg")
+  plant6.photo.attach(io: image_plant, filename: 'image.jpg', content_type: 'image/jpg')

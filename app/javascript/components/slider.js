@@ -1,16 +1,17 @@
 const sliderInput = document.querySelector(".slider")
 const sliderOutput = document.querySelector(".number-plants")
+const inputContainer = document.querySelector(".booking-question")
 
 const initSlider = () => {
 	sliderInput.addEventListener( "input", event => {
 		const sliderValue = Math.floor(sliderInput.value)
-		console.log(sliderValue)
-		console.log(sliderInput)
 		const sliderMin = sliderInput.min
 		const sliderMax = sliderInput.max
-		const newValue = Number(((sliderValue - sliderMin) * 100) / (sliderMax - sliderMin))
+		const valuePercentage = (100 * sliderValue) / sliderMax
+		// const newValue = Number(((sliderValue - sliderMin) * 100) / (sliderMax - sliderMin))
 		sliderOutput.innerHTML = sliderValue
-		sliderOutput.style.left = `calc(${newValue}% + (${8 - newValue * 0.15}px))`;
+		sliderOutput.style.left = `(${(valuePercentage * inputContainer.width) / 100}%)` 
+		console.log(valuePercentage, sliderInput.style)
 
 	})
 }
