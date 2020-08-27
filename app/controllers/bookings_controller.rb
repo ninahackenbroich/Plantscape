@@ -18,6 +18,7 @@ class BookingsController < ApplicationController
     if @booking.save
       watering_dates = params[:watering_dates].split(", ")
       watering_dates.each { |date| Watering.create(date: date, booking: @booking) }
+      key = params[:key]
       redirect_to @booking, notice: 'Booking was successfully created.'
     else
       render :new
