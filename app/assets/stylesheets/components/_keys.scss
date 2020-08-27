@@ -1,0 +1,112 @@
+#booking_key_spati,
+#booking_key_office,
+#booking_key_other {
+	visibility: hidden;
+}
+
+.radio-button {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  margin: 20px 0;
+}
+
+.key-choice {
+  background: #b7b7b7;
+  padding: 20px;
+  border-radius: 5px;
+  opacity: .4;
+  flex: 0 0 30%;
+  text-align: center;
+  &:hover {
+    opacity: 1;
+    cursor: pointer;
+  }
+  &.active {
+  background: red;
+  color: white;
+  opacity: 1;
+  }
+}
+
+
+
+
+/* 00000000000000 */
+
+
+
+[type="checkbox"]:checked,
+[type="checkbox"]:not(:checked),
+[type="radio"]:checked,
+[type="radio"]:not(:checked){
+	position: absolute;
+	left: -9999px;
+	width: 0;
+	height: 0;
+	visibility: hidden;
+}
+
+.checkbox-key:checked + label,
+.checkbox-key:not(:checked) + label{
+	position: relative;
+	display: inline-block;
+	padding: 20px 20px;
+	width: 200px;
+	height: 80px;
+	margin: 0 auto;
+	font-size: 15px;
+	text-align: center;
+	border-radius: 10px;
+	overflow: hidden;
+	cursor: pointer;
+}
+
+.checkbox-key:not(:checked) + label{
+	background-color: #e5e0cc;
+}
+
+.checkbox-key:checked + label{
+	background-color: transparent;
+}
+
+.checkbox-key:checked + label::before,
+.checkbox-key:not(:checked) + label::before{
+	position: absolute;
+	content: '';
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	border-radius: 4px;
+	background-color: #2C786C;
+	z-index: -1;
+}
+.checkbox-key:checked + label span,
+.checkbox-key:not(:checked) + label span{
+	position: relative;
+	display: block;
+}
+.checkbox-key:checked + label span::before,
+.checkbox-key:not(:checked) + label span::before{
+	position: absolute;
+	content: attr(data-hover);
+	top: 0;
+	left: 0;
+	width: 100%;
+	overflow: hidden;
+	-webkit-text-stroke: transparent;
+    text-stroke: transparent;
+    -webkit-text-fill-color: var(--white);
+    text-fill-color: var(--white);
+    color: var(--white);
+	-webkit-transition: max-height 0.3s;
+	-moz-transition: max-height 0.3s;
+	transition: max-height 0.3s;
+}
+.checkbox-key:not(:checked) + label span::before{
+	max-height: 0;
+}
+.checkbox-key:checked + label span::before{
+	max-height: 100%;
+}
