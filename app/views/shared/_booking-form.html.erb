@@ -1,5 +1,5 @@
 <%= simple_form_for @booking do |f| %>
-	<div class="form-group text-left">
+	<div class=" booking-form">
 
 		<div class="booking-question">
 			<%= f.input :number_of_plants, label: "How many plants do you have?", as: :range,wrapper_html: {class: "question"}, input_html: { min: '1', max: '100', step:'any', width: "500px", class: "slider"}, collection: 10..100 %> 
@@ -22,30 +22,30 @@
   			<%#= f.label :key, 'Call us to find other options', :value => 'other', class: "key-choice" %>
   			<%#= f.radio_button :key, 'other', class: "key-choice" %> -->
 
-			<input class="checkbox-key" type="radio" name="key" id="key-1" checked>
-			<label class="for-checkbox-key" for="key-1">
-				<span data-hover="Let at your favorite späti">Let at your favorite späti</span>
-			</label>
+				<input class="checkbox-key" type="radio" name="key" id="key-1" checked>
+				<label class="for-checkbox-key" for="key-1">
+					<span data-hover="Let at your favorite späti">Let at your favorite späti</span>
+				</label>
 
-			<input class="checkbox-key" type="radio" name="key" id="key-2">
-			<label class="for-checkbox-key" for="key-2">							
-				<span data-hover="Bring it to our PlantScape Office">Bring it to our PlantScape Office</span>
+				<input class="checkbox-key" type="radio" name="key" id="key-2">
+				<label class="for-checkbox-key" for="key-2">							
+					<span data-hover="Bring it to our PlantScape Office">Bring it to our PlantScape Office</span>
+				</label>
+				<input class="checkbox-key" type="radio" name="key" id="key-3">
+				<label class="for-checkbox-key" for="key-3">							
+					<span data-hover="Call us to find other options">Call us to find other options</span>
 			</label>
-			<input class="checkbox-key" type="radio" name="key" id="key-3">
-			<label class="for-checkbox-key" for="key-3">							
-				<span data-hover="Call us to find other options">Call us to find other options</span>
-			</label>
+			</div>
 		</div>
 
 		<div class="booking-question">
 			<p class="question">Would you like to book some extra? *</p>
-			<%= f.input :dusting_service, label: "Dusting - Clean your plants", placeholder: "" %>
-			<%= f.input :dusting_service, label: "Cutting - Give your plants a harstyle", placeholder: "" %>
-			<%= f.input :dusting_service, label: "Repotting - Help your plants growing", placeholder: "" %>
-			<%= f.input :dusting_service, label: "Picture - Receive photo updates from your plants", placeholder: "" %>
+			<%= f.input :dusting_service, label: "Dusting - clean your plants"%>
+			<%= f.input :dusting_service, label: "Cutting - give your plants a hairstyle" %>
+			<%= f.input :dusting_service, label: "Repotting - help your plants growing" %>
+			<%= f.input :dusting_service, label: "Picture - receive photo updates from your plants" %>
+
+			<%= link_to "Book" , dashboards_path, class: "yellow-button"%>
 		</div>
-			<%= render "shared/card-key" %>
-		<%= f.button :submit , "Book", id: "home-btn", class: "white-text"%>
 	</div>
 <% end %>
-

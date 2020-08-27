@@ -1,50 +1,46 @@
-#booking_key_spati,
-#booking_key_office,
-#booking_key_other {
-	visibility: hidden;
-}
+// #booking_key_spati,
+// #booking_key_office,
+// #booking_key_other {
+// 	visibility: hidden;
+// }
+
+// .radio-button {
+//   display: flex;
+//   justify-content: space-between;
+//   flex-wrap: wrap;
+//   margin: 20px 0;
+// }
+
+// .key-choice {
+//   background: #b7b7b7;
+//   padding: 20px;
+//   border-radius: 5px;
+//   opacity: .4;
+//   flex: 0 0 30%;
+//   text-align: center;
+//   &:hover {
+//     opacity: 1;
+//     cursor: pointer;
+//   }
+//   &.active {
+//   background: red;
+//   color: white;
+//   opacity: 1;
+//   }
+// }
+
 
 .radio-button {
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  margin: 20px 0;
-}
-
-.key-choice {
-  background: #b7b7b7;
-  padding: 20px;
-  border-radius: 5px;
-  opacity: .4;
-  flex: 0 0 30%;
-  text-align: center;
-  &:hover {
-    opacity: 1;
-    cursor: pointer;
-  }
-  &.active {
-  background: red;
-  color: white;
-  opacity: 1;
-  }
-}
-
-
-
-
-/* 00000000000000 */
-
-
-
-[type="checkbox"]:checked,
-[type="checkbox"]:not(:checked),
-[type="radio"]:checked,
-[type="radio"]:not(:checked){
-	position: absolute;
-	left: -9999px;
-	width: 0;
-	height: 0;
-	visibility: hidden;
+	[type="checkbox"]:checked,
+	[type="checkbox"]:not(:checked),
+	[type="radio"]:checked,
+	[type="radio"]:not(:checked){
+		position: absolute;
+		left: -9999px;
+		// width: 0;
+		height: 0;
+		visibility: hidden;
+	}
 }
 
 .checkbox-key:checked + label,
