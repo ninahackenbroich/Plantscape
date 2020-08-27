@@ -44,8 +44,8 @@ const initPrice = () => {
   addon.addEventListener('change', (e) => {
     let addservice = document.querySelector('#booking_dusting_service');
     console.log(addservice);
-    if 
-      let price = (parseInt(base_price) * parseInt(selectedDays.length)) + 10;
+    // if 
+    // let price = (parseInt(base_price) * parseInt(selectedDays.length)) + 10;
     console.log(price);
 });
 };
