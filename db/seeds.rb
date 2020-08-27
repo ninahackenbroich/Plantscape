@@ -50,6 +50,8 @@ plant1 = Plant.create!(
   fertilizer: "Spring-Summer: Once every 2 weeks",
   repotting: "Every 12 to 18 months: Repotting in a bigger pot",
   )
+  image_plant = File.open("Monstera_1.jpeg")
+  plant1.photo.attach(io: image_plant, filename: 'image.jpeg', content_type: 'image/jpeg')
 
 puts "Creating plants"
 plant2 = Plant.create!(
@@ -60,6 +62,8 @@ plant2 = Plant.create!(
   fertilizer: "Spring-Summer: Once every week",
   repotting: "Every 8 to 12 months: It likes medium pots",
   )
+  image_plant = File.open("Ficus_1.jpeg")
+  plant.photo.attach(io: image_plant, filename: 'image.jpeg', content_type: 'image/jpeg')
 
 puts "Creating plants"
 plant3 = Plant.create!(
@@ -70,6 +74,8 @@ plant3 = Plant.create!(
   fertilizer: "Whole Year: Once every month",
   repotting: "Avoid repotting",
   )
+  image_plant = File.open("Snakeplant_1.jpeg")
+  plant.photo.attach(io: image_plant, filename: 'image.jpeg', content_type: 'image/jpeg')
 
 puts "Creating plants"
 plant4 = Plant.create!(
@@ -80,6 +86,8 @@ plant4 = Plant.create!(
   fertilizer: "Whole Year: Once every month",
   repotting: "Avoid repotting",
   )
+  image_plant = File.open("Hangingplant_1.jpeg")
+  plant.photo.attach(io: image_plant, filename: 'image.jpeg', content_type: 'image/jpeg')
 
 puts "Creating plants"
 plant5 = Plant.create!(
@@ -90,6 +98,8 @@ plant5 = Plant.create!(
   fertilizer: "Spring-Summer: Once every week",
   repotting: "Every 8 to 12 months: It likes medium pots",
   )
+  image_plant = File.open("ChamaedoreaElegans_1")
+  plant.photo.attach(io: image_plant, filename: 'image.jpeg', content_type: 'image/jpeg')
 
 puts "Creating plants"
 plant6 = Plant.create!(
@@ -100,3 +110,5 @@ plant6 = Plant.create!(
   fertilizer: "Spring-Summer: Once every 2 weeks",
   repotting: "Every 12 to 18 months: Repotting in a bigger pot",
   )
+  image_plant = File.open("PeaceLily_4")
+  plant.photo.attach(io: image_plant, filename: 'image.jpeg', content_type: 'image/jpeg')
