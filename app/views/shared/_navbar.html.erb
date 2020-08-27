@@ -1,6 +1,6 @@
 <nav class="navbar navbar-expand-sm navbar-light navbar-lewagon <%= background ? "transparent" : "normal"%>">
   <%= link_to "#", class: "logo" do %>
-    <%= image_tag "logo.png" %>
+    <%= image_tag image_path("logo.png") %>
     <% end %>
 
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -23,7 +23,7 @@
     <% if user_signed_in? %>
       <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            <%= image_tag "avatar.jpg", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %></i>
+            <%= image_tag image_path("avatar.jpg"), class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %></i>
           </a>
         <div class="dropdown-menu dropdown-menu-right shadow p-3 mb-5 rounded" aria-labelledby="navbarDropdown">
           <p class="dropdown-item"><%= link_to "My Jungle", dashboards_index_path %></p>
