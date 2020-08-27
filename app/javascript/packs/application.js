@@ -28,21 +28,15 @@ import "bootstrap";
 // Internal imports, e.g: 
 import { initSlider } from '../components/slider';
 import { initDatepicker } from '../components/datepicker';
-<<<<<<< HEAD
 import { initPrice } from '../components/pricecalc';
-=======
 import { initKey } from '../components/key';
->>>>>>> master
 
 document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
   initSlider();
   initDatepicker();
-<<<<<<< HEAD
   initPrice();
-=======
   initKey();
->>>>>>> master
 });
 
 

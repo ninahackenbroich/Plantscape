@@ -32,7 +32,7 @@ const initPrice = () => {
 
   var Calc_balance = $('#balance');
 
-  var balance = (numberPlants * days) + ;
+  var balance = (numberPlants * days);
 
   Calc_balance.val(balance);
 
