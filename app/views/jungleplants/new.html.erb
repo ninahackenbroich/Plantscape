@@ -2,7 +2,7 @@
 
 <%= simple_form_for [@jungle, @jungleplant] do |f| %>
   <%= f.label :plant, "Which plant do you want to add to you jungle?" %>
-  <%= f.association :plant, as: :check_boxes, collection: ["Monstera", "Ficus", "Palm"] %>
+  <%= f.input :plant, as: :check_boxes, collection: ["Monstera", "Ficus", "Palm"] %>
   <br>
   <%= f.label :comment, "Write your personal notes about this plant here..." %>
   <%= f.text_field :comment %>
