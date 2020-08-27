@@ -1,6 +1,6 @@
 <div class="dashboard-banner">
   <div class ="dashboard-headings">
-    <h1>Your Jungle</h1>
+      <h1 class ="crazshadow">Your Jungle</h1>
     <h3><%= current_user.first_name %>, your next vacations will start in 22 days!</h3>
   </div>
 </div>
@@ -28,25 +28,27 @@
   </div>
 
   <div class="dashboard-plantcollection">
-    <% if @jungles.count == 1 %>
-      <h2>Your Planties</h2>
-        <% @jungles.each do |jungle| %>
-          <p>
-            <%= jungle.name %>
-            <% jungle.jungleplants.each do |jplant| %>
-             <%= jplant.plant.name  %>
-             <% end %>
-          </p>
-        <%end %>
-    <%else %>
-      <h2>Your Jungles</h2>
-        <% @jungles.each do |jungle|%>
-          <p>
-            <%= @jungle.name %>
-            <%= link_to `This Jungle`%>
-          </p>
-        <% end %>
-    <%end %>
+    <div class ="dashboard-jungles">
+      <% if @jungles.count == 1 %>
+        <h2>Your Planties</h2>
+          <% @jungles.each do |jungle| %>
+            <p>
+              <%= jungle.name %> <%= link_to "jungle", jungle_path(jungle) %>
+              <% jungle.jungleplants.each do |jplant| %>
+               <%= jplant.plant.name  %>
+               <% end %>
+            </p>
+          <%end %>
+      <%else %>
+        <h2>Your Jungles</h2>
+          <% @jungles.each do |jungle|%>
+            <p>
+              <%= @jungle.name %>
+              <%= link_to `This jungle`, jungle_path(jungle)%>
+            </p>
+          <% end %>
+      <%end %>
+    </div>
   </div>
 
 </div>

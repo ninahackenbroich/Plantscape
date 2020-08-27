@@ -11,15 +11,13 @@ class BookingsController < ApplicationController
   end
 
   def create
-    console
     booking_params[:number_of_plants] = booking_params[:number_of_plants].to_i
     @booking = Booking.new(booking_params)
     @booking.user = current_user
-    if @booking.save
+    if @booking.save!
       watering_dates = params[:watering_dates].split(", ")
       watering_dates.each { |date| Watering.create(date: date, booking: @booking) }
-      key = params[:key]
-      redirect_to @booking, notice: 'Booking was successfully created.'
+      redirect_to dashboards_path, notice: 'Booking was successfully created.'
     else
       render :new
     end
