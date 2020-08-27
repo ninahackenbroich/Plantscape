@@ -1,8 +1,12 @@
 <div class="container">
   <h1 class="text-center"><%= @jungle.name %></h1>
   <div class="container">
-    <div> 
-      <%= image_tag("https://source.unsplash.com/random", alt:"image", width: 20, height: 300, crop: :fit, class: "card-img-top") %>
+    <div>
+      <% if @jungle.photo.attached? %>
+        <%= cl_image_tag @jungle.photo.key, :transformation=>{:width=>1200, :height=>500, :crop=>"fill"} %>
+      <% else %>
+        <%= image_tag("https://source.unsplash.com/random", alt:"image", width: 20, height: 300, crop: :fit, class: "card-img-top") %>
+      <% end %>
     </div> 
     <div>
         <h1><%= @jungle.name %></h1>
@@ -18,9 +22,9 @@
         </ul>
     </div>
   </div>
-  <div class="container lower-buttons">
+  <div class="container lower-buttons d-flex">
     <%= link_to " + Add a plant ", new_jungle_jungleplant_path(@jungle), class: "btn btn-sm yellow-button shadow px-5 py-3 mb-5"%>
     <br>
-    <%= link_to " Back ", jungles_path(@jungle), class: "btn btn-sm yellow-button shadow px-5 py-3 mb-5"%>
+    <%= link_to " Back ", jungles_path(@jungle), class: "text-left"%>
   </div>
 </div>
