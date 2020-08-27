@@ -1,5 +1,14 @@
 <div class="container">
-  <div class="row mt-4 d-flex justify-content-around">
-    <h1>My Plants</h1>
+
+  <div class="row mt-4 mr-2 ml-2 d-flex justify-content-center">
+    <h1>Plant Catalog</h1>
   </div>
+  <!-- main CALL TO ACTION >> BOOK SERVICE -->
+  <div class="row mt-4 d-flex justify-content-around">
+      <%= link_to " + book your service", new_booking_path, class: "btn btn-lg yellow-button shadow px-5 py-3 mb-5" %>
+  </div>
+  <!-- bottom page CALL TO ACTION >> CREATE A JUNGLE -->
+  <div class="row mt-4 d-flex justify-content-around">
+    <%= link_to " + create your jungle", new_jungle_path, class: "btn btn-lg yellow-button shadow px-5 py-3 mb-5" %>
+   </div>
 </div>
