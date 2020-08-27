@@ -2,7 +2,6 @@
   background-image: asset-url("banner-dashboard.jpg");
   position: relative;
   background-size: cover;
-  height: 80vh;
   padding-left: 50px;
   padding-top: 10%;
   text-align: right;
@@ -26,7 +25,6 @@
 .dashboard-bookings{
   position: relative;
   background-size: cover;
-  height: 80vh;
   padding-left: 50px;
   padding-top: 10%;
 
@@ -40,3 +38,18 @@
     text-align:center;
   }
 }
+
+
+.dashboard-plantcollection{
+  position: relative;
+  background-size: cover;
+  padding-left: 50px;
+  padding-top: 10%;
+
+  .dashboard-jungles{
+    p {
+      text-align: center;
+    }
+  }
+}
+

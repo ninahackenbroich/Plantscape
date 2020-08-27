@@ -1,11 +1,13 @@
+
 footer {
   background-color: $dark-green;
   padding: 30px;
   margin-top: 0;
   font-size: 0.9em;
-  height: 130px;
-  bottom: 0;
   width: 100%;
+  p {
+    text-align:center;
+  }
 }
 
 footer-nav {
