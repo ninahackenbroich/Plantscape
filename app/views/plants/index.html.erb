@@ -7,6 +7,29 @@
   <div class="row mt-4 d-flex justify-content-around">
       <%= link_to " + book your service", new_booking_path, class: "btn btn-lg yellow-button shadow px-5 py-3 mb-5" %>
   </div>
+
+<!-- ALL PLANTS INDEX ITERATION -->
+  <div class="row mt-4">
+    <% @plants.each do |plant| %>
+      <div class="col-sm-6 col-md-6 col-lg-4 mb-4">
+        <!-- CREATING THE CARD CONTAINER -->
+        <div class="card card-plant-style card-dynamic pos-relative">
+          <!-- TOP IMAGE part of CARD PLANT -->
+          <div class="card-plant-img">
+            <%= cl_image_tag plant.photo.key, class: "card-img-top rounded"%>
+          </div>
+          <!-- bottom part of CARD PLANT -->
+          <div class="card-body">
+            <h5 class="card-title text-center"><%= plant.name %></h5>
+            <!-- card-text limites to lenght: 100 -->
+            <!-- <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p> -->
+            <%= link_to "Go to plant", plant_path(plant), class:"btn yellow-button" %>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+
   <!-- bottom page CALL TO ACTION >> CREATE A JUNGLE -->
   <div class="row mt-4 d-flex justify-content-around">
     <%= link_to " + create your jungle", new_jungle_path, class: "btn btn-lg yellow-button shadow px-5 py-3 mb-5" %>
