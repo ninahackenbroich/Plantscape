@@ -7,23 +7,47 @@
 
 <div class ="dashboard-bookings">
   <h2>Upcoming Plantscapes</h2>
+
   <div class="dashboard-calender">
     <% if @bookings.blank? %>
       <p>Oh your plants haven't planned any vacations!</p>
       <%else %>
-        <% @bookings.each do |booki| %>
-          <p>
-            <%= booki.number_of_plants %>
-<!--             <%= booki.waterings.date %> -->
-          </p>
+        <p>Your jungle will be pleased on the </p>
+          <% @bookings.each do |booki| %>
+            <%booki.waterings.each do |water| %>
+              <p><%= water.date %></p>
+            <% end %>
+            <p>
+              Planties = <%= booki.number_of_plants %>
+              || <%= booki.price %>€
+              || <%= link_to "Edit" %>
+            </p>
         <% end %>
       <%end %>
       <%= link_to " + new vacations", new_booking_path, class: "btn btn-lg yellow-button shadow px-5 py-3 mb-5" %>
   </div>
-</div>
-<div class="dashboard-plantcollection">
-<%= @user.id %>
-</div>
 
+  <div class="dashboard-plantcollection">
+    <% if @jungles.count == 1 %>
+      <h2>Your Planties</h2>
+        <% @jungles.each do |jungle| %>
+          <p>
+            <%= jungle.name %>
+            <% jungle.jungleplants.each do |jplant| %>
+             <%= jplant.plant.name  %>
+             <% end %>
+          </p>
+        <%end %>
+    <%else %>
+      <h2>Your Jungles</h2>
+        <% @jungles.each do |jungle|%>
+          <p>
+            <%= @jungle.name %>
+            <%= link_to `This Jungle`%>
+          </p>
+        <% end %>
+    <%end %>
+  </div>
 
+</div>
 
