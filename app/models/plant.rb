@@ -3,6 +3,8 @@ class Plant < ApplicationRecord
   has_many :jungleplants
   has_many :jungles, through: :jungleplants
 
+  has_one_attached :photo
+
   #adding VALIDATION
   validates :name, presence: true
   validates :water, presence: true, inclusion: { in: ["Every day", "Once per week", "Rare"],
