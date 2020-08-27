@@ -112,3 +112,18 @@ plant6 = Plant.create!(
   )
   image_plant = File.open("app/assets/images/PeaceLily_4.jpg")
   plant6.photo.attach(io: image_plant, filename: 'image.jpg', content_type: 'image/jpg')
+
+
+# Bookins
+
+10. times do
+  puts "Creating Bookings"
+  Booking.create!(
+    number_of_plants: [1..10].sample,
+    key:"Bla",
+    price: 1.2,
+    jungle: 1
+    )
+end
+
+

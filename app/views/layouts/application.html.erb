@@ -15,13 +15,12 @@
     <div id="container">
           <%= render "shared/navbar", background: params[:controller] == "pages" && params[:action] == "home" %>
       <%= render 'shared/flashes' %>
-      <div style="min-height: 100vh;">
+      <div>
         <%= yield %>
       </div>
+      <%= render 'shared/footer' %>
     </div>
     <%= render 'shared/footer' %>
-    
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-
   </body>
 </html>
