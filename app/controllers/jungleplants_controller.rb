@@ -11,7 +11,7 @@ class JungleplantsController < ApplicationController
   end
 
   def new
-    @jungeplant = Jungleplant.new
+    @jungleplant = Jungleplant.new
     @plants = Plant.all
     # authorize @jungleplant
     authorize @plants
@@ -20,8 +20,8 @@ class JungleplantsController < ApplicationController
 
   def create
     @jungleplant = Jungleplant.create(jungleplant_params)
-    @jungeplant.jungle = @jungle
-    if @jungeplant.save
+    @jungleplant.jungle = @jungle
+    if @jungleplant.save
       redirect_to jungle_path(@jungle)
     else
       render :new
@@ -36,13 +36,12 @@ class JungleplantsController < ApplicationController
 
   def update
     authorize @jungleplant
-
   end
 
   def destroy
     authorize @jungleplant
-
   end
+
   private 
 
   def set_jungle
