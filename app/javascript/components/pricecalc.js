@@ -1,39 +1,53 @@
 
-const sliderOutput = document.querySelector("#number-plants")
+
 
 
 const initPrice = () => {
-  sliderOutput.innerHTML = sliderValue
+  const sliderOutput = document.querySelector("#number_of_plants");
+  let sliderValue = Number(sliderOutput.innerHTML);
+  console.log(sliderValue);
+  let base_price = 29.99;
+  const sliderInput = document.querySelector(".slider")
+  sliderInput.addEventListener('change', () => {
+    let sliderValue = Number(sliderOutput.innerHTML);
     if (sliderValue > 60 ) {
-      var base_price = 39.99;
+      base_price = 39.99;
     } else if (sliderValue > 40 ) {
-      var base_price = 29.99;
+      base_price = 29.99;
     } else if (sliderValue > 20 ) {
-      var base_price = 19.99;
+      base_price = 19.99;
     } else if (sliderValue > 10 ) {
-      var base_price = 9.99;
+      base_price = 9.99;
     } else if (sliderValue > 5 ) {
-      var base_price = 5.99;
+      base_price = 5.99;
     } else if (sliderValue > 0 ) {
-      var base_price = 2.99;
+      base_price = 2.99;
     } else {
-      var base_price = 2.99;
+      base_price = 1.99;
     };
+    console.log(base_price);
 
-  var numberPlants = base_price.val();
-
-  document.addEventListener('turbolinks:load', () => {
-    // Call your functions here, e.g:
-    initDatepicker();
+    
   });
-  var Calc_days = $('#days');
-  selectedDates
-  var days = Calc_days.length.val();
+  const calform = document.querySelector('#watering-days-calendar');
+    console.log(calform);
+    calform.addEventListener('change', (e) => {
+      console.log(e.currentTarget);
+      let selectedDays = document.querySelectorAll('.selected');
+      console.log(selectedDays.length);
+      let price = parseInt(base_price) * parseInt(selectedDays.length);
+      console.log(price);
+  });
 
-  var Calc_balance = $('#balance');
-
-  var balance = (numberPlants * days);
-
-  Calc_balance.val(balance);
-
+  const addons = document.querySelector('#watering-days-calendar');
+  console.log(calform);
+  calform.addEventListener('change', (e) => {
+    console.log(e.currentTarget);
+    let selectedDays = document.querySelectorAll('.selected');
+    console.log(selectedDays.length);
+    let price = parseInt(base_price) * parseInt(selectedDays.length);
+    console.log(price);
+});
 };
+
+export {initPrice};

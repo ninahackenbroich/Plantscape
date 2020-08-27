@@ -29,14 +29,13 @@ import "bootstrap";
 import { initSlider } from '../components/slider';
 import { initDatepicker } from '../components/datepicker';
 import { initPrice } from '../components/pricecalc';
-import { initKey } from '../components/key';
+// import { initKey } from '../components/key';
 
 document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
   initSlider();
   initDatepicker();
   initPrice();
-  initKey();
 });
 
 
