@@ -22,16 +22,16 @@
   			<%#= f.label :key, 'Call us to find other options', :value => 'other', class: "key-choice" %>
   			<%#= f.radio_button :key, 'other', class: "key-choice" %> -->
 
-				<input class="checkbox-key" type="radio" name="key" id="key-1" checked>
+				<input class="checkbox-key" type="radio" name="booking[key]" id="key-1" value="spati" checked>
 				<label class="for-checkbox-key" for="key-1">
 					<span data-hover="Let at your favorite späti">Let at your favorite späti</span>
 				</label>
 
-				<input class="checkbox-key" type="radio" name="key" id="key-2">
+				<input class="checkbox-key" type="radio" name="booking[key]" id="key-2" value="office">
 				<label class="for-checkbox-key" for="key-2">							
 					<span data-hover="Bring it to our PlantScape Office">Bring it to our PlantScape Office</span>
 				</label>
-				<input class="checkbox-key" type="radio" name="key" id="key-3">
+				<input class="checkbox-key" type="radio" name="booking[key]" id="key-3" value="other">
 				<label class="for-checkbox-key" for="key-3">							
 					<span data-hover="Call us to find other options">Call us to find other options</span>
 			</label>
@@ -44,8 +44,8 @@
 			<%= f.input :dusting_service, label: "Cutting - give your plants a hairstyle" %>
 			<%= f.input :dusting_service, label: "Repotting - help your plants growing" %>
 			<%= f.input :dusting_service, label: "Picture - receive photo updates from your plants" %>
-
-			<%= link_to "Book" , dashboards_path, class: "yellow-button"%>
+			
+			<%= f.submit "Book", class: "yellow-button" %>
 		</div>
 	</div>
 <% end %>
