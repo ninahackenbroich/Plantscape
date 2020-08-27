@@ -4,7 +4,8 @@ class PlantsController < ApplicationController
   end
 
   def show
-    @plant = plant.find(params[:id])
+    @plant = Plant.find(params[:id])
+    authorize @plant
   end
 
   def create
