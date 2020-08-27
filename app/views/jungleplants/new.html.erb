@@ -4,8 +4,8 @@
   <%= f.label :plant, "Which plant do you want to add to you jungle?" %>
   <%= f.input :plant, as: :check_boxes, collection: ["Monstera", "Ficus", "Palm"] %>
   <br>
-  <%= f.label :comment, "Write your personal notes about this plant here..." %>
-  <%= f.text_field :comment %>
+  <%= f.label :comments, "Write your personal notes about this plant here..." %>
+  <%= f.text_field :comments %>
   <br>
   <%= f.label :status, "What is the plants actual status? Please choose." %>
   <%= f.input :status, collection: ["Happy & Healthy", "Dusty, but fine", "Could be better", "Needs some care", "Almost dying"] %>
