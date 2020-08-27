@@ -116,14 +116,14 @@ plant6 = Plant.create!(
 
 # Bookins
 
-10. times do
-  puts "Creating Bookings"
-  Booking.create!(
-    number_of_plants: [1..10].sample,
-    key:"Bla",
-    price: 1.2,
-    jungle: 1
-    )
-end
+# 10. times do
+#   puts "Creating Bookings"
+#   Booking.create!(
+#     number_of_plants: [1..10].sample,
+#     key:"Bla",
+#     price: 1.2,
+#     jungle: 1
+#     )
+# end
 
 
