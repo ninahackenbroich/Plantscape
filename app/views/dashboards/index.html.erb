@@ -2,42 +2,49 @@
   <div class ="dashboard-headings">
       <h1 class ="crazshadow">Your Jungle</h1>
     <h3><%= current_user.first_name %>, your next vacations will start in 22 days!</h3>
+    <br>
   </div>
 </div>
 
 <div class ="dashboard-bookings">
   <h2>Upcoming Plantscapes</h2>
-
   <div class="dashboard-calender">
-    <% if @bookings.blank? %>
-      <p>Oh your plants haven't planned any vacations!</p>
-      <%else %>
-        <p>Your jungle will be pleased on the </p>
+   <div class="row d-flex justify-content-around mt-5">
+    <div style="width: 900px" class="d-flex flex-column justify-content-center">
+      <% if @bookings.blank? %>
+        <p>Oh your plants haven't planned any vacations!</p>
+        <%else %>
+        <h3>Your jungle will be pleased on the </h3>
           <% @bookings.each do |booki| %>
+          <div>
             <%booki.waterings.each do |water| %>
-              <p><%= water.date %></p>
+              <p><%= water.date %>  ||    Plant = <%= booki.number_of_plants %>   ||  <%= booki.price %>€</p>
             <% end %>
-            <p>
-              Planties = <%= booki.number_of_plants %>
-              || <%= booki.price %>€
-              || <%= link_to "Edit" %>
-            </p>
         <% end %>
+        </div>
+      </div>
       <%end %>
-      <%= link_to " + new vacations", new_booking_path, class: "btn btn-lg yellow-button shadow px-5 py-3 mb-5" %>
+      <div >
+        <%= link_to " + new vacations", new_booking_path, class: "btn btn-lg yellow-button shadow px-5 py-3 mb-5" %>
+      </div>
+    </div>
   </div>
+</div>
 
-  <div class="dashboard-plantcollection">
-    <div class ="dashboard-jungles">
+<div class="dashboard-plantcollection">
+  <h2>Your Planties</h2>
+  <div class ="dashboard-jungles">
+    <div class="row d-flex justify-content-around mt-5">
+      <div style="width: 900px" class="d-flex flex-column justify-content-center">
       <% if @jungles.count == 1 %>
-        <h2>Your Planties</h2>
           <% @jungles.each do |jungle| %>
-            <p>
-              <%= jungle.name %> <%= link_to "jungle", jungle_path(jungle) %>
-              <% jungle.jungleplants.each do |jplant| %>
+            <h3><%= jungle.name %></h3>
+              <br>
+              <p>
+                <% jungle.jungleplants.each do |jplant| %>
                <%= jplant.plant.name  %>
                <% end %>
-            </p>
+              </p>
           <%end %>
       <%else %>
         <h2>Your Jungles</h2>
@@ -47,9 +54,15 @@
               <%= link_to `This jungle`, jungle_path(jungle)%>
             </p>
           <% end %>
-      <%end %>
+        <%end %>
+      </div>
+      <div>
+        <%= link_to " This Jungle", new_booking_path, class: "btn btn-lg yellow-button shadow px-5 py-3 mb-5" %>
+      </div>
     </div>
   </div>
-
 </div>
 
+</div>
+<br>
+<br>
