@@ -88,7 +88,7 @@
            </div>
            <div style="width: 200px"><%= link_to " Create a new Jungle", new_jungle_path, class: "btn btn-lg yellow-button shadow px-5 py-3 mb-5" %></div>
          <% elsif  @jungles.count == 1 %>
-           <div style="width: 900px" class="d-flex flex-column">
+           <div style="width: 900px" class="d-flex flex-column ">
             <% @jungles.each do |jungle| %>
               <h3><%= jungle.name.capitalize %></h3>
                 <ul>
