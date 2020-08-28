@@ -2,6 +2,7 @@ require "faker"
 
 puts "Cleaning database..."
 # User.destroy_all
+Jungleplant.destroy_all
 Plant.destroy_all
 
 # puts "Creating a user"
