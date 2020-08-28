@@ -47,6 +47,8 @@
 			
 			<%= f.submit "Book", class: "yellow-button" %>
 		</div>
-		<%= f.hidden_field :price, value: params[:requestval] %>
+		<div class="finalprice">
+		</div>
+		<%= f.hidden_field :price, class: "hiddenprice" %>
 	</div>
 <% end %>
