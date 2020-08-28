@@ -1,7 +1,6 @@
 <div class="dashboard-banner">
   <div class ="dashboard-headings">
     <h1 class ="crazshadow">Your Jungle</h1>
-    <h3><%= current_user.first_name %>, your next vacations will start in 22 days!</h3>
     <br>
   </div>
 </div>
@@ -81,34 +80,15 @@
          <% elsif  @jungles.count == 1 %>
            <div style="width: 900px" class="d-flex flex-column justify-content-center">
             <%= render "shared/card-jungles" %>
-   <!--          <% @jungles.each do |jungle| %>
-              <h3><%= jungle.name.capitalize %></h3>
-                <ul>
-                  <% jungle.jungleplants.each do |jplant| %>
-                    <li><%= jplant.plant.name  %>
-                      <ul>
-                         <li> <%= jplant.status  %></li>
-                         <li> <%= jplant.comments  %></li>
-                      </ul>
-                    </li>
-                 <!--  <% end %> -->
-                <!-- </ul> -->
             </div>
             <div style="width: 200px">
               <%= link_to " Create a new Jungle",new_jungle_path, class: "btn btn-lg yellow-button shadow px-5 py-3 mb-2" %>
             </div>
-            <% end %>
         <%else %>
           <div style="width: 900px" class="d-flex flex-column justify-content-center">
-             <!--  <% @jungles.each do |jungle|%>
-                <p>
-                  <h3><%= jungle.name.capitalize %></h3>
-                  <%= link_to "This jungle",jungle_path(jungle)%>
-                </p> -->
               <%= render "shared/card-jungles" %>
-             <!--  <% end %> -->
           </div>
-          <div style="width: 900px"><%= link_to " Go to my Jungles",new_jungle_path, class: "btn btn-lg yellow-button shadow px-5 py-3 mb-5" %></div>
+          <div style="width: 900px"><%= link_to " Create a new Jungle",new_jungle_path, class: "btn btn-lg yellow-button shadow px-5 py-3 mb-5" %></div>
         <% end %>
       </div>
     </div>
