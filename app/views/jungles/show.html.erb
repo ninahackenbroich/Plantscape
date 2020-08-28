@@ -16,7 +16,7 @@
             <li><%= jp.plant.name %>
             <%= jp.status %>
             <%= jp.comments %>
-            <%= link_to "🗑", plant_path(jp) , method: :delete %>
+            <%= link_to "🗑", jungle_path(jp) , method: :delete %>
             </li>
           <% end %>
         </ul>
@@ -25,6 +25,6 @@
   <div class="container d-flex">
     <%= link_to " + Add a plant ", new_jungle_jungleplant_path(@jungle), class: "btn btn-sm yellow-button shadow px-5 py-3 mb-5"%>
     <br>
-    <%= link_to "Back", jungles_path(@jungle), class: "btn btn-sm back-button shadow px-5 py-3 mb-5"%>
+    <%= link_to "Back", dashboards_index_path, class: "btn btn-sm back-button shadow px-5 py-3 mb-5"%>
   </div>
 </div>
