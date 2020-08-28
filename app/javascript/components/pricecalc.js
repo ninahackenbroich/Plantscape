@@ -40,7 +40,7 @@ const initPrice = () => {
         console.log(price);
         finalprice = price;
         console.log(finalprice);
-        finalDiv.innerText = finalprice + " €";
+        finalDiv.innerText = (parseFloat(finalprice).toFixed(2)) + " €";
         inputPrice.value = finalprice;
     });
 
@@ -62,7 +62,7 @@ const initPrice = () => {
         }
         // let price = (parseInt(base_price) * parseInt(selectedDays.length)) + 10;
         console.log(addonprice);
-        finalDiv.innerText = finalprice + " €";
+        finalDiv.innerText = (parseFloat(finalprice).toFixed(2)) + " €";
         inputPrice.value = finalprice;
       });
     });
