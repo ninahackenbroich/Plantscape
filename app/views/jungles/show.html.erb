@@ -9,7 +9,6 @@
       <% end %>
     </div> 
     <div>
-        <h1><%= @jungle.name %></h1>
         <p><strong>All the plants in my jungle</strong></p>
         <ul>
           <% @jungle.jungleplants.each do |jp| %>
@@ -22,9 +21,10 @@
         </ul>
     </div>
   </div>
-  <div class="container lower-buttons d-flex">
+  <div class="container d-flex">
     <%= link_to " + Add a plant ", new_jungle_jungleplant_path(@jungle), class: "btn btn-sm yellow-button shadow px-5 py-3 mb-5"%>
     <br>
-    <%= link_to " Back ", jungles_path(@jungle), class: "text-left"%>
+    <%= link_to "Back", jungles_path(@jungle), class: "btn btn-sm back-button shadow px-5 py-3 mb-5"%>
   </div>
+
 </div>

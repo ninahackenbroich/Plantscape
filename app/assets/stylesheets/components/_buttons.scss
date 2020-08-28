@@ -10,3 +10,17 @@
   opacity: 0.8;
   color: white;
 }
+
+.back-button {
+	color: white;
+  	background-color: lightgray;
+  	font-family: $body-font;
+  	font-weight: bold;
+  	border-radius: 10px;
+  	margin-left: 20px;
+}
+
+.back-button:hover {
+  opacity: 0.8;
+  color: white;
+}

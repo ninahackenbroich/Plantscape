@@ -21,7 +21,7 @@ class JungleplantsController < ApplicationController
   def create
     @jungleplant = Jungleplant.create(jungleplant_params)
     @jungleplant.jungle = @jungle
-    if @jungleplant.save
+    if @jungleplant.save!
       redirect_to jungle_path(@jungle)
     else
       render :new
