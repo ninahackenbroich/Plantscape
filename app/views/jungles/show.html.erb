@@ -1,30 +1,41 @@
 <div class="container">
-  <h1 class="text-center"><%= @jungle.name %></h1>
-  <div class="container">
-    <div>
-      <% if @jungle.photo.attached? %>
-        <%= cl_image_tag @jungle.photo.key, :transformation=>{:width=>1200, :height=>500, :crop=>"fill"} %>
-      <% else %>
-        <%= image_tag("https://source.unsplash.com/random", alt:"image", width: 20, height: 300, crop: :fit, class: "card-img-top") %>
-      <% end %>
-    </div>
-    <div>
-        <h1><%= @jungle.name %></h1>
-        <p><strong>All the plants in my jungle</strong></p>
+  <div class="row d-flex justify-content-center">
+    <div class="col">
+      <!-- div for the jungle name -->
+      <div>
+        <h1 class="text-center"><%= @jungle.name %></h1>
+      </div>
+      <!-- div for the jungle image -->
+      <div>
+        <% if @jungle.photo.attached? %>
+          <div class="banner-plant-show rounded-lg mt-4" style="background-image: url('<%= cl_image_path @jungle.photo.key %>')">
+          </div>
+        <% else %>
+          <div class="banner-plant-show rounded-lg mt-4" style="background-image: url('/assets/indoor_jungle_10.jpg')">
+          <h2 class="text-center bg-white"><%= current_user.first_name %>...update your Jungle and add an image</h2>
+        <% end %>
+      </div>
+
+      <!-- div for the jungle plants listing -->
+      <div class="text-center mt-5">
+        <h2>The plants in your jungle</h2>
+      </div>
+      <div class="text-center mt-5">
         <ul>
           <% @jungle.jungleplants.each do |jp| %>
-            <li><%= jp.plant.name %>
-            <%= jp.status %>
-            <%= jp.comments %>
-            <%= link_to "🗑", plant_path(jp) , method: :delete %>
-            </li>
+            <h3><strong><%= jp.plant.name %></strong></h3>
+            <p><%= jp.status %></p>
+            <p><%= jp.comments %></p>
+            <p><%= link_to "🗑", plant_path(jp) , method: :delete %></p>
           <% end %>
         </ul>
+      </div>
+      <div class="row mt-4 d-flex justify-content-around">
+        <%= link_to " + Add a plant ", new_jungle_jungleplant_path(@jungle), class: "btn btn-sm yellow-button shadow px-5 py-3 mb-5"%>
+          <br>
+        <%= link_to "Back", jungles_path(@jungle), class: "btn btn-sm back-button shadow px-5 py-3 mb-5"%>
+       </div>
+
     </div>
-  </div>
-  <div class="container d-flex">
-    <%= link_to " + Add a plant ", new_jungle_jungleplant_path(@jungle), class: "btn btn-sm yellow-button shadow px-5 py-3 mb-5"%>
-    <br>
-    <%= link_to "Back", jungles_path(@jungle), class: "btn btn-sm back-button shadow px-5 py-3 mb-5"%>
   </div>
 </div>
