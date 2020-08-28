@@ -40,7 +40,7 @@ const initPrice = () => {
         console.log(price);
         finalprice = price;
         console.log(finalprice);
-        finalDiv.innerText = finalprice + " €";
+        finalDiv.innerText = (parseFloat(finalprice).toFixed(2)) + " €";
         inputPrice.value = finalprice;
     });
 
