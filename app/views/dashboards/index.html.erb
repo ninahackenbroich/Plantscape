@@ -34,7 +34,7 @@
                 <td>
                   <%booki.waterings.each do |water| %>
                     <span>
-                      <%= water.date %>
+                      <%= water.date.strftime("%A, %b %d") %>
                       <br>
                     </span>
                   <% end %>
