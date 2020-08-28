@@ -1,6 +1,6 @@
 <div class="dashboard-banner">
   <div class ="dashboard-headings">
-      <h1 class ="crazshadow">Your Jungle</h1>
+    <h1 class ="crazshadow">Your Jungle</h1>
     <h3><%= current_user.first_name %>, your next vacations will start in 22 days!</h3>
     <br>
   </div>
@@ -11,6 +11,7 @@
   <div class="dashboard-calender">
    <div class="row d-flex justify-content-around mt-5">
     <div style="width: 900px" class="d-flex flex-column justify-content-center">
+
       <% if @bookings.blank? %>
         <p>Oh your plants haven't planned any vacations!</p>
         <%else %>
@@ -30,6 +31,43 @@
     </div>
   </div>
 </div>
+
+<div class ="dashboard-bookings">
+  <h2>Upcoming Plantscapes</h2>
+  <div class="dashboard-calender">
+   <div class="row d-flex justify-content-around mt-5">
+    <div style="width: 900px" class="d-flex flex-column justify-content-center">
+      <% if @bookings.blank? %>
+        <p>Oh your plants haven't planned any vacations!</p>
+      <%else %>
+        <table class="table table-bordered">
+          <thead>
+            <tr>
+              <th scope="col">Booking#</th>
+              <th scope="col">Wateringdate(s)</th>
+              <th scope="col">Number of Plants</th>
+              <th scope="col">Price</th>
+            </tr>
+          </thead>
+          <tbody>
+            <% @bookings.each do |booki| %>
+              <tr>
+                <%booki.waterings.each do |water| %>
+                  <th scope="row">1</th>
+                  <td><%= water.date %></td>
+                  <td><%= booki.number_of_plants %></td>
+                  <td><%= booki.price %>€</td>
+                <% end %>
+              </tr>
+            <% end %>
+          </tbody>
+        </table>
+      <% end %>
+    </div>
+  </div>
+</div>
+
+
 
 <div class="dashboard-plantcollection">
   <h2>Your Planties</h2>
@@ -61,8 +99,6 @@
       </div>
     </div>
   </div>
-</div>
-
 </div>
 <br>
 <br>
