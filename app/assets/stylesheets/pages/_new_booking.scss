@@ -1,3 +1,11 @@
+
+.price-tag {
+	color: black;
+	font-weight: bold;
+	font-family: $headers-font;
+	font-size: 40px;
+}
+
 .booking-title-box {
 	background-color: $beige;
     position: fixed;
@@ -15,8 +23,12 @@
 	.underline {
 		margin-left: -150px;
 		margin-top:-50px;
-		width: 1000px;
+		width: 900px;
 		}
+	.background-price {
+		margin-left: 800px;
+		margin-top: 0px;
+	}
 }
 
 .booking-question {
@@ -24,8 +36,6 @@
 	width: 700px;
 	margin: auto auto;
 	text-align: center;
-	.radio-button {
-	}
 	.form-check {
 		background-color: #e5e0cc;
 		text-align: left;

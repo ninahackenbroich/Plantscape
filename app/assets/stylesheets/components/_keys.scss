@@ -92,9 +92,9 @@
 	width: 100%;
 	overflow: hidden;
 	-webkit-text-stroke: transparent;
-    text-stroke: transparent;
+    text-transform: transparent;
     -webkit-text-fill-color: var(--white);
-    text-fill-color: var(--white);
+    text-emphasis-color: var(--white);
     color: var(--white);
 	-webkit-transition: max-height 0.3s;
 	-moz-transition: max-height 0.3s;
