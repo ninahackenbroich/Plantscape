@@ -2,17 +2,17 @@
 	<div class=" booking-form">
 
 		<div class="booking-question">
-			<%= f.input :number_of_plants, label: "How many plants do you have?", as: :range,wrapper_html: {class: "question"}, input_html: { min: '1', max: '100', step:'any', width: "500px", class: "slider"}, collection: 10..100 %> 
+			<%= f.input :number_of_plants, label: "How many plants do you have? (price per day)", as: :range,wrapper_html: {class: "question"}, input_html: { min: '1', max: '100', step:'any', width: "500px", class: "slider"}, collection: 10..100 %> 
 			<output class="number-plants" id="number_of_plants">50</output>
 		</div>
 
 		<div class="booking-question" id="watering-cal">
-			<p class="question">Choose your watering days *</p>
+			<p class="question">Choose your the days your plants need to be watered!*</p>
 			<input type="text" name="watering_dates" class="datepicker d-none" id="watering-days-calendar">
 		</div>
 		
 		<div class="booking-question">
-			<p class="question">How do you want to handle your key house? *</p>
+			<p class="question">How do you want to handle your house key? *</p>
 			<div class="radio-button">
 
 <!-- 			<%#= f.label :key, 'Let at your favorite späti', :value => 'spati', class: "key-choice"%>
@@ -24,7 +24,7 @@
 
 				<input class="checkbox-key" type="radio" name="booking[key]" id="key-1" value="spati" checked>
 				<label class="for-checkbox-key" for="key-1">
-					<span data-hover="Let at your favorite späti">Let at your favorite späti</span>
+					<span data-hover="Store the key at your favorite Späti nearby">Store the key at your favorite Späti nearby</span>
 				</label>
 
 				<input class="checkbox-key" type="radio" name="booking[key]" id="key-2" value="office">
@@ -33,21 +33,19 @@
 				</label>
 				<input class="checkbox-key" type="radio" name="booking[key]" id="key-3" value="other">
 				<label class="for-checkbox-key" for="key-3">							
-					<span data-hover="Call us to find other options">Call us to find other options</span>
+					<span data-hover="Contact us for more options">Contact us for more options</span>
 			</label>
 			</div>
 		</div>
 
 		<div class="booking-question" id="addon-select">
-			<p class="question">Would you like to book some extra? *</p>
-			<%= f.input :dusting_service, label: "Dusting - clean your plants", id: "dusting-service" %>
-			<%= f.input :cutting_service, label: "Cutting - give your plants a hairstyle", id: "cutting-service"%>
-			<%= f.input :repotting_service, label: "Repotting - help your plants growing", id: "repotting-service" %>
-			<%#= f.input :picture_service, label: "Picture - receive photo updates from your plants", id: "picture-service" %>
+			<p class="question">Would you like to book some extra services? *</p>
+			<%= f.input :dusting_service, label: "Dusting - we clean your plants (10€)", id: "dusting-service" %>
+			<%= f.input :cutting_service, label: "Cutting - we give your plants a hairstyle (10€)", id: "cutting-service"%>
+			<%= f.input :repotting_service, label: "Repotting - we help one of your plants growing (10€)", id: "repotting-service" %>
+			<%= f.input :picture_service, label: "Picture - receive updates from your plants (10€)", id: "picture-service" %>
 			
 			<%= f.submit "Book", class: "yellow-button" %>
-		</div>
-		<div class="finalprice">
 		</div>
 		<%= f.hidden_field :price, class: "hiddenprice" %>
 	</div>

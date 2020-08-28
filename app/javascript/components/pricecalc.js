@@ -8,19 +8,18 @@ const initPrice = () => {
   const inputPrice = document.querySelector(".hiddenprice");
   const sliderOutput = document.querySelector("#number_of_plants");
   let sliderValue = Number(sliderOutput.innerHTML);
-  console.log(sliderValue);
   let base_price = 29.99;
   const sliderInput = document.querySelector(".slider")
   sliderInput.addEventListener('change', () => {
     let sliderValue = Number(sliderOutput.innerHTML);
     if (sliderValue > 60 ) {
-      base_price = 39.99;
-    } else if (sliderValue > 40 ) {
-      base_price = 29.99;
-    } else if (sliderValue > 20 ) {
       base_price = 19.99;
+    } else if (sliderValue > 40 ) {
+      base_price = 15.99;
+    } else if (sliderValue > 20 ) {
+      base_price = 10.99;
     } else if (sliderValue > 10 ) {
-      base_price = 9.99;
+      base_price = 7.99;
     } else if (sliderValue > 5 ) {
       base_price = 5.99;
     } else if (sliderValue > 0 ) {
@@ -29,9 +28,9 @@ const initPrice = () => {
       base_price = 1.99;
     };
     console.log(base_price); 
-    finalprice += base_price;
+    finalprice = base_price;
     console.log(finalprice);
-    finalDiv.innerText = finalprice;
+    finalDiv.innerText = finalprice + " €";
     inputPrice.value = finalprice;
   });
 
@@ -39,11 +38,11 @@ const initPrice = () => {
     let price;
     calform.addEventListener('change', (e) => {
       let selectedDays = document.querySelectorAll('.selected');
-      price = (parseFloat(base_price) * parseInt(selectedDays.length));
+      price = (parseFloat(base_price).toFixed(2) * parseInt(selectedDays.length));
       console.log(price);
-      finalprice += price;
+      finalprice = price;
       console.log(finalprice);
-      finalDiv.innerText = finalprice;
+      finalDiv.innerText = finalprice + " €";
       inputPrice.value = finalprice;
   });
 
@@ -58,16 +57,14 @@ const initPrice = () => {
     addon.addEventListener('change', (e) => {
       if (e.currentTarget.checked) {
         addonprice += 10;
-        console.log("hi");
         finalprice += 10;
       } else {
         addonprice -= 10;
-        console.log("ho");
         finalprice -= 10;
       }
       // let price = (parseInt(base_price) * parseInt(selectedDays.length)) + 10;
       console.log(addonprice);
-      finalDiv.innerText = finalprice;
+      finalDiv.innerText = finalprice + " €";
       inputPrice.value = finalprice;
     });
   });
