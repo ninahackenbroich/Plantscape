@@ -31,23 +31,37 @@ const initPrice = () => {
   });
   const calform = document.querySelector('#watering-days-calendar');
     console.log(calform);
+    let price;
     calform.addEventListener('change', (e) => {
       console.log(e.currentTarget);
       let selectedDays = document.querySelectorAll('.selected');
       console.log(selectedDays.length);
-      let price = (parseInt(base_price) * parseInt(selectedDays.length));
+      price = (parseInt(base_price) * parseInt(selectedDays.length));
       console.log(price);
   });
 
   const addon = document.querySelector('#addon-select');
   console.log(addon);
   addon.addEventListener('change', (e) => {
-    let addservice = document.querySelector('#booking_dusting_service');
-    console.log(addservice);
-    // if 
+    let finalprice;
+    let dustingservice = document.querySelector('#booking_dusting_service');
+    console.log(dustingservice);
+    let cuttingservice = document.querySelector('#booking_cutting_service');
+    console.log(cuttingservice);
+    let repottingservice = document.querySelector('#booking_repotting_service');
+    console.log(repottingservice);
+    if (repottingservice.selected) {
+        finalprice = price + 30;
+    }
+    if (cuttingservice.selected) {
+      finalprice = price + 20;
+    }
+    if (dustingservice.selected) {
+      finalprice = price + 10;
+    }
     // let price = (parseInt(base_price) * parseInt(selectedDays.length)) + 10;
-    console.log(price);
-});
+    console.log(finalprice);
+  });
 };
 
 export {initPrice};
