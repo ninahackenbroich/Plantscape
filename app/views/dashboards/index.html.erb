@@ -6,31 +6,6 @@
   </div>
 </div>
 
-<!-- <div class ="dashboard-bookings">
-  <h2>Upcoming Plantscapes</h2>
-  <div class="dashboard-calender">
-   <div class="row d-flex justify-content-around mt-5">
-    <div style="width: 900px" class="d-flex flex-column justify-content-center">
-
-      <% if @bookings.blank? %>
-        <p>Oh your plants haven't planned any vacations!</p>
-        <%else %>
-        <h3>Your jungle will be pleased on the </h3>
-          <% @bookings.each do |booki| %>
-          <div>
-            <%booki.waterings.each do |water| %>
-              <p><%= water.date %>  ||    Plant = <%= booki.number_of_plants %>   ||  <%= booki.price %>€</p>
-            <% end %>
-        <% end %>
-        </div>
-      </div>
-      <%end %>
-      <div >
-        <%= link_to " + new vacations", new_booking_path, class: "btn btn-lg yellow-button shadow px-5 py-3 mb-5" %>
-      </div>
-    </div>
-  </div>
-</div> -->
 
 <div class ="dashboard-bookings">
   <h2>Upcoming Plantscapes</h2>
@@ -46,24 +21,41 @@
               <th scope="col">Booking#</th>
               <th scope="col">Wateringdate(s)</th>
               <th scope="col">Number of Plants</th>
-              <th scope="col">Special Services</th>
+              <th scope="col">Dusting Service</th>
+              <th scope="col">Cutting Service</th>
+              <th scope="col">Repotting</th>
               <th scope="col">Price</th>
             </tr>
           </thead>
           <tbody>
             <% @bookings.each do |booki| %>
               <tr>
-                <%booki.waterings.each do |water| %>
-                  <th scope="row">1</th>
-                  <td><%= water.date %></td>
-                  <td><%= booki.number_of_plants %></td>
+                <th scope="row"> <%= booki.id %> </th>
+                <td>
+                  <%booki.waterings.each do |water| %>
+                    <span>
+                      <%= water.date %>
+                      <br>
+                    </span>
+                  <% end %>
+                  </td>
+                <td><%= booki.number_of_plants %></td>
                     <% if booki.dusting_service %>
-                      <td>Dusting Service</td>
+                      <td ><i class="far fa-gem"></i></td>
                     <% else %>
-                      <td>No extra Service</td>
+                      <td>x</td>
                     <% end %>
-                  <td><%= booki.price %>€</td>
-                <% end %>
+                    <% if booki.cutting_service %>
+                      <td><i class="far fa-hand-scissors"></i></td>
+                    <% else %>
+                      <td>x</td>
+                    <% end %>
+                    <% if booki.repotting_service %>
+                      <td><i class="fas fa-exchange-alt"></i></td>
+                    <% else %>
+                      <td>x</td>
+                    <% end %>
+                <td><%= booki.price %>€</td>
               </tr>
             <% end %>
           </tbody>
@@ -71,10 +63,9 @@
       <% end %>
     </div>
     <div ><%= link_to " New booking", new_booking_path, class: "btn btn-lg yellow-button shadow px-5 py-3 mb-5" %></div>
+    </div>
   </div>
 </div>
-</div>
-
 
 
 <div class="dashboard-plantcollection">
@@ -88,30 +79,34 @@
            </div>
            <div style="width: 200px"><%= link_to " Create a new Jungle", new_jungle_path, class: "btn btn-lg yellow-button shadow px-5 py-3 mb-5" %></div>
          <% elsif  @jungles.count == 1 %>
-           <div style="width: 900px" class="d-flex flex-column ">
-            <% @jungles.each do |jungle| %>
+           <div style="width: 900px" class="d-flex flex-column justify-content-center">
+            <%= render "shared/card-jungles" %>
+   <!--          <% @jungles.each do |jungle| %>
               <h3><%= jungle.name.capitalize %></h3>
                 <ul>
                   <% jungle.jungleplants.each do |jplant| %>
-                    <li><%= jplant.plant.name  %> |
-                      <%= jplant.status  %>
+                    <li><%= jplant.plant.name  %>
+                      <ul>
+                         <li> <%= jplant.status  %></li>
+                         <li> <%= jplant.comments  %></li>
+                      </ul>
                     </li>
-                  <% end %>
-                </ul>
+                 <!--  <% end %> -->
+                <!-- </ul> -->
             </div>
             <div style="width: 200px">
-              <%= link_to " Go to Jungle", jungle_path(jungle), class: "btn btn-lg yellow-button shadow px-5 py-3 mb-2" %><br>
-              <%= link_to " + Plant to Jungle",new_jungle_jungleplant_path(jungle), class: "btn btn-lg yellow-button shadow px-5 py-3 mb-2" %>
+              <%= link_to " Create a new Jungle",new_jungle_path, class: "btn btn-lg yellow-button shadow px-5 py-3 mb-2" %>
             </div>
             <% end %>
         <%else %>
           <div style="width: 900px" class="d-flex flex-column justify-content-center">
-              <% @jungles.each do |jungle|%>
+             <!--  <% @jungles.each do |jungle|%>
                 <p>
                   <h3><%= jungle.name.capitalize %></h3>
-                  <%= link_to `This jungle`, jungle_path(jungle)%>
-                </p>
-              <% end %>
+                  <%= link_to "This jungle",jungle_path(jungle)%>
+                </p> -->
+              <%= render "shared/card-jungles" %>
+             <!--  <% end %> -->
           </div>
           <div style="width: 900px"><%= link_to " Go to my Jungles",new_jungle_path, class: "btn btn-lg yellow-button shadow px-5 py-3 mb-5" %></div>
         <% end %>
