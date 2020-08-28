@@ -64,6 +64,6 @@ class JunglesController < ApplicationController
   end
 
   def jungle_params
-    params.require(:jungle).permit(:name, :address)
+    params.require(:jungle).permit(:name, :address, :photo)
   end
 end
