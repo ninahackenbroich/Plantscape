@@ -50,7 +50,7 @@ class JunglesController < ApplicationController
   def destroy
     authorize @jungle
     @jungle.destroy!
-    redirect_to jungles_path, notice: ' Your Jungle was successfully destroyed.'
+    redirect_to dashboards_index_path, notice: ' Your Jungle was successfully destroyed.'
   end
 
   private
