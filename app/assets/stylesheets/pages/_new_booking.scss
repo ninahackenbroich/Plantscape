@@ -46,9 +46,14 @@
 	.yellow-button {
 			width: 700px;
 			margin-top: 50px;
-			padding: 20px 30px;
+			padding: 10px 30px;
 			border-radius: 10px;
 			border: none;
+			font-size: 20px;
+			font-weight: 700;
+	}
+	&.last-element {
+		height: auto;
 	}
 }
 
