@@ -25,43 +25,61 @@ const initPrice = () => {
     } else {
       base_price = 1.99;
     };
-    console.log(base_price);
-
-    
+    console.log(base_price); 
   });
+
   const calform = document.querySelector('#watering-days-calendar');
-    console.log(calform);
     let price;
     calform.addEventListener('change', (e) => {
-      console.log(e.currentTarget);
       let selectedDays = document.querySelectorAll('.selected');
-      console.log(selectedDays.length);
-      price = (parseInt(base_price) * parseInt(selectedDays.length));
+      price = (parseFloat(base_price) * parseInt(selectedDays.length));
       console.log(price);
   });
 
   const addon = document.querySelector('#addon-select');
-  console.log(addon);
-  addon.addEventListener('change', (e) => {
-    let finalprice;
-    let dustingservice = document.querySelector('#booking_dusting_service');
-    console.log(dustingservice);
-    let cuttingservice = document.querySelector('#booking_cutting_service');
-    console.log(cuttingservice);
-    let repottingservice = document.querySelector('#booking_repotting_service');
-    console.log(repottingservice);
-    if (repottingservice.selected) {
-        finalprice = price + 30;
-    }
-    if (cuttingservice.selected) {
-      finalprice = price + 20;
-    }
-    if (dustingservice.selected) {
-      finalprice = price + 10;
+  const dustingservice = document.querySelector('#booking_dusting_service');
+  const cuttingservice = document.querySelector('#booking_cutting_service');
+  const repottingservice = document.querySelector('#booking_repotting_service');
+
+  dustingservice.addEventListener('change', (e) => {
+    let dustingprice;
+    if (dustingservice.value == true) {
+      dustingprice = 10;
+    } else {
+      dustingprice = 0;
     }
     // let price = (parseInt(base_price) * parseInt(selectedDays.length)) + 10;
-    console.log(finalprice);
+    console.log(dustingprice);
+    dustingprice;
   });
+
+
+  cuttingservice.addEventListener('change', (e) => {
+    let cuttingprice;
+    if (cuttingservice.val == true) {
+      cuttingprice = 20;
+    } else {
+      cuttingprice = 0;
+    }
+    // let price = (parseInt(base_price) * parseInt(selectedDays.length)) + 10;
+    console.log(cuttingprice);
+  });
+
+  repottingservice.addEventListener('change', (e) => {
+    let repottingprice;
+    if (repottingservice.val == true) {
+      repottingprice = 30;
+    } else {
+      repottingprice = 0;
+    }
+    // let price = (parseInt(base_price) * parseInt(selectedDays.length)) + 10;
+    console.log(repottingprice);
+  });
+
+  // let finalprice;
+  // finalprice = price + parseInt(dustingprice) + parseInt(cuttingprice) + parseInt(repottingprice);
+  // console.log(finalprice);
+  // finalprice;
 };
 
 export {initPrice};
