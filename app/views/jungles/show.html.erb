@@ -7,16 +7,16 @@
       <% else %>
         <%= image_tag("https://source.unsplash.com/random", alt:"image", width: 20, height: 300, crop: :fit, class: "card-img-top") %>
       <% end %>
-    </div> 
+    </div>
     <div>
         <h1><%= @jungle.name %></h1>
         <p><strong>All the plants in my jungle</strong></p>
         <ul>
           <% @jungle.jungleplants.each do |jp| %>
             <li><%= jp.plant.name %>
-            <%= jp.status %> 
-            <%= jp.comment %> 
-            <%= link_to "🗑", plant_path(jp) , method: :delete %> 	
+            <%= jp.status %>
+            <%= jp.comments %>
+            <%= link_to "🗑", plant_path(jp) , method: :delete %>
             </li>
           <% end %>
         </ul>

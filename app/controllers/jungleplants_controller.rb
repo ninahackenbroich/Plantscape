@@ -19,8 +19,9 @@ class JungleplantsController < ApplicationController
   end
 
   def create
-    @jungleplant = Jungleplant.create(jungleplant_params)
+    @jungleplant = Jungleplant.new(jungleplant_params)
     @jungleplant.jungle = @jungle
+    @jungleplant.save
     if @jungleplant.save
       redirect_to jungle_path(@jungle)
     else
@@ -42,14 +43,14 @@ class JungleplantsController < ApplicationController
     authorize @jungleplant
   end
 
-  private 
+  private
 
   def set_jungle
     @jungle = Jungle.find(params[:jungle_id])
   end
 
   def jungleplant_params
-    params.require(:jungleplant).permit(:status, :comment, :plant_id)
+    params.require(:jungleplant).permit(:status, :comments, :plant_id)
   end
 
 end
