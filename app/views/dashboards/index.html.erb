@@ -33,22 +33,25 @@
                 <th scope="row"> <%= booki.id %> </th>
                 <td>
                   <%booki.waterings.each do |water| %>
-                    <span><%= water.date %> <br></span>
+                    <span>
+                      <%= water.date %>
+                      <br>
+                    </span>
                   <% end %>
                   </td>
                 <td><%= booki.number_of_plants %></td>
                     <% if booki.dusting_service %>
-                      <td>Yes</td>
+                      <td ><i class="far fa-gem"></i></td>
                     <% else %>
                       <td>x</td>
                     <% end %>
                     <% if booki.cutting_service %>
-                      <td>Yes</td>
+                      <td><i class="far fa-hand-scissors"></i></td>
                     <% else %>
                       <td>x</td>
                     <% end %>
                     <% if booki.repotting_service %>
-                      <td>Yes</td>
+                      <td><i class="fas fa-exchange-alt"></i></td>
                     <% else %>
                       <td>x</td>
                     <% end %>
@@ -76,30 +79,34 @@
            </div>
            <div style="width: 200px"><%= link_to " Create a new Jungle", new_jungle_path, class: "btn btn-lg yellow-button shadow px-5 py-3 mb-5" %></div>
          <% elsif  @jungles.count == 1 %>
-           <div style="width: 900px" class="d-flex flex-column ">
-            <% @jungles.each do |jungle| %>
+           <div style="width: 900px" class="d-flex flex-column justify-content-center">
+            <%= render "shared/card-jungles" %>
+   <!--          <% @jungles.each do |jungle| %>
               <h3><%= jungle.name.capitalize %></h3>
                 <ul>
                   <% jungle.jungleplants.each do |jplant| %>
-                    <li><%= jplant.plant.name  %> |
-                      <%= jplant.status  %>
+                    <li><%= jplant.plant.name  %>
+                      <ul>
+                         <li> <%= jplant.status  %></li>
+                         <li> <%= jplant.comments  %></li>
+                      </ul>
                     </li>
-                  <% end %>
-                </ul>
+                 <!--  <% end %> -->
+                <!-- </ul> -->
             </div>
             <div style="width: 200px">
-              <%= link_to " Go to Jungle", jungle_path(jungle), class: "btn btn-lg yellow-button shadow px-5 py-3 mb-2" %><br>
-              <%= link_to " + Plant to Jungle",new_jungle_jungleplant_path(jungle), class: "btn btn-lg yellow-button shadow px-5 py-3 mb-2" %>
+              <%= link_to " Create a new Jungle",new_jungle_path, class: "btn btn-lg yellow-button shadow px-5 py-3 mb-2" %>
             </div>
             <% end %>
         <%else %>
           <div style="width: 900px" class="d-flex flex-column justify-content-center">
-              <% @jungles.each do |jungle|%>
+             <!--  <% @jungles.each do |jungle|%>
                 <p>
                   <h3><%= jungle.name.capitalize %></h3>
-                  <%= link_to `This jungle`, jungle_path(jungle)%>
-                </p>
-              <% end %>
+                  <%= link_to "This jungle",jungle_path(jungle)%>
+                </p> -->
+              <%= render "shared/card-jungles" %>
+             <!--  <% end %> -->
           </div>
           <div style="width: 900px"><%= link_to " Go to my Jungles",new_jungle_path, class: "btn btn-lg yellow-button shadow px-5 py-3 mb-5" %></div>
         <% end %>
