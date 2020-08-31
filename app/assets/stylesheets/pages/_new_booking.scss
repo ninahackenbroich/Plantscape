@@ -17,7 +17,7 @@
     padding-bottom: 0px;
 	.booking-title {
 		margin-left: -100px;
-		font-size: 50px;
+		font-size: 40px;
 		font-family: 'Cardo', "serif";
 	 }
 	.underline {
@@ -27,7 +27,7 @@
 		}
 	.background-price {
 		margin-left: 800px;
-		margin-top: 0px;
+		margin-top: -40px;
 	}
 }
 
@@ -65,3 +65,21 @@
 .slider {
 	margin-top: 80px;
 }
+
+.next,
+.next:hover {
+	text-align: right;
+	margin-left: 600px;
+	margin-top: 60px;
+	color:  #004445;
+	text-decoration: none;
+	border: none;
+	background: none;
+	button {
+		border: none;
+	}
+}
+
+
+
+
