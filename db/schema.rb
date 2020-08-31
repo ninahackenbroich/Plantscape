@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_08_26_093747) do
+ActiveRecord::Schema.define(version: 2020_08_31_103338) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -43,11 +43,11 @@ ActiveRecord::Schema.define(version: 2020_08_26_093747) do
     t.boolean "cutting_service", default: false
     t.boolean "repotting_service", default: false
     t.boolean "picture_service", default: false
-    t.float "price"
     t.bigint "user_id", null: false
     t.bigint "jungle_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.integer "price_cents", default: 0, null: false
     t.index ["jungle_id"], name: "index_bookings_on_jungle_id"
     t.index ["user_id"], name: "index_bookings_on_user_id"
   end
@@ -70,6 +70,18 @@ ActiveRecord::Schema.define(version: 2020_08_26_093747) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["user_id"], name: "index_jungles_on_user_id"
+  end
+
+  create_table "orders", force: :cascade do |t|
+    t.string "state"
+    t.integer "amount_cents", default: 0, null: false
+    t.string "checkout_session_id"
+    t.bigint "user_id", null: false
+    t.bigint "booking_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["booking_id"], name: "index_orders_on_booking_id"
+    t.index ["user_id"], name: "index_orders_on_user_id"
   end
 
   create_table "plants", force: :cascade do |t|
@@ -112,5 +124,7 @@ ActiveRecord::Schema.define(version: 2020_08_26_093747) do
   add_foreign_key "jungleplants", "jungles"
   add_foreign_key "jungleplants", "plants"
   add_foreign_key "jungles", "users"
+  add_foreign_key "orders", "bookings"
+  add_foreign_key "orders", "users"
   add_foreign_key "waterings", "bookings"
 end

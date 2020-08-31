@@ -14,7 +14,11 @@ Rails.application.routes.draw do
   # we only nest routes when we want to pass prior elements to the url in order to access that instance
   # nested routes they do not set the relationship in the db between models but it's actually the SCHEMA job
   resources :plants, only:[:show, :index]
+
   resources :bookings, only:[:new, :create, :show, :index, :destroy]
   resources :dashboards, only:[:index]
 
+  resources :orders, only: [:show, :create] do
+    resources :payments, only: :new
+  end
 end
