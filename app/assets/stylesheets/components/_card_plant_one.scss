@@ -16,7 +16,7 @@
   padding: 0px;
   border-radius: 5px;
   background: white;
-
+  border:4px solid #e5e0cc;
   .card-body {
     display: flex;
     flex-direction: column;
@@ -33,11 +33,12 @@
     /* min-height: 200px; */
     flex-shrink: 0;
     width: 100%;
-    height: 400px;
+    height: 300px;
 
   img{
     width: 100%;
     object-fit: cover;
+
   }
 }
 
@@ -48,3 +49,25 @@
 .card-plant-title{
   height: 50%;
 }
+
+.link-style {
+
+  a {
+  color: black;
+  text-decoration: none;
+
+  }
+}
+
+.card-plant-style-hover:hover{
+  margin-bottom: 5px;
+  border:4px solid #F8B400;
+  background-color: #004445;
+  a {
+    text-decoration: none;
+  }
+  h5 {
+  color: white;
+  }
+}
+

@@ -42,7 +42,6 @@ document.addEventListener('turbolinks:load', () => {
   initSlider();
   initDatepicker();
   initPrice();
-  // initTooltip();
   initAnchorOne();
   initAnchorTwo();
   initAnchorThree();

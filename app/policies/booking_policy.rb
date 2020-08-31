@@ -21,8 +21,7 @@ class BookingPolicy < ApplicationPolicy
   end
 
   def create?
-    true
-  	# user_as_owner_or_admin?
+  	true
   end
 
   def destroy?
@@ -30,9 +29,8 @@ class BookingPolicy < ApplicationPolicy
     # user_as_owner_or_admin?
   end
 
-  # private
 
   # def user_as_owner_or_admin?
-  #   user == record.user
+  #   user == record.user || user.admin?
   # end
 end
