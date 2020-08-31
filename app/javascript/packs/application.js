@@ -34,6 +34,7 @@ import { initAnchorOne } from '../components/anchor';
 import { initAnchorTwo } from '../components/anchor';
 import { initAnchorThree } from '../components/anchor';
 import { initAnchorFour } from '../components/anchor';
+import { initHide } from '../components/hiding';
 
 
 document.addEventListener('turbolinks:load', () => {
@@ -46,6 +47,7 @@ document.addEventListener('turbolinks:load', () => {
   initAnchorTwo();
   initAnchorThree();
   initAnchorFour();
+  initHide();
 });
 
 
