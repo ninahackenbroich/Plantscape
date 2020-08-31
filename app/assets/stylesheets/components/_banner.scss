@@ -1,15 +1,16 @@
 .banner {
   background: linear-gradient(rgba($beige,0.01),rgba($beige,0.01)), asset-url("monster-light.png") center center;
   background-size: cover;
-  position: relative;
-  background-size: cover;
+  /* position: relative; */
+  /* background-size: cover; */
   background-position: bottom;
-  height: 100vh;
-  padding-left: 50px;
+  height: 80vh;
+  /* padding-left: 50px; */
   padding-top: 10%;
 
   h1{
-    font-size: 70px;
+    font-size: 100px;
+    font-size: 6vw;
   }
 }
 
@@ -20,3 +21,9 @@
 .margin-bottom {
   margin-bottom: 50px;
 }
+
+.banner-body {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
