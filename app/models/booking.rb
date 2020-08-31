@@ -12,8 +12,9 @@ class Booking < ApplicationRecord
   def days
   	water_days = []
   	waterings.each do |watering|
-  	  water_days << watering.date.strftime("%A, %b %d") 
+  	  water_days << watering.date.strftime("%b %d, %Y")
   	end
-  	water_days.join(", ")
+    water_days
+  	# water_days.join(" / ")
   end
 end
