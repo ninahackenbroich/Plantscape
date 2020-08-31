@@ -6,6 +6,7 @@
   padding-left: 50px;
   padding-top: 10%;
   text-align: right;
+  margin-bottom: 40px;
 
   .dashboard-headings {
     padding-right: 80px;
@@ -23,11 +24,32 @@
   }
 }
 
-.dashboard-bookings{
-  position: relative;
-  background-size: cover;
-  padding-left: 50px;
-  padding-top: 30px;
+.extras-details {
+  font-family: 'Josefin Sans', "sans-serif" !important;
+}
+.dashboard-bookings {
+  text-align: center;
+}
+
+.bookings-head {
+  background-color: #2C786C;
+  color: white;
+  font-weight: 300;
+  th {
+    height: 50px;
+  }
+}
+
+
+
+.table-bordered th,
+.table-bordered td {
+  border: 0 !important;
+}
+
+tbody {
+  background-color: #f7f5ef;
+
 }
 
 .dashboard-plantcollection{

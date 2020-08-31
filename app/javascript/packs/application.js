@@ -29,6 +29,8 @@ import "bootstrap";
 import { initSlider } from '../components/slider';
 import { initDatepicker } from '../components/datepicker';
 import { initPrice } from '../components/pricecalc';
+import { initTooltip } from '../components/tooltip';
+
 // import { initKey } from '../components/key';
 
 document.addEventListener('turbolinks:load', () => {
@@ -36,6 +38,7 @@ document.addEventListener('turbolinks:load', () => {
   initSlider();
   initDatepicker();
   initPrice();
+  initTooltip();
 });
 
 
