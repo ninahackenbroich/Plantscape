@@ -9,7 +9,7 @@ const initPrice = () => {
   if (finalDiv) {
     let sliderValue = Number(sliderOutput.innerHTML);
     sliderInput.addEventListener('change', () => {
-      let sliderValue = Number(sliderOutput.innerHTML);
+      sliderValue = Number(sliderOutput.innerHTML);
       if (sliderValue > 60 ) {
         base_price = 19.99;
       } else if (sliderValue > 40 ) {

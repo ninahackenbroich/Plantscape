@@ -17,7 +17,7 @@
     padding-bottom: 0px;
 	.booking-title {
 		margin-left: -100px;
-		font-size: 50px;
+		font-size: 40px;
 		font-family: 'Cardo', "serif";
 	 }
 	.underline {
@@ -27,14 +27,14 @@
 		}
 	.background-price {
 		margin-left: 800px;
-		margin-top: 0px;
+		margin-top: -40px;
 	}
 }
 
 .booking-question {
-	height: 100vh;
+	height: 80vh;
 	width: 700px;
-	margin: auto auto;
+	margin: auto;
 	text-align: center;
 	.form-check {
 		background-color: #e5e0cc;
@@ -65,3 +65,29 @@
 .slider {
 	margin-top: 80px;
 }
+
+.next,
+.next:hover {
+	text-align: right;
+	margin-left: 700px;
+	color:  #004445;
+	text-decoration: none;
+	border: none;
+	background: none;
+	button {
+		border: none;
+	}
+}
+
+.margin-below {
+	margin-bottom: 80px;
+}
+
+.margin-ontop {
+	margin-top: 80px;
+}
+
+
+
+
+
