@@ -30,8 +30,11 @@ import { initSlider } from '../components/slider';
 import { initDatepicker } from '../components/datepicker';
 import { initPrice } from '../components/pricecalc';
 import { initTooltip } from '../components/tooltip';
+import { initAnchorOne } from '../components/anchor';
+import { initAnchorTwo } from '../components/anchor';
+import { initAnchorThree } from '../components/anchor';
+import { initAnchorFour } from '../components/anchor';
 
-// import { initKey } from '../components/key';
 
 document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
@@ -39,6 +42,10 @@ document.addEventListener('turbolinks:load', () => {
   initDatepicker();
   initPrice();
   initTooltip();
+  initAnchorOne();
+  initAnchorTwo();
+  initAnchorThree();
+  initAnchorFour();
 });
 
 
