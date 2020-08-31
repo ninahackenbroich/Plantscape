@@ -1,5 +1,13 @@
-<h1>Are you sure?</h1>
-<%= form_tag orders_path do %>
-  <%= hidden_field_tag 'booking_id', @booking.id %>
-  <%= submit_tag 'Purchase', class: 'btn btn-primary' %>
-<% end %>
+<div class="container-payment">
+  <div class="row py-4"><!--
+    <div class="col-md-3"><%#= image_tag @order.teddy.photo_url, width: '100%' %></div> -->
+    <div class="col">
+      <h3>Please answer this safety question!</h3>
+        <%= form_tag orders_path do %>
+        <h3>From which country does the Monstera plant originate from?</h3>'
+        <%= hidden_field_tag 'booking_id', @booking.id %>
+      <div class="col"><%= submit_tag 'MEXICO', class: 'btn btn-lg yellow-button shadow px-5 py-3 mb-5' %>
+      <% end %></div>
+    </div>
+  </div>
+</div>
