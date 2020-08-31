@@ -6,7 +6,7 @@ class DashboardPolicy < ApplicationPolicy
   end
 
   def index?
-    true
+    user
   end
 
   private
