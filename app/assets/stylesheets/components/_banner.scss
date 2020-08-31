@@ -1,5 +1,6 @@
 .banner {
-  background-image: asset-url("monster-light.png");
+  background: linear-gradient(rgba($beige,0.01),rgba($beige,0.01)), asset-url("monster-light.png") center center;
+  background-size: cover;
   position: relative;
   background-size: cover;
   background-position: bottom;
@@ -8,7 +9,7 @@
   padding-top: 10%;
 
   h1{
-    font-size: 120px;
+    font-size: 70px;
   }
 }
 
