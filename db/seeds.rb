@@ -114,6 +114,42 @@ plant6 = Plant.create!(
   image_plant = File.open("app/assets/images/PeaceLily_4.jpg")
   plant6.photo.attach(io: image_plant, filename: 'image.jpg', content_type: 'image/jpg')
 
+puts "Creating plants"
+plant6 = Plant.create!(
+  name: "Calathea Orbifolia",
+  water: "Every day",
+  light: "Direct light",
+  soil: "Sand",
+  fertilizer: "Spring-Summer: Once every 2 weeks",
+  repotting: "Every 12 to 18 months: Repotting in a bigger pot",
+  )
+  image_plant = File.open("app/assets/images/CalatheaOrbifolia_2.jpeg")
+  plant6.photo.attach(io: image_plant, filename: 'image.jpg', content_type: 'image/jpeg')
+
+puts "Creating plants"
+plant6 = Plant.create!(
+  name: "Aglaonema",
+  water: "Every day",
+  light: "Direct light",
+  soil: "Sand",
+  fertilizer: "Spring-Summer: Once every 2 weeks",
+  repotting: "Every 12 to 18 months: Repotting in a bigger pot",
+  )
+  image_plant = File.open("app/assets/images/Aglaonema_2.jpg")
+  plant6.photo.attach(io: image_plant, filename: 'image.jpg', content_type: 'image/jpg')
+
+puts "Creating plants"
+plant6 = Plant.create!(
+  name: "Maranta Leuconeura",
+  water: "Every day",
+  light: "Direct light",
+  soil: "Sand",
+  fertilizer: "Spring-Summer: Once every 2 weeks",
+  repotting: "Every 12 to 18 months: Repotting in a bigger pot",
+  )
+  image_plant = File.open("app/assets/images/MarantaLeuconeura_1.jpg")
+  plant6.photo.attach(io: image_plant, filename: 'image.jpg', content_type: 'image/jpg')
+
 
 # Bookins
 
