@@ -21,6 +21,9 @@
       text-align:center;
       padding-top: 80px;
     }
+    .btn-lg, .btn-group-lg {
+      font-size: 0.5rem !important;
+    }
   }
 }
 
@@ -33,23 +36,38 @@
 
 .bookings-head {
   background-color: #2C786C;
+  opacity: 0.6;
   color: white;
   font-weight: 300;
   th {
     height: 50px;
+    border-bottom: 5px solid $beige;
   }
 }
 
+.dashboard-page {
+  h2 {
+    font-size: 40px !important;
+  }
+  .back-button {
+    height: 30px;
+    font-size: 15px;
+    font-weight: bold;
+    margin-top: 15px;
+  }
+  h5 {
+    font-family: 'Josefin Sans', "sans-serif" !important;
+  }
 
-
-.table-bordered th,
-.table-bordered td {
-  border: 0 !important;
 }
 
 tbody {
-  background-color: #f7f5ef;
+  background-color: white ;
 
+  tr {
+      border-bottom: 6px solid $beige;
+
+  }
 }
 
 .dashboard-plantcollection{

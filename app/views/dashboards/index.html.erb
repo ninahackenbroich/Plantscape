@@ -5,10 +5,11 @@
   </div>
 </div>
 
-<div class="container">
+<div class="container dashboard-page">
 
 <!-- UPCOMING BOOKINGS -->
 
+  <div class="d-flex">
     <h2>Upcoming Plantscapes</h2>
 
     <!-- Button trigger modal -->
@@ -35,7 +36,7 @@
       </div>
     </div>
   </div>
-
+  </div>
 
     <div class="dashboard-bookings">
      <div class="row d-flex justify-content-around mt-5">
@@ -58,19 +59,12 @@
               <% @upcoming_bookings.each do |booki| %>
                 <tr>
                   <th scope="row"> # <%= booki.id %> </th>
-                  <th scope="row"> <%= booki.waterings.count %> days </th>
-<!--                   <button type="button" class="btn btn-secondary" data-toggle="tooltip" data-placement="right" title="pop up window">
-                  Text to hover
-                  </button> -->
 
-<!--                   <td> -->
-                    <%#booki.waterings.each do |water| %>
-<!--                       <span> -->
-                        <%#= water.date.strftime("%A, %b %d") %>
-<!--                         <br>
-                      </span> -->
-                    <%# end %>
-<!--                   </td> -->
+
+                  <p class="btn btn-secondary" data-toggle="tooltip" data-placement="right" title= <%= booki.days %>>
+                    <th scope="row"> <%= booki.waterings.count %> days </th>
+                  </p>
+
                   <td><%= booki.number_of_plants %></td>
                   <td >
                     <% if booki.dusting_service %>
@@ -96,66 +90,75 @@
     </div>
   </div>
 
-    <div ><%= link_to " New booking", new_booking_path, class: "btn btn-lg yellow-button shadow px-5 py-3 mb-5" %></div>
+    <div ><%= link_to " New booking", new_booking_path, class: "btn btn-lg yellow-button shadow px-3 py-2 mb-5 mt-4 ml-2" %></div>
 
 <!-- PAST BOOKINGS -->
 
-    <h2>Past Plantscapes</h2>
+<div class="d-flex">
+  <h2>Past Plantscapes</h2>
+  <p>
+    <button class="btn back-button" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+    Display
+    </button>
+  </p>
+</div>
 
-    <div class="dashboard-bookings">
-     <div class="row d-flex justify-content-around mt-5">
-      <div style="width: 900px" class="d-flex flex-column justify-content-center">
-        <% if @bookings.blank? %>
-        <p>No booking</p>
+<div class="collapse" id="collapseExample">
+  <div class="dashboard-bookings">
+       <div class="row d-flex justify-content-around mt-5">
+        <div style="width: 900px" class="d-flex flex-column justify-content-center">
+          <% if @bookings.blank? %>
+          <p>No booking</p>
 
-        <%else%>
-          <table class="">
-            <thead class= "bookings-head">
-              <tr>
-                <th scope="col">Booking Number</th>
-                <th scope="col">Watering Dates</th>
-                <th scope="col">Number of Plants</th>
-                <th scope="col">Extras</th>
-                <th scope="col">Total Price</th>
-              </tr>
-            </thead>
-            <tbody>
-              <% @past_bookings.each do |booki| %>
+          <%else%>
+            <table class="">
+              <thead class= "bookings-head">
                 <tr>
-                  <th scope="row"> <%= booki.id %> </th>
-                  <th scope="row"> <%= booki.waterings.count %> </th>
-<!--                   <td> -->
-                    <%#booki.waterings.each do |water| %>
-<!--                       <span> -->
-                        <%#= water.date.strftime("%A, %b %d") %>
-<!--                         <br>
-                      </span> -->
-                    <%# end %>
-<!--                   </td> -->
-                  <td><%= booki.number_of_plants %></td>
-                  <td >
-                    <% if booki.dusting_service %>
-                      <i class="far fa-gem"></i>
-                    <% end %>
-                    <% if booki.cutting_service %>
-                      <i class="far fa-hand-scissors"></i>
-                    <% end %>
-                    <% if booki.repotting_service %>
-                      <i class="fas fa-exchange-alt"></i>
-                    <% end %>
-                    <% if booki.picture_service %>
-                      <i class="fas fa-camera"></i>
-                    <% end %>
-                  </td>
-                  <td><%= booki.price %>€</td>
+                  <th scope="col">Booking Number</th>
+                  <th scope="col">Watering Dates</th>
+                  <th scope="col">Number of Plants</th>
+                  <th scope="col">Extras</th>
+                  <th scope="col">Total Price</th>
                 </tr>
-              <% end %>
-            </tbody>
-          </table>
-        <% end %>
+              </thead>
+              <tbody>
+                <% @past_bookings.each do |booki| %>
+                  <tr>
+                    <th scope="row"> <%= booki.id %> </th>
+                    <th scope="row"> <%= booki.waterings.count %> </th>
+  <!--                   <td> -->
+                      <%#booki.waterings.each do |water| %>
+  <!--                       <span> -->
+                          <%#= water.date.strftime("%A, %b %d") %>
+  <!--                         <br>
+                        </span> -->
+                      <%# end %>
+  <!--                   </td> -->
+                    <td><%= booki.number_of_plants %></td>
+                    <td >
+                      <% if booki.dusting_service %>
+                        <i class="far fa-gem"></i>
+                      <% end %>
+                      <% if booki.cutting_service %>
+                        <i class="far fa-hand-scissors"></i>
+                      <% end %>
+                      <% if booki.repotting_service %>
+                        <i class="fas fa-exchange-alt"></i>
+                      <% end %>
+                      <% if booki.picture_service %>
+                        <i class="fas fa-camera"></i>
+                      <% end %>
+                    </td>
+                    <td><%= booki.price %>€</td>
+                  </tr>
+                <% end %>
+              </tbody>
+            </table>
+          <% end %>
+        </div>
       </div>
     </div>
-  </div>
+</div>
 
 
 <!-- JUNGLES -->
