@@ -10,5 +10,4 @@ class ReviewsController < ApplicationController
   def create
   end
 
-  def
 end
