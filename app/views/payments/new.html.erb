@@ -1,10 +1,20 @@
-<div class="container">
+<div class="container-payment">
   <div class="row py-4">
    <!--  <div class="col-md-3"> <%#= image_tag @order.booking.photo_url, width: '100%' %></div> -->
     <div class="col">
       <h1>Checkout summary</h1>
-      <p>Purchase of <strong>Your Booking!</strong> for <strong><%= humanized_money_with_symbol @order.amount %></strong></p>
-      <button id="pay" class="btn btn-primary">Pay</button>
+      <ul class="list-unstyled">
+        <li><strong>DATES</strong>
+          <% @bookings.waterings.each do |water| %>
+                    <span><%= water.date.strftime("%A, %b %d") %></span>
+            <% end %>
+        </li>
+        <li><strong>WATERINGS</strong> <%= @order.booking.waterings.count %></li>
+        <li><strong>KEY-OPTION</strong> <%= @order.booking.key%></li>
+        <li><strong>NUMBER OF PLANTS</strong> <%= @order.booking.number_of_plants %></li>
+        <li><strong>TOTAL</strong> <%= humanized_money_with_symbol @order.amount %></li>
+      </ul>
+      <button id="pay" class="btn btn-lg yellow-button shadow px-5 py-3 mb-5">Pay now!</button>
       <script src="https://js.stripe.com/v3/"></script>
       <script>
         const paymentButton = document.getElementById('pay');
