@@ -1,38 +1,69 @@
 
-<div class="banner">
-  <div class="home-text">
-    <br>
-    <h1 class="color-black">We take your plants on vacation,</h1>
-    <br>
-    <h1>while you are.</h1>
-    <br>
-  <!--     <h3 class="color-black margin-bottom">Hire a plantsitter now!</h3> -->
-    <%= link_to "Hire a plantsitter", new_booking_path, class: "btn btn-lg yellow-button shadow px-5 py-3 mb-5" %>
+<!-- BANNER CONTAINER -->
+<div class="container-fluid">
+  <div class="banner">
+      <div class="row p-5 text-center color-black">
+        <!-- <br> -->
+        <h1>We take your plants on vacation, while you are.</h1>
+        <!-- <br> -->
+        <!-- <h1 class="text-center">while you are.</h1> -->
+        <!-- <br> -->
+      <!--     <h3 class="color-black margin-bottom">Hire a plantsitter now!</h3> -->
+
+        <%#= link_to "Hire a plantsitter", new_booking_path, class: "btn btn-lg yellow-button shadow px-5 py-3 mb-5" %>
+      </div>
+      <div class="row d-flex justify-content-center">
+        <%= link_to "Hire a plantsitter", new_booking_path, class: "btn btn-lg yellow-button shadow" %>
+      </div>
   </div>
 </div>
-<div class="container">
-  <%#= render 'shared/card-plant-one' %>
-  <div class="row mt-4">
-      <% @plants.each do |plant| %>
-        <div class="col-sm-6 col-md-6 col-lg-4 mb-4">
-          <!-- CREATING THE CARD CONTAINER -->
-          <div class="card card-plant-style card-dynamic pos-relative">
-            <!-- TOP IMAGE part of CARD PLANT -->
-            <div class="card-plant-img">
-              <%= cl_image_tag plant.photo.key, class: "card-img-top rounded"%>
-            </div>
-            <!-- bottom part of CARD PLANT -->
-            <div class="card-body">
-              <h5 class="card-title text-center"><%= plant.name %></h5>
-              <!-- card-text limites to lenght: 100 -->
-              <!-- <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p> -->
-              <%= link_to "Go to plant", plant_path(plant), class:"btn yellow-button" %>
-            </div>
-          </div>
-        </div>
-      <% end %>
+
+<!-- HOW IT WORKS CONTAINER -->
+
+<!-- HOW IT WORKS OPTION 2 -->
+<div class="container-fluid mb-4">
+  <!-- HOW IT WORKS HEADLINE -->
+  <div class="row mt-4 ml-2 mr-2">
+    <div class="subtitle1 col-sm-12 p-3 mb-0 htw-container">
+      <h2>How it works</h2>
     </div>
+  </div>
+  <div class="row ml-2 mr-2 d-flex justify-content-around">
+    <div class="col-xs-6 col-sm-12 col-lg-3 p-3 htw-card">
+        <!-- inside a col we need an image and h2 and a p -->
+        <!-- <img src="logo.png" height="80px" width="auto"> -->
+        <i class="fas fa-leaf d-flex justify-content-center"></i>
+        <br>
+        <h3 class="text-center">Pick the number of plants</h2>
+        <p class="text-center">The number of plants will influence the final price of the service.</p>
+    </div>
+    <div class="col-xs-6 col-sm-12 col-lg-3 p-3 htw-card">
+        <!-- inside a col we need an image and h2 and a p -->
+        <!-- <img src="logo.png" height="80px" width="auto"> -->
+        <i class="fas fa-calendar-alt d-flex justify-content-center"></i>
+        <br>
+        <h3 class="text-center">Pick dates for your service</h2>
+        <p class="text-center">We are happy to take care of your plant at anytime.</p>
+    </div>
+    <div class="col-xs-6 col-sm-12 col-lg-3 p-3 htw-card">
+        <!-- inside a col we need an image and h2 and a p -->
+        <!-- <img src="logo.png" height="80px" width="auto"> -->
+        <i class="fas fa-key d-flex justify-content-center"></i>
+        <br>
+        <h3 class="text-center">Time to handle your keys</h2>
+        <p class="text-center">We offer very felxible options, all safe and secure.</p>
+    </div>
+    <div class="col-xs-6 col-sm-12 col-lg-3 p-3 htw-card">
+        <!-- inside a col we need an image and h2 and a p -->
+        <!-- <img src="logo.png" height="80px" width="auto"> -->
+        <i class="fas fa-user-check d-flex justify-content-center"></i>
+         <br>
+        <h3 class="text-center">In need of special treats?</h2>
+        <p class="text-center">Dusting, cutting, Repotting and we even send you pictures.</p>
+    </div>
+  </div>
 </div>
+
 
 
 <!-- the next one is a test for cloudinary TEST FOR CLOUDINARY -->
