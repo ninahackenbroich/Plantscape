@@ -33,14 +33,22 @@
 
       <!-- div for the jungle plants listing (Cards) as iteration for the plants associated with the specific jungle of the user -->
       <div class="row mt-4">
-        <% @jungle.jungleplants.each do |plant| %>
+        <% @jungle.jungleplants.each do |jp| %>
           <div class="col-sm-6 col-md-6 col-lg-4 mb-4 link-style">
-          <%= link_to plant_path(plant) do%>
+          <%= link_to plant_path(jp) do%>
             <!-- CREATING THE CARD CONTAINER -->
             <div class="card card-plant-style card-dynamic pos-relative card-plant-style-hover">
               <!-- TOP IMAGE part of CARD PLANT -->
+              <div class="jp-overlay">
+                <p class="icon-status"><%= jp.status %></p>
+                <p><%= link_to "🗑", plant_path(jp) , method: :delete %></p>
+              </div>
               <div class="card-plant-img">
-              <%#= cl_image_tag plant.photo.key, class: "card-img-top rounded"%>
+              <%= cl_image_tag jp.plant.photo.key, class: "card-img-top rounded"%>
+               <!--  <div class="jp-overlay">
+                  <p class="icon-status"><%= jp.status %></p>
+                  <p><%#= link_to "🗑", plant_path(jp) , method: :delete %></p>
+                </div> -->
               </div>
               <!-- bottom part of CARD PLANT -->
               <div class="card-body">
@@ -49,7 +57,7 @@
                 <!-- <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p> -->
                 <%#= link_to "Go to plant", plant_path(plant), class:"btn yellow-button" %>
                 <!-- <h5 class="card-title text-center link-style"><%#= link_to plant.name, plant_path(plant)%></h5> -->
-                <!-- <h5 class="card-title text-center link-style"><%#= plant.name %></h5> -->
+                <h5 class="card-title text-center link-style"><%= jp.plant.name %></h5>
               </div>
             </div>
           <% end %>
