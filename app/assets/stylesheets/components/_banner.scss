@@ -1,5 +1,5 @@
 .banner {
-  background: linear-gradient(rgba($beige,0.3),rgba($beige,0.01)), asset-url("monster-light.png") center center;
+  background: linear-gradient(rgba($beige,0.3),rgba($beige,0.01)), asset-url("babyplant.jpg") center center;
   /* background: linear-gradient(rgba($beige,0.01),rgba($beige,0.01)), asset-url("Roundplant_1.jpg") center center; */
   background-size: cover;
   /* position: relative; */
@@ -11,8 +11,9 @@
   padding-top: 10%;
 
   h1{
-    font-size: 100px;
+    font-size: 90px;
     font-size: 8vw;
+    color: white;
   }
 }
 

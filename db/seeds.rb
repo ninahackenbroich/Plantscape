@@ -37,13 +37,13 @@ user2 = User.create!(
 #   admin: true,
 #   )
 
-# puts "Creating a user"
-# user4 = User.create!(
-#   email: "kimberly.dohmen@web.de",
-#   first_name:"Kim",
-#   last_name: "Dohmen",
-#   password: "123456",
-#   )
+puts "Creating the BEST USER OF ALL TIMES"
+user4 = User.create!(
+  email: "kimberly.dohmen@web.de",
+  first_name:"Kim",
+  last_name: "Dohmen",
+  password: "123456",
+  )
 
 
 
