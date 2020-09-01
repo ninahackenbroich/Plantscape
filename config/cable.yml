@@ -7,4 +7,9 @@ test:
 production:
   adapter: redis
   url: <%= ENV.fetch("REDIS_URL") { "redis://localhost:6379/1" } %>
+<<<<<<< HEAD
   channel_prefix: plantscape-ninahackenbroich
+=======
+  channel_prefix: Plantscape_production
+
+>>>>>>> 6e84ed38716a82b19715732bbc4d815161cc64a6

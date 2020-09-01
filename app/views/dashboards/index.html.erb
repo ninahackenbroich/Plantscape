@@ -5,21 +5,22 @@
   </div>
 </div>
 
-<div class="container">
+<div class="container dashboard-page">
 
 <!-- UPCOMING BOOKINGS -->
 
+  <div class="d-flex">
     <h2>Upcoming Plantscapes</h2>
 
     <!-- Button trigger modal -->
     <button type="button" class="btn back-button" data-toggle="modal" data-target="#exampleModal">
-    ?
+    <i class="fas fa-question"></i>
     </button>
 
     <!-- Modal -->
     <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
       <div class="modal-dialog" role="document">
-        <div class="modal-content">
+        <div class="modal-content extras-details">
           <div class="modal-header">
             <h5 class="modal-title" id="exampleModalLabel">Details</h5>
               <button type="button" class="close" data-dismiss="modal" aria-label="Close">
@@ -35,13 +36,13 @@
       </div>
     </div>
   </div>
-
+  </div>
 
     <div class="dashboard-bookings">
      <div class="row d-flex justify-content-around mt-5">
       <div style="width: 900px" class="d-flex flex-column justify-content-center">
         <% if @bookings.blank? %>
-        <p>No booking</p>
+        <p>You didn't plan a Plantscape yet!</p>
 
         <%else%>
           <table class="">
@@ -58,19 +59,16 @@
               <% @upcoming_bookings.each do |booki| %>
                 <tr>
                   <th scope="row"> # <%= booki.id %> </th>
-                  <th scope="row"> <%= booki.waterings.count %> days </th>
-<!--                   <button type="button" class="btn btn-secondary" data-toggle="tooltip" data-placement="right" title="pop up window">
-                  Text to hover
-                  </button> -->
 
-<!--                   <td> -->
-                    <%#booki.waterings.each do |water| %>
-<!--                       <span> -->
-                        <%#= water.date.strftime("%A, %b %d") %>
-<!--                         <br>
-                      </span> -->
-                    <%# end %>
-<!--                   </td> -->
+                  <th scope="row" class="hover"><%= booki.waterings.count %> days
+                    <div class="tooltip"> <% booki.days.each do |date| %>
+                      <ul>
+                        <li><%= date %></li>
+                      </ul>
+                      <% end %>
+                    </div>
+                  </th>
+
                   <td><%= booki.number_of_plants %></td>
                   <td >
                     <% if booki.dusting_service %>
@@ -96,71 +94,79 @@
     </div>
   </div>
 
-    <div ><%= link_to " New booking", new_booking_path, class: "btn btn-lg yellow-button shadow px-5 py-3 mb-5" %></div>
+    <div ><%= link_to " New booking", new_booking_path, class: "btn btn-lg yellow-button shadow px-3 py-2 mb-5 mt-4 ml-2" %></div>
 
 <!-- PAST BOOKINGS -->
 
-    <h2>Past Plantscapes</h2>
+<div class="d-flex">
+  <h2>Past Plantscapes</h2>
+  <p>
+    <button class="btn back-button" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+    <i class="fas fa-angle-double-down"></i>
+    </button>
+  </p>
+</div>
 
-    <div class="dashboard-bookings">
-     <div class="row d-flex justify-content-around mt-5">
-      <div style="width: 900px" class="d-flex flex-column justify-content-center">
-        <% if @bookings.blank? %>
-        <p>No booking</p>
+<div class="collapse" id="collapseExample">
+  <div class="dashboard-bookings mb-5">
+       <div class="row d-flex justify-content-around mt-5">
+        <div style="width: 900px" class="d-flex flex-column justify-content-center">
+          <% if @bookings.blank? %>
+          <p>No booking</p>
 
-        <%else%>
-          <table class="">
-            <thead class= "bookings-head">
-              <tr>
-                <th scope="col">Booking Number</th>
-                <th scope="col">Watering Dates</th>
-                <th scope="col">Number of Plants</th>
-                <th scope="col">Extras</th>
-                <th scope="col">Total Price</th>
-              </tr>
-            </thead>
-            <tbody>
-              <% @past_bookings.each do |booki| %>
+          <%else%>
+            <table class="">
+              <thead class= "bookings-head">
                 <tr>
-                  <th scope="row"> <%= booki.id %> </th>
-                  <th scope="row"> <%= booki.waterings.count %> </th>
-<!--                   <td> -->
-                    <%#booki.waterings.each do |water| %>
-<!--                       <span> -->
-                        <%#= water.date.strftime("%A, %b %d") %>
-<!--                         <br>
-                      </span> -->
-                    <%# end %>
-<!--                   </td> -->
-                  <td><%= booki.number_of_plants %></td>
-                  <td >
-                    <% if booki.dusting_service %>
-                      <i class="far fa-gem"></i>
-                    <% end %>
-                    <% if booki.cutting_service %>
-                      <i class="far fa-hand-scissors"></i>
-                    <% end %>
-                    <% if booki.repotting_service %>
-                      <i class="fas fa-exchange-alt"></i>
-                    <% end %>
-                    <% if booki.picture_service %>
-                      <i class="fas fa-camera"></i>
-                    <% end %>
-                  </td>
-                  <td><%= booki.price %>€</td>
+                  <th scope="col">Booking Number</th>
+                  <th scope="col">Watering Dates</th>
+                  <th scope="col">Number of Plants</th>
+                  <th scope="col">Extras</th>
+                  <th scope="col">Total Price</th>
                 </tr>
-              <% end %>
-            </tbody>
-          </table>
-        <% end %>
+              </thead>
+              <tbody>
+
+               <% @past_bookings.each do |booki| %>
+                <tr>
+                  <th scope="row"> # <%= booki.id %> </th>
+
+                  <th scope="row" class="hover"><%= booki.waterings.count %> days
+                    <div class="tooltip"> <%= booki.days %>
+                    </div>
+                  </th>
+
+
+                    <td><%= booki.number_of_plants %></td>
+                    <td >
+                      <% if booki.dusting_service %>
+                        <i class="far fa-gem"></i>
+                      <% end %>
+                      <% if booki.cutting_service %>
+                        <i class="far fa-hand-scissors"></i>
+                      <% end %>
+                      <% if booki.repotting_service %>
+                        <i class="fas fa-exchange-alt"></i>
+                      <% end %>
+                      <% if booki.picture_service %>
+                        <i class="fas fa-camera"></i>
+                      <% end %>
+                    </td>
+                    <td><%= booki.price %>€</td>
+                  </tr>
+                <% end %>
+              </tbody>
+            </table>
+          <% end %>
+        </div>
       </div>
     </div>
-  </div>
+</div>
 
 
 <!-- JUNGLES -->
 
-<div class="dashboard-plantcollection">
+
   <h2>Your Jungles</h2>
   <div class ="dashboard-jungles">
     <div class="row d-flex justify-content-around mt-5">
@@ -175,17 +181,16 @@
             <%= render "shared/card-jungles" %>
             </div>
             <div style="width: 200px">
-              <%= link_to " Create a new Jungle",new_jungle_path, class: "btn btn-lg yellow-button shadow px-5 py-3 mb-2" %>
             </div>
         <%else %>
           <div style="width: 900px" class="d-flex flex-column justify-content-center">
               <%= render "shared/card-jungles" %>
           </div>
-          <div style="width: 900px"><%= link_to " Create a new Jungle",new_jungle_path, class: "btn btn-lg yellow-button shadow px-5 py-3 mb-5" %></div>
         <% end %>
       </div>
     </div>
+    <%= link_to " Create a new Jungle",new_jungle_path, class: "btn btn-lg yellow-button shadow px-5 py-3 mb-5 " %>
   </div>
-</div>
+
 
 </div>

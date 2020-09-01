@@ -21,11 +21,16 @@
       text-align:center;
       padding-top: 80px;
     }
+    .btn-lg, .btn-group-lg {
+      font-size: 0.5rem !important;
+    }
   }
 }
 
-.extras-details {
+.extras-details,
+.modal.header {
   font-family: 'Josefin Sans', "sans-serif" !important;
+  background-color: $beige;
 }
 .dashboard-bookings {
   text-align: center;
@@ -33,23 +38,36 @@
 
 .bookings-head {
   background-color: #2C786C;
+  opacity: 0.6;
   color: white;
   font-weight: 300;
   th {
     height: 50px;
+    border-bottom: 5px solid $beige;
   }
 }
 
-
-
-.table-bordered th,
-.table-bordered td {
-  border: 0 !important;
+.dashboard-page {
+  h2 {
+    font-size: 40px !important;
+  }
+  .back-button {
+    height: 30px;
+    font-size: 15px;
+    font-weight: bold;
+    margin-top: 15px;
+    background-color: #dbd4bc
+  }
 }
 
 tbody {
-  background-color: #f7f5ef;
+  background-color: $beige ;
+  border: #dbd4bc;
 
+  tr {
+      border-bottom: 6px solid $beige;
+
+  }
 }
 
 .dashboard-plantcollection{
@@ -72,3 +90,40 @@ td {
     object-fit: cover;
     height: 200px;
   }
+
+
+.hover {
+  position: relative;
+}
+
+.tooltip {
+  /* hide and position tooltip */
+  background-color: #dbd4bc;
+  color: black;
+  border-radius: 5px;
+  position: absolute;
+  -webkit-transition: opacity 0.5s;
+  -moz-transition: opacity 0.5s;
+  -ms-transition: opacity 0.5s;
+  -o-transition: opacity 0.5s;
+  transition: opacity 0.5s;
+  padding: 10px 20px;
+}
+
+.hover:hover .tooltip {
+  /* display tooltip on hover */
+  opacity: 1;
+  left: 100px;
+  width: 500px;
+}
+
+table {
+    border-collapse:separate;
+    border:solid  #dbd4bc 1px;
+    border-radius:6px;
+    -moz-border-radius:6px;
+}
+
+td:first-child, th:first-child {
+     // border-left: none;
+}

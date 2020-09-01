@@ -6,11 +6,11 @@ class JunglePolicy < ApplicationPolicy
   end
  
   def index?
-    true
+    user_as_owner_or_admin?
   end
 
   def show?
-    true
+    user_as_owner_or_admin?
   end
 
   def new?
@@ -22,13 +22,13 @@ class JunglePolicy < ApplicationPolicy
   end
 
   def destroy?
-    true # user_as_owner_or_admin?
+    user_as_owner_or_admin?
   end
 
   
   private
 
-  # def user_as_owner_or_admin?
-  #   @user == record.user
-  # end
+  def user_as_owner_or_admin?
+    @user == record.user || user.admin?
+  end
 end
