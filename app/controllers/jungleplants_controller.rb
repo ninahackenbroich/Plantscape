@@ -35,6 +35,7 @@ class JungleplantsController < ApplicationController
 
   def edit
     authorize @jungleplant
+    @plant = @jungleplant.plant
   end
 
   def update
