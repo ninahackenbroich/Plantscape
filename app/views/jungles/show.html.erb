@@ -47,9 +47,13 @@
               <div class="jp-overlay d-flex justify-content-between w-100">
                 <div class="icon-status mt-2 ml-2"><strong><%= jp.status %></strong></div>
                 <p class="mt-2 mr-2"><%= link_to "🗑", plant_path(jp) , method: :delete %></p>
+                <!-- <div class="dropdown-menu" aria-labelledby="btnGroupDrop1">
+                <%#= link_to "Edit", edit_jungle_path(jungle), class: "dropdown-item"%>
+                <%#= link_to "Delete", jungle_path(jungle), method: :delete, class:"dropdown-item"%>
+                </div> -->
               </div>
               <div class="card-plant-img">
-              <%= link_to plant_path(jp) do%>
+              <%= link_to jungle_jungleplant_path(@jungle, jp) do%>
               <%= cl_image_tag jp.plant.photo.key, class: "card-img-top rounded"%>
                <!--  <div class="jp-overlay">
                   <p class="icon-status"><%= jp.status %></p>

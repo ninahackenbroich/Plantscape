@@ -1,0 +1,35 @@
+<div class="container-fluid bg-white">
+  <div class="container">
+
+  <!-- the next is a ROW DIV for the PLANT IMAGE as Banner -->
+    <div class="row mt-4">
+      <div class="col">
+        <!-- here I want an image -->
+        <!-- <div class="banner-plant-show rounded-lg mt-4" style="background-image: url('<%#= cl_image_path @plant.photo.key %>')"> -->
+          <!-- <%#= cl_image_tag @plant.photo.key, :transformation=>{:width=>1200, :height=>500, :crop=>"fill"} %> -->
+          <%#= cl_image_tag @plant.photo.key %>
+          <!-- here I want a black H1 title with a square white background -->
+          <h1 class="text-center bg-white rounded-lg"><%= @plant.name %></h1>
+        </div>
+
+        <!-- here we are going to have an H2 -->
+        <div>
+          <h2 class="text-center rounded-lg mt-4">Plant Profile</h2>
+        </div>
+        <div class="rounded-lg mt-4 mb-4">
+
+          <p class="text-center"><strong>Water:</strong> <%= @plant.water %></p>
+          <p class="text-center"><strong>Light:</strong> <%= @plant.light %></p>
+          <p class="text-center"><strong>Soil:</strong> <%= @plant.soil %></p>
+          <p class="text-center"><strong>Fertilizer:</strong> <%= @plant.fertilizer %></p>
+          <p class="text-center"><strong>Repotting:</strong> <%= @plant.repotting %></p>
+        </div>
+      </div>
+    </div>
+    <!-- the next is a ROW DIV for the PLANT ATTRIBUTE as Section-->
+    <div class="row mt-4 d-flex justify-content-around">
+      <%= link_to " + book your service", new_booking_path, class: "btn btn-lg yellow-button shadow px-5 py-3 mb-5" %>
+      <%= link_to " + create your jungle", new_jungle_path, class: "btn btn-lg yellow-button shadow px-5 py-3 mb-5" %>
+    </div>
+  </div>
+</div>
