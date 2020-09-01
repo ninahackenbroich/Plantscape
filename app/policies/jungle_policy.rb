@@ -6,11 +6,11 @@ class JunglePolicy < ApplicationPolicy
   end
  
   def index?
-    user_as_owner_or_admin?
+    user
   end
 
   def show?
-    user_as_owner_or_admin?
+    user
   end
 
   def new?

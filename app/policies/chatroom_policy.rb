@@ -5,8 +5,10 @@ class ChatroomPolicy < ApplicationPolicy
     end
   end
 
+  
+
   def show?
-    true
+    record.customer_id == user.id || user.admin
     # user_as_owner_or_admin?
   end
 

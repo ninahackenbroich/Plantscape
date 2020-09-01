@@ -1,0 +1,18 @@
+.box-title { 
+  width: 100%;
+  h2 {
+    font-size: 50px !important;
+    z-index: 2;
+    position:relative;
+    width: 50%;
+    padding-left: 0;
+    margin-left: 12%;
+  }
+  .underline {
+    z-index: 1;
+    position: absolute;
+    margin-left: -10%;
+    margin-top: 2.7%;
+    width: 40%;
+  }
+}

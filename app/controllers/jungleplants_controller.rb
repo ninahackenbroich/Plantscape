@@ -7,7 +7,9 @@ class JungleplantsController < ApplicationController
   end
 
   def show
+    @jungleplant =  Jungleplant.find(params[:id])
     authorize @jungleplant
+    @plant = @jungleplant.plant
   end
 
   def new
@@ -33,6 +35,7 @@ class JungleplantsController < ApplicationController
 
   def edit
     authorize @jungleplant
+    @plant = @jungleplant.plant
   end
 
   def update

@@ -10,7 +10,8 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_09_01_083129) do
+
+ActiveRecord::Schema.define(version: 2020_09_01_124557) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -56,6 +57,11 @@ ActiveRecord::Schema.define(version: 2020_09_01_083129) do
     t.string "name"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.integer "customer_id", null: false
+    t.integer "admin_id", null: false
+    t.index ["admin_id"], name: "index_chatrooms_on_admin_id"
+    t.index ["customer_id", "admin_id"], name: "index_chatrooms_on_customer_id_and_admin_id", unique: true
+    t.index ["customer_id"], name: "index_chatrooms_on_customer_id"
   end
 
   create_table "jungleplants", force: :cascade do |t|

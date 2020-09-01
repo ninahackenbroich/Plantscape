@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   root to: 'pages#home'
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
   resources :jungles do
-    resources :jungleplants, only:[:new, :create]
+    resources :jungleplants, only:[:new, :create, :show]
     # do
       # resources :plants, only:[:show, :index]
     # end
@@ -16,13 +16,15 @@ Rails.application.routes.draw do
   resources :plants, only:[:show, :index]
 
   resources :bookings, only:[:new, :create, :show, :index, :destroy]
-  resources :dashboards, only:[:index]
+  resources :dashboards, only:[:index] do
+    resources :chatrooms, only: :create
+  end
 
   resources :orders, only: [:show, :create] do
     resources :payments, only: :new
   end
 
-  resources :chatrooms, only: :show do
+  resources :chatrooms, only: [:show, :index] do
     resources :messages, only: :create
   end
 

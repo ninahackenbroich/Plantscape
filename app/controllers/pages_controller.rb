@@ -13,4 +13,9 @@ class PagesController < ApplicationController
   def review_params
     params.require(:review).permit(:title, :rating, :comment)
   end
+
+  def chats
+    general = Chatroom.find_by(name: "general")
+    redirect_to chatroom_path(general) if general
+  end
 end

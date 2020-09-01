@@ -16,6 +16,8 @@
   &.normal {
     background-color: $beige;
     position: sticky;
+    z-index: 4;
+    border-bottom: 1px solid #dbd4bc;
   }
 }
 
