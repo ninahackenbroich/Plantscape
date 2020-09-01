@@ -15,6 +15,7 @@ class BookingsController < ApplicationController
   def create
     booking_params[:number_of_plants] = booking_params[:number_of_plants].to_i
     @booking = Booking.new(booking_params)
+    redirect_to new_booking_path, notice: "Make sure you choose a day" if params[:watering_dates].empty?
     @booking.user = current_user
     @booking.price = params[:booking][:price].to_i
     if @booking.save!

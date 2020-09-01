@@ -7,7 +7,7 @@ class Booking < ApplicationRecord
   #adding VALIDATION
   validates :number_of_plants, presence: true
   validates :key, presence: true
-  validates :waterings, presence: true
+  validates_associated :waterings
   # validates :price, presence: true
 
   def days
