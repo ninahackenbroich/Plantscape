@@ -1,8 +1,11 @@
 require "faker"
 
 puts "Cleaning database..."
-User.destroy_all
 Jungleplant.destroy_all
+Jungle.destroy_all
+Order.destroy_all
+Booking.destroy_all
+User.destroy_all
 Plant.destroy_all
 Chatroom.destroy_all
 
