@@ -4,7 +4,10 @@ class JungleplantPolicy < ApplicationPolicy
       scope.all
     end
   end
- 
+
+  def show?
+    true  # user_as_owner_or_admin?
+  end
 
   def new?
   	true # user_as_owner_or_admin?
