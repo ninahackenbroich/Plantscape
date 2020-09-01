@@ -4,7 +4,7 @@
     <div class="row justify-content-center">
       <div class="col-9">
         <!-- <h1 class="text-center mt-4">Add a plant to your Jungle</h1> -->
-        <h2 class="text-center mt-4 mb-4">Add a plant to your Jungle</h2>
+        <h2 class="text-center mt-2 mb-4">Add a plant to your Jungle</h2>
     <!-- </div> -->
     <!-- <div class="col mt-4 col-sm-6"> -->
       <!-- <div class="form-group justify-content-center"> -->
@@ -25,7 +25,8 @@
           <%# end %>
           <br>
           <%= f.label :comments, "Write your personal notes about this plant here..." %>
-          <%= f.text_field :comments %>
+          <%#= f.text_field :comments%>
+          <%= f.input :comments, :input_html => { :cols => 20, :rows => 3 } %>
           <br>
           <%= f.label :status, "What is the plants actual status? Please choose." %>
           <%= f.input :status, collection: ["Happy & Healthy", "Dusty, but fine", "Could be better", "Needs some care", "Almost dying"] %>
