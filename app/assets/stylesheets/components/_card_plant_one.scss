@@ -17,6 +17,7 @@
   border-radius: 5px;
   background: white;
   border:4px solid #e5e0cc;
+  position: relative;
   .card-body {
     display: flex;
     flex-direction: column;
@@ -70,4 +71,24 @@
   color: white;
   }
 }
+
+.icon-status {
+  background-color: #F8B400;
+  padding: 5px;
+  width: 50%;
+  border-radius: 2px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: white;
+
+}
+
+.jp-overlay {
+ position: absolute;
+}
+
+
+
+
+
 
