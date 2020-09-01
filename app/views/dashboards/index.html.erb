@@ -1,16 +1,16 @@
 <div class="dashboard-banner">
   <div class ="dashboard-headings">
-    <h1 class ="crazshadow">Your Jungle</h1>
+    <h1 class ="crazshadow"><i>Happy to see you, <%= current_user.first_name %></i></h1>
     <br>
   </div>
 </div>
 
+<!--------------------- UPCOMING BOOKINGS ----------------------->
 <div class="container dashboard-page">
-
-<!-- UPCOMING BOOKINGS -->
-
   <div class="d-flex">
     <h2>Upcoming Plantscapes</h2>
+    <%= render "shared/underline" %>
+
 
     <!-- Button trigger modal -->
     <button type="button" class="btn back-button" data-toggle="modal" data-target="#exampleModal">
@@ -39,11 +39,10 @@
   </div>
 
     <div class="dashboard-bookings">
-     <div class="row d-flex justify-content-around mt-5">
-      <div style="width: 900px" class="d-flex flex-column justify-content-center">
-        <% if @bookings.blank? %>
-        <p>You didn't plan a Plantscape yet!</p>
-
+     <div class="row d-flex mt-5">
+      <div style="width: 900px" class="d-flex flex-column">
+        <% if @upcoming_bookings.blank? %>
+        <p>No Plantscape planned yet!</p>
         <%else%>
           <table class="">
             <thead class= "bookings-head">
@@ -55,7 +54,7 @@
                 <th scope="col">Total Price</th>
               </tr>
             </thead>
-            <tbody>
+            <tbody class= "bookings-body">
               <% @upcoming_bookings.each do |booki| %>
                 <tr>
                   <th scope="row"> # <%= booki.id %> </th>
@@ -90,107 +89,105 @@
             </tbody>
           </table>
         <% end %>
-      </div>
-    </div>
-  </div>
-
-    <div ><%= link_to " New booking", new_booking_path, class: "btn btn-lg yellow-button shadow px-3 py-2 mb-5 mt-4 ml-2" %></div>
-
-<!-- PAST BOOKINGS -->
-
-<div class="d-flex">
-  <h2>Past Plantscapes</h2>
-  <p>
-    <button class="btn back-button" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
-    <i class="fas fa-angle-double-down"></i>
-    </button>
-  </p>
-</div>
-
-<div class="collapse" id="collapseExample">
-  <div class="dashboard-bookings mb-5">
-       <div class="row d-flex justify-content-around mt-5">
-        <div style="width: 900px" class="d-flex flex-column justify-content-center">
-          <% if @bookings.blank? %>
-          <p>No booking</p>
-
-          <%else%>
-            <table class="">
-              <thead class= "bookings-head">
-                <tr>
-                  <th scope="col">Booking Number</th>
-                  <th scope="col">Watering Dates</th>
-                  <th scope="col">Number of Plants</th>
-                  <th scope="col">Extras</th>
-                  <th scope="col">Total Price</th>
-                </tr>
-              </thead>
-              <tbody>
-
-               <% @past_bookings.each do |booki| %>
-                <tr>
-                  <th scope="row"> # <%= booki.id %> </th>
-
-                  <th scope="row" class="hover"><%= booki.waterings.count %> days
-                    <div class="tooltip"> <%= booki.days %>
-                    </div>
-                  </th>
-
-
-                    <td><%= booki.number_of_plants %></td>
-                    <td >
-                      <% if booki.dusting_service %>
-                        <i class="far fa-gem"></i>
-                      <% end %>
-                      <% if booki.cutting_service %>
-                        <i class="far fa-hand-scissors"></i>
-                      <% end %>
-                      <% if booki.repotting_service %>
-                        <i class="fas fa-exchange-alt"></i>
-                      <% end %>
-                      <% if booki.picture_service %>
-                        <i class="fas fa-camera"></i>
-                      <% end %>
-                    </td>
-                    <td><%= booki.price %>€</td>
-                  </tr>
-                <% end %>
-              </tbody>
-            </table>
-          <% end %>
         </div>
       </div>
     </div>
+
+    <div ><%= link_to " New booking", new_booking_path, class: "btn btn-lg yellow-button shadow px-3 py-2 mb-5 mt-4 ml-2" %></div>
 </div>
 
+<!--------------------- PAST BOOKINGS ----------------------->
 
-<!-- JUNGLES -->
+<div class="container dashboard-page past-bookings">
+  <div class="d-flex">
+    <h2>Past Plantscapes</h2>
+    <%= render "shared/underline" %>
 
-
-  <h2>Your Jungles</h2>
-  <div class ="dashboard-jungles">
-    <div class="row d-flex justify-content-around mt-5">
-
-         <% if  @jungles.count == 0%>
-           <div style="width: 900px" class="d-flex flex-column justify-content-center">
-             <p>You do not have a jungle yet! If you create a Jungle and add your plants, you can upload pictures and a status to your plants! </p>
-           </div>
-           <div style="width: 200px"><%= link_to " Create a new Jungle", new_jungle_path, class: "btn btn-lg yellow-button shadow px-5 py-3 mb-5" %></div>
-         <% elsif  @jungles.count == 1 %>
-           <div style="width: 900px" class="d-flex flex-column justify-content-center">
-            <%= render "shared/card-jungles" %>
-            </div>
-            <div style="width: 200px">
-            </div>
-        <%else %>
-          <div style="width: 900px" class="d-flex flex-column justify-content-center">
-              <%= render "shared/card-jungles" %>
-          </div>
-        <% end %>
-      </div>
-    </div>
-    <%= link_to " Create a new Jungle",new_jungle_path, class: "btn btn-lg yellow-button shadow px-5 py-3 mb-5 " %>
+    <p>
+      <button class="btn back-button" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+      <i class="fas fa-angle-double-down"></i>
+      </button>
+    </p>
   </div>
 
+  <div class="collapse" id="collapseExample">
+    <div class="dashboard-bookings mb-5">
+         <div class="row d-flex mt-5">
+          <div style="width: 900px" class="d-flex flex-column">
+            <% if @past_bookings.blank? %>
+            <p>No past Plantscape!</p>
+            <%else%>
+              <table class="">
+                <thead class= "bookings-head">
+                  <tr>
+                    <th scope="col">Booking Number</th>
+                    <th scope="col">Watering Dates</th>
+                    <th scope="col">Number of Plants</th>
+                    <th scope="col">Extras</th>
+                    <th scope="col">Total Price</th>
+                  </tr>
+                </thead>
+                <tbody>
 
+                 <% @past_bookings.each do |booki| %>
+                  <tr>
+                    <th scope="row"> # <%= booki.id %> </th>
+
+                    <th scope="row" class="hover"><%= booki.waterings.count %> days
+                      <div class="tooltip"> <%= booki.days %>
+                      </div>
+                    </th>
+
+
+                      <td><%= booki.number_of_plants %></td>
+                      <td >
+                        <% if booki.dusting_service %>
+                          <i class="far fa-gem"></i>
+                        <% end %>
+                        <% if booki.cutting_service %>
+                          <i class="far fa-hand-scissors"></i>
+                        <% end %>
+                        <% if booki.repotting_service %>
+                          <i class="fas fa-exchange-alt"></i>
+                        <% end %>
+                        <% if booki.picture_service %>
+                          <i class="fas fa-camera"></i>
+                        <% end %>
+                      </td>
+                      <td><%= booki.price %>€</td>
+                    </tr>
+                  <% end %>
+                </tbody>
+              </table>
+            <% end %>
+          </div>
+        </div>
+      </div>
+  </div>
 </div>
+
+<!--------------------- JUNGLES ----------------------->
+
+<div class="container dashboard-page jungle">
+  <h2 class="mt-5">Your Jungles</h2>
+  <%= render "shared/underline" %>
+  <div class ="dashboard-jungles">
+    <div class="row d-flex mt-5">
+
+      <% if  @jungles.count == 0%>
+        <div>
+          <p>You do not have a jungle yet! If you create a Jungle and add your plants, you can upload pictures and a status to your plants! </p>
+        </div>
+      <% else  @jungles.count >= 1 %>
+        <div style="width: 900px" class="d-flex flex-column">
+          <%= render "shared/card-jungles" %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+
+  <div class="container">
+  <%= link_to " Create a new Jungle",new_jungle_path, class: "btn btn-lg yellow-button shadow px-5 py-3 mb-5 mt-5" %>
+  </div>
+</div>
+
