@@ -1,7 +1,8 @@
 .reviews{
-  border-style: solid;
+  border-style: solid 10px;
   padding: 15px 15px 0px 15px;
-  margin: 20px;
+  margin: 30px;
+  box-shadow: 6px 6px 6px 7px #e8e2ce;
 
   h5{
     padding-top: 10px;
@@ -16,6 +17,10 @@
       text-align:right;
     }
   }
+}
+
+.comment-text{
+  min-height: 20px;
 }
 
 .rev-name {
