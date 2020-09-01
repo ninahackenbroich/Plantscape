@@ -1,28 +1,39 @@
-<h1>Add a plant to your Jungle</h1>
 
+<div class="container mt-2 mb-2">
+    <!-- <div class="col mt-4 col-sm-12"> -->
+    <div class="row justify-content-center">
+      <div class="col-9">
+        <!-- <h1 class="text-center mt-4">Add a plant to your Jungle</h1> -->
+        <h2 class="text-center mt-4 mb-4">Add a plant to your Jungle</h2>
+    <!-- </div> -->
+    <!-- <div class="col mt-4 col-sm-6"> -->
+      <!-- <div class="form-group justify-content-center"> -->
+      <div class="form-inputs">
+        <%= simple_form_for [@jungle, @jungleplant] do |f| %>
+          <%= f.label :plant, "Which plant do you want to add to you jungle?" %>
+          <!-- commenting out the next line which is hardcoded, and working on the real iteration  -->
+          <%#= f.input :plant, as: :check_boxes, collection: ["Monstera", "Ficus", "Palm"] %>
+          <!-- commenting out the next block becuase the FE works but the save method not -->
+          <!-- <%# plants = [] %> -->
+          <!-- <%# @plants.each {|plant| plants.push(plant.name)} %> -->
+          <!-- <%#= f.input :plant, as: :check_boxes, collection: plants %> -->
 
-
-    <%= simple_form_for [@jungle, @jungleplant] do |f| %>
-      <%= f.label :plant, "Which plant do you want to add to you jungle?" %>
-      <!-- commenting out the next line which is hardcoded, and working on the real iteration  -->
-      <%#= f.input :plant, as: :check_boxes, collection: ["Monstera", "Ficus", "Palm"] %>
-      <!-- commenting out the next block becuase the FE works but the save method not -->
-      <!-- <%# plants = [] %> -->
-      <!-- <%# @plants.each {|plant| plants.push(plant.name)} %> -->
-      <!-- <%#= f.input :plant, as: :check_boxes, collection: plants %> -->
-
-      <%# @plants.each do |plant| %>
-        <%#= f.select :plant, as: :check_boxes, collection: plant.name %>
-        <%#= f.input :plant, as: :check_boxes, collection: @plants %>
-        <%= f.association :plant %>
-      <%# end %>
-      <br>
-      <%= f.label :comments, "Write your personal notes about this plant here..." %>
-      <%= f.text_field :comments %>
-      <br>
-      <%= f.label :status, "What is the plants actual status? Please choose." %>
-      <%= f.input :status, collection: ["Happy & Healthy", "Dusty, but fine", "Could be better", "Needs some care", "Almost dying"] %>
-      <br>
-      <%= f.submit "Add plant", class: "btn btn-sm yellow-button shadow px-5 py-3 mb-5 text-right", disable_with: 'Adding plant to your jungle...' %>
-      <br>
-<% end %>
+          <%# @plants.each do |plant| %>
+            <%#= f.select :plant, as: :check_boxes, collection: plant.name %>
+            <%#= f.input :plant, as: :check_boxes, collection: @plants %>
+            <%= f.association :plant %>
+          <%# end %>
+          <br>
+          <%= f.label :comments, "Write your personal notes about this plant here..." %>
+          <%= f.text_field :comments %>
+          <br>
+          <%= f.label :status, "What is the plants actual status? Please choose." %>
+          <%= f.input :status, collection: ["Happy & Healthy", "Dusty, but fine", "Could be better", "Needs some care", "Almost dying"] %>
+          <br>
+          <%= f.submit "Add plant", class: "btn btn-sm yellow-button shadow px-5 py-3 mb-5 text-right", disable_with: 'Adding plant to your jungle...' %>
+          <br>
+        <% end %>
+      </div>
+      </div>
+    </div>
+</div>
