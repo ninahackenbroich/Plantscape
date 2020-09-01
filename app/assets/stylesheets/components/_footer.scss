@@ -1,10 +1,12 @@
 
 footer {
-  background-color: $dark-green;
+  background-color: #40847e;
+
   padding: 30px;
   margin-top: 0;
   font-size: 0.9em;
   width: 100%;
+  padding-bottom: 0;
   p {
     text-align:center;
   }
@@ -64,17 +66,14 @@ social-icons li:last-child {
 }
 
 .fa-linkedin-in:hover{
-  color: #3b5998;
   transform: scale(1.5)
 }
 
 .fa-twitter:hover{
-  color: #00aced;
   transform: scale(1.5)
 }
 
 .fa-github:hover{
-  color: #8665AB;
   transform: scale(1.5)
 }
 
