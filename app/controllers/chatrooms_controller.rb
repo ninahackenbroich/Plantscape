@@ -1,5 +1,11 @@
 class ChatroomsController < ApplicationController
 
+  def index
+    @chatrooms = policy_scope(Chatroom)
+    @chatrooms = Chatroom.all
+    redirect_to root_path unless current_user.admin
+  end
+
   def show
     @chatroom = Chatroom.find(params[:id])
     @message = Message.new

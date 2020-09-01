@@ -4,6 +4,7 @@
 
     <div>
       <%= simple_form_for [ @chatroom, @message ] do |f| %>
+        <%= f.input :photo, as: :file, label: "Send a file:" %>
         <%= f.input :content, label: false, placeholder: "Message ##{@chatroom.name}" %>
       <% end %>
 

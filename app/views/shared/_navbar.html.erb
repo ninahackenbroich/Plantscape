@@ -18,8 +18,13 @@
       </li>
     </ul>
     <% if user_signed_in? %>
+
       <li class="nav-item">
-        <%= link_to "✉", chatroom_path(@chatroom), class: "nav-link" %>
+      <% if current_user.admin %>
+        <%= link_to "✉", chatroom_path(current_user.superchats.first), class: "nav-link" %>
+      <% else %>
+        <%= link_to "✉", chatroom_path(current_user.chatrooms.first), class: "nav-link" %>
+      <% end %>
       </li>
       <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -27,7 +32,6 @@
           </a>
         <div class="dropdown-menu dropdown-menu-right shadow p-3 mb-5 rounded" aria-labelledby="navbarDropdown">
           <p class="dropdown-item"><%= link_to "My Dashboard", dashboards_index_path %></p>
-          <p class="dropdown-item"><%= link_to "Chat", chatroom_path(@chatroom) %></p>
           <p class="dropdown-item"><%= link_to "+ Hire a plantsitter", new_booking_path %></p>
           <div class="dropdown-divider"></div>
           <p class="dropdown-item"><%= link_to "Log out", destroy_user_session_path, method: :delete %></p>
