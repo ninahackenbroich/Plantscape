@@ -4,4 +4,9 @@ class PagesController < ApplicationController
   def home
     @plants = Plant.all
   end
+
+  def chats
+    general = Chatroom.find_by(name: "general")
+    redirect_to chatroom_path(general) if general
+  end
 end
