@@ -5,6 +5,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
   has_many :jungles
   has_many :orders
+  has_many :reviews
 
   has_many :chatrooms, foreign_key: :customer_id, class_name: 'Chatroom'
   has_many :superchats, foreign_key: :admin_id, class_name: 'Chatroom'

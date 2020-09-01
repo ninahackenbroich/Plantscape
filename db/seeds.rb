@@ -5,6 +5,7 @@ Jungleplant.destroy_all
 Jungle.destroy_all
 Order.destroy_all
 Booking.destroy_all
+Message.destroy_all
 User.destroy_all
 Plant.destroy_all
 Chatroom.destroy_all

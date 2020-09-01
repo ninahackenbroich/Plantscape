@@ -6,6 +6,9 @@ class ApplicationPolicy
     @record = record
   end
 
+  def home?
+    true
+  end
   def index?
     true
   end
