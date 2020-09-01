@@ -1,16 +1,18 @@
+<body style="background-color:#;">
+
 <div class="dashboard-banner">
   <div class ="dashboard-headings">
-    <h1 class ="crazshadow"><i>Happy to see you, <%= current_user.first_name %></i></h1>
-    <br>
+    <h1 class ="crazshadow"><i>Happy to see you, <%= current_user.first_name %>.</i></h1>
+    <p class="under">.</p>
   </div>
 </div>
 
 <!--------------------- UPCOMING BOOKINGS ----------------------->
 <div class="container dashboard-page">
   <div class="d-flex">
-    <h2>Upcoming Plantscapes</h2>
-    <%= render "shared/underline" %>
-
+      <h2>Upcoming Plantscapes</h2>
+      <p class="barre">.</p>
+      <%#= render "shared/underline" %>
 
     <!-- Button trigger modal -->
     <button type="button" class="btn back-button" data-toggle="modal" data-target="#exampleModal">
@@ -39,7 +41,7 @@
   </div>
 
     <div class="dashboard-bookings">
-     <div class="row d-flex mt-5">
+     <div class="row">
       <div style="width: 900px" class="d-flex flex-column">
         <% if @upcoming_bookings.blank? %>
         <p>No Plantscape planned yet!</p>
@@ -60,7 +62,7 @@
                   <th scope="row"> # <%= booki.id %> </th>
 
                   <th scope="row" class="hover"><%= booki.waterings.count %> days
-                    <div class="tooltip"> <% booki.days.each do |date| %>
+                    <div class="tooltipp"> <% booki.days.each do |date| %>
                       <ul>
                         <li><%= date %></li>
                       </ul>
@@ -93,24 +95,28 @@
       </div>
     </div>
 
-    <div ><%= link_to " New booking", new_booking_path, class: "btn btn-lg yellow-button shadow px-3 py-2 mb-5 mt-4 ml-2" %></div>
+    <div class="row d-flex booking-buttons">
+      <button class="btn back-button" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+        Past Bookings
+      </button>
+      <%= link_to " New booking", new_booking_path, class: "btn btn-lg yellow-button shadow px-3 py-2" %>
+    </div>
 </div>
 
 <!--------------------- PAST BOOKINGS ----------------------->
 
 <div class="container dashboard-page past-bookings">
+
+
+<div class="collapse" id="collapseExample">
   <div class="d-flex">
     <h2>Past Plantscapes</h2>
-    <%= render "shared/underline" %>
+    <p class="barre">.</p>
+    <%#= render "shared/underline" %>
 
-    <p>
-      <button class="btn back-button" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
-      <i class="fas fa-angle-double-down"></i>
-      </button>
-    </p>
   </div>
 
-  <div class="collapse" id="collapseExample">
+
     <div class="dashboard-bookings mb-5">
          <div class="row d-flex mt-5">
           <div style="width: 900px" class="d-flex flex-column">
@@ -133,10 +139,14 @@
                   <tr>
                     <th scope="row"> # <%= booki.id %> </th>
 
-                    <th scope="row" class="hover"><%= booki.waterings.count %> days
-                      <div class="tooltip"> <%= booki.days %>
-                      </div>
-                    </th>
+                  <th scope="row" class="hover"><%= booki.waterings.count %> days
+                    <div class="tooltipp"> <% booki.days.each do |date| %>
+                      <ul>
+                        <li><%= date %></li>
+                      </ul>
+                      <% end %>
+                    </div>
+                  </th>
 
 
                       <td><%= booki.number_of_plants %></td>
@@ -169,8 +179,9 @@
 <!--------------------- JUNGLES ----------------------->
 
 <div class="container dashboard-page jungle">
-  <h2 class="mt-5">Your Jungles</h2>
-  <%= render "shared/underline" %>
+    <h2>Your Jungles</h2>
+    <p class="barre">.</p>
+    <%#= render "shared/underline" %>
   <div class ="dashboard-jungles">
     <div class="row d-flex mt-5">
 
@@ -191,3 +202,4 @@
   </div>
 </div>
 
+</body>
