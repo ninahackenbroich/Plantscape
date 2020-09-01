@@ -34,11 +34,12 @@
 .dashboard-page {
   width: 100%;
   h2 {
-    font-size: 40px !important;
+    font-size: 50px !important;
     z-index: 2;
     position:relative;
-    width: 50%;
+    width: 1000px;
     padding-left: 0;
+    margin-left: 12%;
   }
   .back-button {
     height: 30px;
@@ -47,21 +48,21 @@
     margin-top: 2%;
     margin-left: 52%;
     background-color: #dbd4bc;
-    z-index: 2;
+    z-index: 3;
   }
   i {
     padding: 0 5px;
   }
+
   .underline {
     z-index: 1;
-    width: 600px;
     position: absolute;
-    margin-left: -200px;
-    margin-top: 30px;
-    background-color: #F8B400;
+    margin-left: -10%;
+    margin-top: 2.7%;
+    width: 40%;
     color: #F8B400;
+    background-color:  #F8B400;
     opacity: 0.6;
-
   }
 }
 
