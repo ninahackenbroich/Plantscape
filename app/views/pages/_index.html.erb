@@ -1,7 +1,12 @@
 
-<h1>REVIEWS</h1>
+<div class="box-title">
+  <h2>Reviews</h2>
+  <p class="barre">.</p>
+</div>
  <div class="row mt-4">
+  <% counter = 0 %>
     <% @reviews.each do |rev| %>
+      <% break if counter > 2 %>
       <div class=" reviews d-flex align-items-end flex-column" style="width: 25rem;">
         <div class="mb-3 comment p-2">
            <h4><strong><%= rev.title %></strong></h4>
@@ -24,6 +29,7 @@
             <% elsif rev.rating == "5" %>
               <p><i class="fas fa-spa"></i><i class="fas fa-spa"></i><i class="fas fa-spa"></i><i class="fas fa-spa"></i><i class="fas fa-spa"></i></p>
             <% end %>
+            <% counter += 1 %>
            </div>
           <div><p><%= rev.user.first_name %></p></div>
         </div>
