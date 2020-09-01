@@ -1,3 +1,4 @@
 class Review < ApplicationRecord
-  belongs_to :bookings_id
+  belongs_to :user
+  has_many :bookings, through: :user
 end
