@@ -30,12 +30,38 @@
           <% end %>
         </ul>
       </div>
+
+      <!-- div for the jungle plants listing (Cards) as iteration for the plants associated with the specific jungle of the user -->
+      <div class="row mt-4">
+        <% @jungle.jungleplants.each do |plant| %>
+          <div class="col-sm-6 col-md-6 col-lg-4 mb-4 link-style">
+          <%= link_to plant_path(plant) do%>
+            <!-- CREATING THE CARD CONTAINER -->
+            <div class="card card-plant-style card-dynamic pos-relative card-plant-style-hover">
+              <!-- TOP IMAGE part of CARD PLANT -->
+              <div class="card-plant-img">
+              <%#= cl_image_tag plant.photo.key, class: "card-img-top rounded"%>
+              </div>
+              <!-- bottom part of CARD PLANT -->
+              <div class="card-body">
+                <!-- <h5 class="card-title text-center"><%#= plant.name %></h5> -->
+                <!-- card-text limites to lenght: 100 -->
+                <!-- <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p> -->
+                <%#= link_to "Go to plant", plant_path(plant), class:"btn yellow-button" %>
+                <!-- <h5 class="card-title text-center link-style"><%#= link_to plant.name, plant_path(plant)%></h5> -->
+                <!-- <h5 class="card-title text-center link-style"><%#= plant.name %></h5> -->
+              </div>
+            </div>
+          <% end %>
+          </div>
+        <% end %>
+      </div>
+
       <div class="row mt-4 d-flex justify-content-around">
         <%= link_to " + Add a plant ", new_jungle_jungleplant_path(@jungle), class: "btn btn-sm yellow-button shadow px-5 py-3 mb-5"%>
           <br>
         <%= link_to "Back", jungles_path(@jungle), class: "btn btn-sm back-button shadow px-5 py-3 mb-5"%>
-       </div>
-
+      </div>
     </div>
   </div>
 </div>
