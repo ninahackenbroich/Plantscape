@@ -1,0 +1,58 @@
+.reviews{
+  border-style: solid 10px;
+  padding: 15px 15px 0px 15px;
+  margin: 30px;
+  box-shadow: 6px 6px 6px 7px #e8e2ce;
+
+  h5{
+    padding-top: 10px;
+  }
+
+  .comment{
+    padding: 10px 10px;
+    p {
+    font-size: 20px
+    }
+    .qmark{
+      text-align:right;
+    }
+  }
+}
+
+.comment-text{
+  min-height: 20px;
+}
+
+.rev-name {
+  text-align: right;
+  padding-right: 10px;
+  p {
+    font-size: 20px;
+  }
+}
+
+.grey{
+  color: grey;
+}
+
+.modal-content {
+  background-color: $beige;
+  border-radius: 20px;
+
+}
+
+.modal-body{
+  width: 100%;
+}
+.simple_form {
+  width: 100%;
+}
+
+#review_comment {
+  height: 30vh;
+}
+
+#review_rating {
+  width:100%;
+  color:green;
+}

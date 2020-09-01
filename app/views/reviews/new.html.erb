@@ -1,0 +1,38 @@
+<h1>Make a new review</h1>
+
+<button type="button" class="btn btn-lg yellow-button shadow px-5 py-3 mb-5" data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo">New Review</button>
+
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Leave us a Review</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <%= simple_form_for [@review] do |f|%>
+          <div class="form-group">
+            <%= f.label :title %>
+            <%= f.text_field :title %>
+          </div>
+          <div class="form-group">
+            <%= f.label :comment %>
+            <%= f.text_field :comment %>
+          </div>
+          <div class="form-group">
+            <%= f.label :rating %>
+            <%= f.range_field :rating, in: 1..5 %>
+          </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <%= f.submit %>
+      </div>
+      <% end %>
+    </div>
+  </div>
+</div>
+
+
