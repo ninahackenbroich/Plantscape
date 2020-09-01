@@ -1,6 +1,16 @@
-<div class="container pt-5">
+<div class="container mt-2 mb-2">
   <h1> You want to create your own jungle? </h1>
-  <h3>Great here you go!</h3>
-  <br>
-  <%= render "shared/new-jungle-form" %>
+  <div class="position-line">
+    <%= render "shared/underline" %>
+  </div>
+  <div class="row justify-content-center m-5">
+    <div class="col-12">
+        <br>
+        <p class="text-center">Hey <%= current_user.first_name %> create a jungle that has all the plants you have!</p>
+        <br>
+        <div class="text-left">
+          <%= render "shared/new-jungle-form" %>
+        </div> 
+    </div>
+  </div>
 </div>

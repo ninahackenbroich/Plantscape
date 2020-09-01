@@ -1,12 +1,18 @@
-<div>
+<div class="next-to">
+  <div class="jungle-picture">
+</div>
+<div class="form-group text-left">
     <%= simple_form_for(@jungle) do |f| %>
+    <br>
     <%= f.label :name, "Name of your Jungle" %>
     <%= f.text_field :name %>
+    <br>
     <br>
     <%= f.label :address, "Address of your Jungle" %>
     <%= f.text_field :address %>
     <br>
-    <%= f.input :photo, as: :file, label: "Upload a picture to your Jungle:" %>
+    <br>
+    <%= f.input :photo, as: :file, label: false %>
     <br>
     <%= f.submit "Create Jungle", class: "btn btn-sm yellow-button shadow px-5 py-3 mb-5", disable_with: 'Submiting...' %>
     <br>
