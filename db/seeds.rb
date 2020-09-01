@@ -1,27 +1,28 @@
 require "faker"
 
 puts "Cleaning database..."
-# User.destroy_all
+User.destroy_all
 Jungleplant.destroy_all
 Plant.destroy_all
+Chatroom.destroy_all
 
-# puts "Creating a user"
-# user1 = User.create!(
-#   email: "hackenbroich.nina@gmail.com",
-#   first_name:"Nina",
-#   last_name: "Hackenbroich",
-#   password: "123456",
-#   admin: true,
-#   )
+puts "Creating a user"
+user = User.create!(
+  email: "hackenbroich.nina@gmail.com",
+  first_name:"Nina",
+  last_name: "Hackenbroich",
+  password: "123456",
+  admin: true,
+  )
 
-# puts "Creating a user"
-# user2 = User.create!(
-#   email: "triggiano.r@gmail.com",
-#   first_name:"Raffaele",
-#   last_name: "Triggiano",
-#   password: "123456",
-#   admin: true,
-#   )
+puts "Creating a user"
+user2 = User.create!(
+  email: "triggiano.r@gmail.com",
+  first_name:"Raffaele",
+  last_name: "Triggiano",
+  password: "123456",
+  admin: false,
+  )
 
 # puts "Creating a user"
 # user3 = User.create!(

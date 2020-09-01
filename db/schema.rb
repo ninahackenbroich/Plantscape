@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_08_31_161358) do
+ActiveRecord::Schema.define(version: 2020_09_01_124557) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -56,6 +56,11 @@ ActiveRecord::Schema.define(version: 2020_08_31_161358) do
     t.string "name"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.integer "customer_id", null: false
+    t.integer "admin_id", null: false
+    t.index ["admin_id"], name: "index_chatrooms_on_admin_id"
+    t.index ["customer_id", "admin_id"], name: "index_chatrooms_on_customer_id_and_admin_id", unique: true
+    t.index ["customer_id"], name: "index_chatrooms_on_customer_id"
   end
 
   create_table "jungleplants", force: :cascade do |t|
@@ -122,10 +127,10 @@ ActiveRecord::Schema.define(version: 2020_08_31_161358) do
   end
 
   create_table "users", force: :cascade do |t|
-    t.string "email", default: "flora.flower@gmail.com", null: false
-    t.string "encrypted_password", default: "********", null: false
-    t.string "first_name", default: "Flora", null: false
-    t.string "last_name", default: "Flower", null: false
+    t.string "email", null: false
+    t.string "encrypted_password", null: false
+    t.string "first_name", null: false
+    t.string "last_name", null: false
     t.string "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
