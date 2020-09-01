@@ -21,15 +21,15 @@
           <%# @plants.each do |plant| %>
             <%#= f.select :plant, as: :check_boxes, collection: plant.name %>
             <%#= f.input :plant, as: :check_boxes, collection: @plants %>
-            <%= f.association :plant %>
+            <%= f.association :plant, label: false %>
           <%# end %>
           <br>
           <%= f.label :comments, "Write your personal notes about this plant here..." %>
           <%#= f.text_field :comments%>
-          <%= f.input :comments, :input_html => { :cols => 20, :rows => 3 } %>
+          <%= f.input :comments, label: false, :input_html => { :cols => 20, :rows => 3 } %>
           <br>
           <%= f.label :status, "What is the plants actual status? Please choose." %>
-          <%= f.input :status, collection: ["Happy & Healthy", "Dusty, but fine", "Could be better", "Needs some care", "Almost dying"] %>
+          <%= f.input :status, label: false, collection: ["Happy & Healthy", "Dusty, but fine", "Could be better", "Needs some care", "Almost dying"] %>
           <br>
           <%= f.submit "Add plant", class: "btn btn-sm yellow-button shadow px-5 py-3 mb-5 text-right", disable_with: 'Adding plant to your jungle...' %>
           <br>

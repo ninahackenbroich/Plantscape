@@ -1,34 +1,51 @@
 <div class="container mt-2 mb-2">
-  <br>
-  <h1>PLANTSCAPE || Chat</h1>
-  <div class="position-line">
-    <%= render "shared/underline" %>
-  </div>
-  <div class="row">
-    <div class="col-12">
-      <div class="chatroom">
-        <br>
-        <%= simple_form_for [ @chatroom, @message ] do |f| %>
-          <div class="d-flex flex-row align-items-center">
-            <div>
-              <%= f.input :content, label: false, placeholder: "Start writing...", input_html: {rows: "5"} %>
-            </div>
-            <div class="p-2">
-              <%= f.input :photo, as: :file, label: false %>
-            </div>
+  <div class="row justify-content-center">
+    <div class="col-12 mt-2 text-center">
+      <h1>PLANTSCAPE || Chat</h1>
+      <div class="position-line">
+        <%= render "shared/underline" %>
+      </div>
+
+      <%= simple_form_for [ @chatroom, @message ] do |f| %>
+        <div class="form-input">
+          <div>
+            <%= f.input :content, label: false, placeholder: "Start writing...", input_html: {rows: "5"} %>
           </div>
-        <% end %>
-      </div>
-      <div id="messages" data-chatroom-id="<%= @chatroom.id %>">
-      <% counter = 0 %>
-      <br>
-      <p class="font-weight-bold">Latest Messages</p>
-      <% @chatroom.messages.reverse.each do |message| %>
-        <% break if counter > 9 %>
-          <%= render "messages/message", message: message %>
-          <% counter += 1 %>
+          <div class="row p-2">
+            <%= f.input :photo, as: :file, label: false %>
+          </div>
+        </div>
       <% end %>
-      </div>
+
     </div>
+
+    <div class="row text-center">
+      <div class="col-12">
+          <!-- <div class="chatroom"> -->
+
+            <%= simple_form_for [ @chatroom, @message ] do |f| %>
+              <div class="d-flex flex-row align-items-center">
+                <div>
+                  <%= f.input :content, label: false, placeholder: "Start writing...", input_html: {rows: "5"} %>
+                </div>
+                <div class="p-2">
+                  <%= f.input :photo, as: :file, label: false %>
+                </div>
+              </div>
+            <% end %>
+          <!-- </div> -->
+          <div id="messages" data-chatroom-id="<%= @chatroom.id %>">
+          <% counter = 0 %>
+
+          <p class="font-weight-bold">Latest Messages</p>
+          <% @chatroom.messages.reverse.each do |message| %>
+            <% break if counter > 9 %>
+              <%= render "messages/message", message: message %>
+              <% counter += 1 %>
+          <% end %>
+          </div>
+        </div>
+    </div>
+
   </div>
 </div>
