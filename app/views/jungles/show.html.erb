@@ -3,7 +3,7 @@
     <div class="col">
       <!-- div for the jungle name -->
       <div>
-        <h1 class="text-center"><%= @jungle.name %></h1>
+        <h2 class="text-center"><%= @jungle.name %></h2>
       </div>
       <!-- div for the jungle image -->
       <div>
@@ -17,21 +17,26 @@
       </div>
 
       <!-- div for the jungle plants listing -->
-      <div class="text-center mt-5">
+      <!-- <div class="text-center mt-5">
         <h2>The plants in your jungle</h2>
       </div>
       <div class="text-center mt-5">
         <ul>
-          <% @jungle.jungleplants.each do |jp| %>
-            <h3><strong><%= jp.plant.name %></strong></h3>
-            <p><%= jp.status %></p>
-            <p><%= jp.comments %></p>
-            <p><%= link_to "🗑", plant_path(jp) , method: :delete %></p>
-          <% end %>
+          <%# @jungle.jungleplants.each do |jp| %>
+            <h3><strong><%#= jp.plant.name %></strong></h3>
+            <p><%#= jp.status %></p>
+            <p><%#= jp.comments %></p>
+            <p><%#= link_to "🗑", plant_path(jp) , method: :delete %></p>
+          <%# end %>
         </ul>
-      </div>
+      </div> -->
 
       <!-- div for the jungle plants listing (Cards) as iteration for the plants associated with the specific jungle of the user -->
+
+      <div class="text-center mt-5">
+        <h2>The plants in your jungle</h2>
+      </div>
+
       <div class="row mt-4">
         <% @jungle.jungleplants.each do |jp| %>
           <div class="col-sm-6 col-md-6 col-lg-4 mb-4 link-style">
@@ -40,7 +45,7 @@
             <div class="card card-plant-style card-dynamic pos-relative card-plant-style-hover">
               <!-- TOP IMAGE part of CARD PLANT -->
               <div class="jp-overlay d-flex justify-content-between w-100">
-                <div class="icon-status mt-2 ml-2"><%= jp.status %></div>
+                <div class="icon-status mt-2 ml-2"><strong><%= jp.status %></strong></div>
                 <p class="mt-2 mr-2"><%= link_to "🗑", plant_path(jp) , method: :delete %></p>
               </div>
               <div class="card-plant-img">
