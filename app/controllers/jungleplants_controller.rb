@@ -9,7 +9,7 @@ class JungleplantsController < ApplicationController
   def show
     @jungleplant =  Jungleplant.find(params[:id])
     authorize @jungleplant
-    # @plants = Plant.all
+    @plant = @jungleplant.plant
   end
 
   def new
