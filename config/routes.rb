@@ -16,13 +16,15 @@ Rails.application.routes.draw do
   resources :plants, only:[:show, :index]
 
   resources :bookings, only:[:new, :create, :show, :index, :destroy]
-  resources :dashboards, only:[:index]
+  resources :dashboards, only:[:index] do
+    resources :chatrooms, only: :create
+  end
 
   resources :orders, only: [:show, :create] do
     resources :payments, only: :new
   end
 
-  resources :chatrooms, only: :show do
+  resources :chatrooms, only: [:show] do
     resources :messages, only: :create
   end
 end
