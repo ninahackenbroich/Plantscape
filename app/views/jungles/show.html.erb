@@ -35,15 +35,16 @@
       <div class="row mt-4">
         <% @jungle.jungleplants.each do |jp| %>
           <div class="col-sm-6 col-md-6 col-lg-4 mb-4 link-style">
-          <%= link_to plant_path(jp) do%>
+          <%#= link_to plant_path(jp) do%>
             <!-- CREATING THE CARD CONTAINER -->
             <div class="card card-plant-style card-dynamic pos-relative card-plant-style-hover">
               <!-- TOP IMAGE part of CARD PLANT -->
-              <div class="jp-overlay">
-                <p class="icon-status"><%= jp.status %></p>
-                <p><%= link_to "🗑", plant_path(jp) , method: :delete %></p>
+              <div class="jp-overlay d-flex justify-content-between w-100">
+                <div class="icon-status mt-2 ml-2"><%= jp.status %></div>
+                <p class="mt-2 mr-2"><%= link_to "🗑", plant_path(jp) , method: :delete %></p>
               </div>
               <div class="card-plant-img">
+              <%= link_to plant_path(jp) do%>
               <%= cl_image_tag jp.plant.photo.key, class: "card-img-top rounded"%>
                <!--  <div class="jp-overlay">
                   <p class="icon-status"><%= jp.status %></p>
