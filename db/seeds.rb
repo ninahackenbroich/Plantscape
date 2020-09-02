@@ -6,6 +6,7 @@ Jungle.destroy_all
 Order.destroy_all
 Booking.destroy_all
 Message.destroy_all
+Review.destroy_all
 User.destroy_all
 Plant.destroy_all
 Review.destroy_all
@@ -13,6 +14,7 @@ Chatroom.destroy_all
 
 puts "Creating a user"
 user = User.create!(
+  id: 1,
   email: "hackenbroich.nina@gmail.com",
   first_name:"Flora",
   last_name: "from Plantscape",
@@ -22,6 +24,7 @@ user = User.create!(
 
 puts "Creating a user"
 user2 = User.create!(
+  id: 3,
   email: "triggiano.r@gmail.com",
   first_name:"Raffaele",
   last_name: "Triggiano",
@@ -31,6 +34,7 @@ user2 = User.create!(
 
 puts "Creating a user"
 user3 = User.create!(
+  id: 2,
   email: "chambre.celine@gmail.com",
   first_name:"Celine",
   last_name: "Chambre",
@@ -40,6 +44,7 @@ user3 = User.create!(
 
 puts "Creating the BEST USER OF ALL TIMES"
 user4 = User.create!(
+  id: 4,
   email: "kimberly.dohmen@web.de",
   first_name:"Kim",
   last_name: "Dohmen",
@@ -169,4 +174,28 @@ plant6 = Plant.create!(
 #     )
 # end
 
+puts "Create Review 1"
+Review.create!(
+  title: "SWEET CARE & People",
+  comment: "I was four weeks on holiday in Cuba and lovely Celine did take care of my planties. When i came back they were looking amzing, happy and even got a new haircut;)",
+  rating: 5,
+  user_id: 1,
+  )
+
+Review.create!(
+  title: "no worries for my keys",
+  comment: "i was a bit scared because if how to handover the keys safely but Bobby Brown contacted me right after my booking to confirm the key handover at my favorite späti. They came the 2 times and fertilized two of my plants as well. Happy!!",
+  rating: 4,
+  user_id: 3,
+  )
+
+Review.create!(
+  title: "New favorits for VACAYs",
+  comment: "I was four weeks on holiday in Cuba and lovely Celine did take care of my planties. When i came back they were looking amzing, happy and even got a new haircut;)",
+  rating: 5,
+  user_id: 2,
+  )
+
+
+puts "All GOOD, all DONE "
 
