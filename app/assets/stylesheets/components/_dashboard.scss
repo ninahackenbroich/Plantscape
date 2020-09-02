@@ -50,15 +50,6 @@
     margin-left: 12%;
     color: black;
   }
-  .back-button {
-    height: 30px;
-    font-size: 15px;
-    font-weight: bold;
-    margin-top: 2%;
-    margin-left: 52%;
-    background-color: #dbd4bc;
-    z-index: 3;
-  }
   i {
     padding: 0 5px;
   }
@@ -115,24 +106,6 @@ table {
 
 .booking-buttons {
     margin: 5px 200px;
-  .back-button {
-    height: 50px;
-    font-size: 15px;
-    font-weight: bold;
-    margin-top: 0%;
-    margin-left: 0%;
-    background-color: #dbd4bc;
-    z-index: 2;
-    border-radius: 10px;
-    margin-right: 10px;
-  }
-  .yellow-button {
-    height: 50px;
-    font-size: 15px;
-    font-weight: bold;
-    margin-top: 0%;
-    margin-left: 0%;
-  }
 }
 
 .past-bookings {
@@ -176,13 +149,6 @@ td {
   text-align: center;
   justify-content: center;
 }
-  .yellow-button {
-    height: 50px;
-    font-size: 15px;
-    font-weight: bold;
-    margin-top: 0%;
-    margin-left: 18%;
-  }
 
 .img-for-junglecards{
     height: 600px;

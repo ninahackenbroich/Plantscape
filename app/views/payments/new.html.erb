@@ -14,7 +14,7 @@
         <li><strong>NUMBER OF PLANTS</strong> <%= @order.booking.number_of_plants %></li>
         <li><strong>TOTAL</strong> <%= humanized_money_with_symbol @order.amount %></li>
       </ul>
-      <button id="pay" class="btn btn-lg yellow-button shadow px-5 py-3 mb-5">Pay now!</button>
+      <button id="pay" class="btn btn-lg big-yellow-button shadow px-5 py-3 mb-5">Pay now!</button>
       <script src="https://js.stripe.com/v3/"></script>
       <script>
         const paymentButton = document.getElementById('pay');
