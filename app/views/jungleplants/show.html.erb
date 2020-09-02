@@ -14,17 +14,22 @@
 
         <!-- here we are going to have an H2 -->
         <div>
-          <h2 class="text-center rounded-lg mt-4">Plant Profile</h2>
+          <!-- <h2 class="text-center rounded-lg mt-4">Plant Profile</h2> -->
         </div>
-        <div class="rounded-lg mt-4 mb-4">
-
-          <p class="text-center"><strong>Water: </strong> <%= @plant.water %></p>
-          <p class="text-center"><strong>Light: </strong> <%= @plant.light %></p>
-          <p class="text-center"><strong>Soil: </strong> <%= @plant.soil %></p>
-          <p class="text-center"><strong>Fertilizer: </strong><%= @plant.fertilizer %></p>
-          <p class="text-center"><strong>Repotting: </strong><%= @plant.repotting %></p>
+        <div class="row rounded-2 border border-dark pt-4 mt-2 mb-4">
+          <div class="col">
+            <p class="text-center"><strong>Water: </strong> <%= @plant.water %></p>
+            <p class="text-center"><strong>Light: </strong> <%= @plant.light %></p>
+            <p class="text-center"><strong>Soil: </strong> <%= @plant.soil %></p>
+            <p class="text-center"><strong>Fertilizer: </strong><%= @plant.fertilizer %></p>
+            <p class="text-center"><strong>Repotting: </strong><%= @plant.repotting %></p>
+          </div>
+          <div class="col">
+          <!-- <p class="text-center"><strong>Fertilizer: </strong><%#= @plant.fertilizer %></p> -->
+          <!-- <p class="text-center"><strong>Repotting: </strong><%#= @plant.repotting %></p> -->
           <p class="text-center"><strong>Comment: </strong><%= @jungleplant.comments %></p>
           <p class="text-center"><strong>Status: </strong><%= @jungleplant.status %></p>
+          </div>
         </div>
       </div>
     </div>
