@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container final-booking-page">
   <div class="box-title">
     <h2>Checkout summary</h2>
     <p class="barre">.</p>
@@ -8,11 +8,12 @@
     <div class="col-sm-7 booking-summary">
       <div class="col">
         <div class="col">
-          <h3>You're order:</h3>
+          <h3>Order summary</h3>
           <br>
-          <ul class="list-unstyled">
+          <ul class="list-unstyled order-list">
+            <li><strong>NUMBER OF PLANTS</strong> <%= @order.booking.number_of_plants %></li>
             <li><strong>DATES:</strong>
-              <ul>
+              <ul class="dates">
               <% @bookings.waterings.each do |water| %>
                   <li><span><%= water.date.strftime("%A, %b %d") %></span></li>
               <% end %>
@@ -20,10 +21,23 @@
             </li>
             <li><strong>WATERINGS</strong> <%= @order.booking.waterings.count %></li>
             <li><strong>KEY-OPTION</strong> <%= @order.booking.key%></li>
-            <li><strong>NUMBER OF PLANTS</strong> <%= @order.booking.number_of_plants %></li>
+            <li><strong>EXTRAS</strong>
+              <% if @order.booking.dusting_service %>
+                <i class="far fa-gem"></i>
+              <% end %>
+              <% if @order.booking.cutting_service %>
+                <i class="far fa-hand-scissors"></i>
+              <% end %>
+              <% if @order.booking.repotting_service %>
+                <i class="fas fa-exchange-alt"></i>
+              <% end %>
+              <% if @order.booking.picture_service %>
+                <i class="fas fa-camera"></i>
+              <% end %>
+            </li>
             <li><strong>TOTAL</strong> <%= humanized_money_with_symbol @order.amount %></li>
           </ul>
-          <button id="pay" class="btn btn-lg big-yellow-button shadow px-5 py-3 mb-5">Pay now!</button>
+          <button id="pay" class="btn btn-lg small-yellow-button shadow mb-5">Pay now!</button>
           <script src="https://js.stripe.com/v3/"></script>
           <script>
             const paymentButton = document.getElementById('pay');
@@ -38,8 +52,8 @@
       </div>
     </div>
   
-    <div class="col-sm-5 pl-5 gif">
-      <iframe src="https://giphy.com/embed/ZNn2OLYWJYDC60OKuo" width="480" height="480" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
+    <div class="col-sm-5 pl-5">
+      <iframe src="https://giphy.com/embed/ZNn2OLYWJYDC60OKuo" width="420" height="420" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
     </div>
   </div>
 </div>
