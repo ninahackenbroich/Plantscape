@@ -21,18 +21,6 @@
 
     <div class="row text-center">
       <div class="col-12">
-          <!-- <div class="chatroom"> -->
-
-            <%= simple_form_for [ @chatroom, @message ] do |f| %>
-              <div class="d-flex flex-row align-items-center">
-                <div>
-                  <%= f.input :content, label: false, placeholder: "Start writing...", input_html: {rows: "5"} %>
-                </div>
-                <div class="p-2">
-                  <%= f.input :photo, as: :file, label: false %>
-                </div>
-              </div>
-            <% end %>
           <!-- </div> -->
           <div id="messages" data-chatroom-id="<%= @chatroom.id %>">
           <% counter = 0 %>

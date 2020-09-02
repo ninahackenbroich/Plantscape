@@ -10,7 +10,7 @@
   </div> -->
 
 <!-- ALL PLANTS INDEX ITERATION -->
-  <div class="row mt-5">
+  <div class="row mt-4">
     <% @plants.each do |plant| %>
       <div class="col-sm-6 col-md-6 col-lg-4 mb-4 link-style">
       <%= link_to plant_path(plant) do%>
@@ -18,7 +18,7 @@
         <div class="card card-plant-style card-dynamic pos-relative card-plant-style-hover">
           <!-- TOP IMAGE part of CARD PLANT -->
           <div class="card-plant-img">
-            <%= cl_image_tag plant.photo.key, class: "card-img-top rounded"%>
+            <%= cl_image_tag plant.photo.key, class: "card-plant-img rounded"%>
           </div>
           <!-- bottom part of CARD PLANT -->
           <div class="card-body">
@@ -27,7 +27,7 @@
             <!-- <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p> -->
             <%#= link_to "Go to plant", plant_path(plant), class:"btn yellow-button" %>
             <!-- <h5 class="card-title text-center link-style"><%#= link_to plant.name, plant_path(plant)%></h5> -->
-            <h5 class="card-title text-center link-style"><%= plant.name %></h5>
+            <p class="card-text"><%= plant.name %></p>
           </div>
         </div>
       <% end %>
@@ -35,6 +35,7 @@
     <% end %>
   </div>
 </div>
+
   <!-- bottom page CALL TO ACTION >> CREATE A JUNGLE -->
 <!--   <div class="row mt-4 d-flex justify-content-around">
     <%#= link_to " + create your jungle", new_jungle_path, class: "btn btn-lg yellow-button shadow px-5 py-3 mb-5" %>
