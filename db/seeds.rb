@@ -39,7 +39,7 @@ user3 = User.create!(
   first_name:"Celine",
   last_name: "Chambre",
   password: "123456",
-  admin: true,
+  admin: false,
   )
 
 puts "Creating the BEST USER OF ALL TIMES"
