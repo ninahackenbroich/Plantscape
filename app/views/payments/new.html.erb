@@ -4,24 +4,28 @@
     <p class="barre">.</p>
   </div>
   
-  <div class="row mt-5 mb-5 mr-5">
-    <div class="col-sm-7 booking-summary">
+  <div class="row mt-5 mb-5 mr-5 ml-5">
+    <div class="col-sm-6 booking-summary">
       <div class="col">
         <div class="col">
           <h3>Order summary</h3>
           <br>
           <ul class="list-unstyled order-list">
-            <li><strong>NUMBER OF PLANTS</strong> <%= @order.booking.number_of_plants %></li>
-            <li><strong>DATES:</strong>
-              <ul class="dates">
-              <% @bookings.waterings.each do |water| %>
-                  <li><span><%= water.date.strftime("%A, %b %d") %></span></li>
-              <% end %>
-              </ul>
+            <li><strong><i class="fab fa-pagelines"></i>     Number of plants - </strong> <%= @order.booking.number_of_plants %></li>
+            <li><strong><i class="fas fa-calendar-day"></i>  Watering days - </strong><%= @order.booking.waterings.count %>
+              <button class="btn" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+                <i class="fas fa-angle-down"></i>
+              </button>
+              <div class="collapse" id="collapseExample">
+                <ul class="dates">
+                  <% @bookings.waterings.each do |water| %>
+                      <li><span><%= water.date.strftime("%A, %b %d") %></span></li>
+                  <% end %>
+                </ul>
+              </div>
             </li>
-            <li><strong>WATERINGS</strong> <%= @order.booking.waterings.count %></li>
-            <li><strong>KEY-OPTION</strong> <%= @order.booking.key%></li>
-            <li><strong>EXTRAS</strong>
+            <li><strong><i class="fas fa-key"></i>  Key option - </strong> <%= @order.booking.key%></li>
+            <li><strong><i class="fas fa-plus"></i> Extras -  </strong>
               <% if @order.booking.dusting_service %>
                 <i class="far fa-gem"></i>
               <% end %>
@@ -35,7 +39,7 @@
                 <i class="fas fa-camera"></i>
               <% end %>
             </li>
-            <li><strong>TOTAL</strong> <%= humanized_money_with_symbol @order.amount %></li>
+            <li class="total"><i><strong>Your total is </strong><%= humanized_money_with_symbol @order.amount %></i> </li>
           </ul>
           <button id="pay" class="btn btn-lg small-yellow-button shadow mb-5">Pay now!</button>
           <script src="https://js.stripe.com/v3/"></script>
@@ -52,8 +56,8 @@
       </div>
     </div>
   
-    <div class="col-sm-5 pl-5">
-      <iframe src="https://giphy.com/embed/ZNn2OLYWJYDC60OKuo" width="420" height="420" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
+    <div class="col-sm-6 pl-5">
+      <iframe src="https://giphy.com/embed/ZNn2OLYWJYDC60OKuo" width="400" height="400" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
     </div>
   </div>
 </div>
