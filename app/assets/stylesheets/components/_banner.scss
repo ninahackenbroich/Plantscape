@@ -1,3 +1,5 @@
+// -----BANNER-------
+
 .banner {
   background: linear-gradient(rgba($beige,0.3),rgba($beige,0.01)), asset-url("newplant.jpg") center center;
   background-size: cover;
@@ -33,6 +35,21 @@
     justify-content: space-between;
   }
 
+
+
+
+// ---------HOW IT WORKS------
+
+.container-hiw {
+  // min-height: 100vh;
+
+   a {
+  text-decoration: none;
+  color: black;
+  }
+}
+
+
 .hiw-cards {
   border-style: solid 10px;
   padding: 15px 15px 0px 15px;
@@ -46,5 +63,18 @@
   i {
     font-size: 40px;
     padding-top: 20px;
+  }
+}
+
+// -------Review----------
+.rev-point {
+
+  a {
+  text-decoration: none;
+
+  #rev-point:hover {
+    text-decoration: none
+
+    }
   }
 }

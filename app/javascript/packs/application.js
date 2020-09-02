@@ -25,7 +25,7 @@ require("channels")
 // External imports
 import "bootstrap";
 
-// Internal imports, e.g: 
+// Internal imports, e.g:
 import { initSlider } from '../components/slider';
 import { initDatepicker } from '../components/datepicker';
 import { initPrice } from '../components/pricecalc';
@@ -35,7 +35,7 @@ import { initAnchorTwo } from '../components/anchor';
 import { initAnchorThree } from '../components/anchor';
 import { initAnchorFour } from '../components/anchor';
 import { initChatroomCable } from '../channels/chatroom_channel';
-
+import { initAnchorToHIW } from '../components/hp-anchor';
 
 document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
@@ -47,6 +47,7 @@ document.addEventListener('turbolinks:load', () => {
   initAnchorThree();
   initAnchorFour();
   initChatroomCable();
+  initAnchorToHIW();
 });
 
 

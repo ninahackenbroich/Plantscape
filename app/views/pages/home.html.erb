@@ -2,21 +2,22 @@
 <!-------------------------- BANNER-------------------------------------------->
   <div class="banner">
       <div class="row justify-content-end">
-        <div class="col-7 mr-5">
+        <div class="col-7 mr-5 pr-5">
           <div class="banner-heading"><h1>We take your plants on vacation - while you are.</h1></div>
           <!-- <h1 class="text-center">while you are.</h1> -->
         <!--     <h3 class="color-black margin-bottom">Hire a plantsitter now!</h3> -->
             <div class="row d-flex justify-content-end">
               <%= link_to "Hire a plantsitter", new_booking_path, class: "btn big-yellow-button shadow mt-3" %>
-              <%= link_to "How it works", new_booking_path, class: "btn big-transparant-button shadow mt-3" %>
+          <!--     <a href="#hiw" class="btn big-transparant-button shadow mt-3" >How it works</a> -->
+          <button id="hiw-button"class="btn big-transparant-button shadow mt-3" >How it works</button>
             </div>
         </div>
       </div>
   </div>
 
 <!-------------------------- HOW IT WORKS CONTAINER ------------------------------->
-
-<div class="container-fluid mb-4">
+<p id="hiw">.</p>
+<div class=" container-hiw container-fluid mb-4" >
   <!-- HOW IT WORKS HEADLINE -->
   <div class="row mt-4 ml-2 mr-2">
     <div class="subtitle1 col-sm-12 p-3 mb-0 htw-container home-page">
@@ -32,8 +33,9 @@
         <i class=" fas fa-shower d-flex justify-content-center"></i>
         <br>
         <h5 class="text-center">Select watering dates</h5>
-        <p data-toggle="collapse" data-target="#collapseHIW" aria-expanded="false" aria-controls="collapseHIWbooking"><i class="fas fa-angle-down  d-flex justify-content-center"></i></p>
-        <div class="collapse" id="collapseHIW">
+        <p class="text-center">Let us water your plants based on your schedule.</p>
+        <p data-toggle="collapse" data-target="#collapseHIW1" aria-expanded="false" aria-controls="collapseHIWbooking"><i class="fas fa-angle-down  d-flex justify-content-center"></i></p>
+        <div class="collapse" id="collapseHIW1">
           <p class=" d-flex justify-content-center text-center"> Select all the days that you want your plants to be watered. Your personal Plantkeeper will then make sure that your plants are perfectly and in shape and watered and will apply the additional services you booked. Our base price per 5 plants is 2,99EUR. </p>
        </div>
         <!-- <p class="text-center">The number of plants will influence the final price of the service.</p> -->
@@ -44,38 +46,28 @@
         <i class="fas fa-key d-flex justify-content-center"></i>
         <br>
         <h5 class="text-center"> Handover keys</h5>
-        <!-- <p class="text-center">We are happy to take care of your plant at anytime.</p> -->
-        <p data-toggle="collapse" data-target="#collapseHIW" aria-expanded="false" aria-controls="collapseHIWbooking"><i class="fas fa-angle-down  d-flex justify-content-center"></i></p>
-        <div class="collapse" id="collapseHIW">
-          <p class=" d-flex justify-content-center text-center"> Select all the days that you want your plants to be watered. Your personal Plantkeeper will then make sure that your plants are perfectly and in shape and watered and will apply the additional services you booked. Our base price per 5 plants is 2,99EUR. </p>
+        <p class="text-center">We have a 100%-trust-policy.</p>
+        <p data-toggle="collapse" data-target="#collapseHIW2" aria-expanded="false" aria-controls="collapseHIWbooking"><i class="fas fa-angle-down  d-flex justify-content-center"></i></p>
+        <div class="collapse" id="collapseHIW2">
+          <p class="text-center"> Choose the most comfortable way of how we can access your home. We have a <strong> 100%-trust-policy </strong>. You can give the keys to the <strong>Späti-of-trust</strong> or bring it to our <strong>Key-safety-locks</strong>. Find address here.</p>
        </div>
     </div>
     <div class=" hiw-cards d-flex  flex-column" style="width: 25rem;">
-        <!-- inside a col we need an image and h2 and a p -->
-        <!-- <img src="logo.png" height="80px" width="auto"> -->
         <i class="fas fa-bell d-flex justify-content-center"></i>
         <br>
         <h5 class="text-center">Get updates of your plants</h5>
-        <p class="text-center">Create your own digital HomeJungle! Add your plants and see live-updates with pictures! </p>
-        <p data-toggle="collapse" data-target="#collapseHIW" aria-expanded="false" aria-controls="collapseHIWbooking"><i class="fas fa-angle-down  d-flex justify-content-center"></i></p>
-        <div class="collapse" id="collapseHIW">
-          <p class=" d-flex justify-content-center text-center"> Select all the days that you want your plants to be watered. Your personal Plantkeeper will then make sure that your plants are perfectly and in shape and watered and will apply the additional services you booked. Our base price per 5 plants is 2,99EUR. </p>
+        <p class="text-center">Create HomeJungle & add your plants and get live-updates.</p>
+        <p data-toggle="collapse" data-target="#collapseHIW3" aria-expanded="false" aria-controls="collapseHIWbooking"><i class="fas fa-angle-down  d-flex justify-content-center"></i></p>
+        <div class="collapse" id="collapseHIW3">
+          <p class=" d-flex justify-content-center text-center"> The only thing you need to do is to build your own HomeJungle and add all the plants you want us to take care of. Give each plant a comment and status and keep updated on their newest developements through our status-updates with photos or on our livechat! </p>
        </div>
     </div>
-<!--     <div class="col-xs-6 col-sm-12 col-lg-3 p-3 htw-card">
-        <!-- inside a col we need an image and h2 and a p -->
-        <!-- <img src="logo.png" height="80px" width="auto"> -->
-<!--         <i class="fas fa-user-check d-flex justify-content-center"></i>
-         <br>
-        <h5 class="text-center">In need of special treats?</h5>
-        <p class="text-center">Dusting, cutting, Repotting and we even send you pictures.</p>
-    </div> -->
   </div>
 </div>
 
 <!-------------------------- REVIEW ---------------------------------------->
 
-<div class="container-fluid mb-4">
+<div class=" rev-point container-fluid mb-4" id="rev-point">
   <div class="row mt-4 ml-2 mr-2">
     <div class="subtitle1 col-sm-12 p-3 mb-0 htw-container home-page">
       <%= render 'pages/index' %>
