@@ -9,13 +9,15 @@ Message.destroy_all
 Review.destroy_all
 User.destroy_all
 Plant.destroy_all
+Review.destroy_all
 Chatroom.destroy_all
 
 puts "Creating a user"
 user = User.create!(
+  id: 1,
   email: "hackenbroich.nina@gmail.com",
-  first_name:"Nina",
-  last_name: "Hackenbroich",
+  first_name:"Flora",
+  last_name: "from Plantscape",
   password: "123456",
   admin: true,
   )
@@ -42,7 +44,7 @@ user3 = User.create!(
 
 puts "Creating the BEST USER OF ALL TIMES"
 user4 = User.create!(
-  id: 1,
+  id: 4,
   email: "kimberly.dohmen@web.de",
   first_name:"Kim",
   last_name: "Dohmen",

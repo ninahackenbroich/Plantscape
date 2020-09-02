@@ -15,7 +15,7 @@
       <%#= render "shared/underline" %>
 
     <!-- Button trigger modal -->
-    <button type="button" class="btn back-button" data-toggle="modal" data-target="#exampleModal">
+    <button type="button" class="btn modal-button" data-toggle="modal" data-target="#exampleModal">
     <i class="fas fa-question"></i>
     </button>
 
@@ -96,10 +96,10 @@
     </div>
 
     <div class="row d-flex booking-buttons">
-      <button class="btn back-button" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+      <button class="btn gray-button" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
         Past Bookings
       </button>
-      <%= link_to " New booking", new_booking_path, class: "btn btn-lg yellow-button shadow px-3 py-2" %>
+      <%= link_to " New booking", new_booking_path, class: "btn btn-lg small-yellow-button shadow" %>
     </div>
 </div>
 
@@ -198,7 +198,7 @@
   </div>
 
   <div class="container">
-  <%= link_to " Create a new Jungle",new_jungle_path, class: "btn btn-lg yellow-button shadow px-5 py-3 mb-5 mt-5" %>
+  <%= link_to " Create a new Jungle",new_jungle_path, class: "btn btn-lg small-yellow-button mb-5 mt-5" %>
   </div>
 </div>
 
