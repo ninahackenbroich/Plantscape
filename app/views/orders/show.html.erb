@@ -1,14 +1,24 @@
 <div class="container order-confirmation">
   <div class="box-title">
-    <h2>Congrat's <%= current_user.first_name %>!</h2>
-    <p>You're booking #<%= @order.id %> has been confirmed.</p>
+    <h2>Booking confirmed!</h2>
     <p class="barre">.</p>
   </div>
-  
-  <div class="row mt-5 mb-5 mr-5">
 
-      <p>What's next?</p>
-      <%= link_to "My Bookings", dashboards_index_path, class: "btn btn-lg small-yellow-button shadow mb-5" %>
+  <h3><i>What's next?</i></h3>
 
+ <div class="row mt-5">
+    <div class="col-sm-6">
+      <p>See your dashboard</p>
+      <p>Le lorem ipsum est, en imprimerie, une suite de mots sans signification utilisée à titre provisoire pour calibrer une mise en page, le texte définitif venant remplacer le faux-texte dès qu'il est prêt ou que la mise en page est achevée. Généralement, on utilise un texte en faux latin, le Lorem ipsum ou Lipsum</p>
+      <%= link_to "My Dashboard", dashboards_index_path, class: "btn btn-lg small-yellow-button shadow mb-5" %>
+    </div>
+
+    <div class="col-sm-6">
+      <p>Create your urban jungle</p>
+      <p>What is it? Le lorem ipsum est, en imprimerie, une suite de mots sans signification utilisée à titre provisoire pour calibrer une mise en page, le texte définitif venant remplacer le faux-texte dès qu'il est prêt ou que la mi</p>
+      <p>Why doing it? Le lorem ipsum est, en imprimerie, une suite de mots sans signification utilisée à titre provisoire pour calibrer une mise en page, le texte définitif venant remplacer le faux-texte dès qu'il est prêt ou que la mi</p>
+      <%= link_to "Create my urban jungle", new_jungle_path, class: "btn small-yellow-button shadow mb-5" %>
+
+    </div>
   </div>
 </div>

@@ -1,21 +1,15 @@
 .order-confirmation {
 	height: 100vh;
-}
-
-
-.order-summary {
-	background-color: white;
-	border: 5px solid  #dbd4bc;
-	padding: 20px;
-
-}
-
-.whats-next {
-	background-color: none;
-	text-align: center;
-	p {
-		font-size: 30px;
-		font-weight: bold;
+	.box-title {
+		margin-top: 2%;
 	}
-
+	.barre {
+		margin-left: -10%;
+		width: 47%;
+	}
+	h3 {
+		text-align: center;
+		padding-top: 25px;
+	}
 }
+
