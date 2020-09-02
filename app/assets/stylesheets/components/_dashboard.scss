@@ -5,7 +5,6 @@
   // background: asset-url("banner-dashboard.jpg");
   position: relative;
   height: 35vh;
-  padding-left: 50px;
   padding-top: 5%;
   text-align: right;
   margin-bottom: 40px;
@@ -13,7 +12,7 @@
   .under {
     height: 50px;
     width: 80%;
-    margin-left: 400px;
+    margin-left: 26%;
     margin-top: -3%;
     background-color: #F8B400;
   }
@@ -40,12 +39,10 @@
 // ******************** CONTAINERS ********************
 
 .dashboard-page {
-  width: 100%;
   h2 {
     font-size: 35px !important;
     z-index: 2;
     position:relative;
-    width: 1000px;
     padding-left: 0;
     margin-left: 12%;
     color: black;
@@ -58,7 +55,7 @@
     position: absolute;
     margin-left: -10%;
     margin-top: 1.7%;
-    width: 40%;
+    // width: 40%;
     color: #004445;
     background-color: #004445;
     opacity: 0.6;
@@ -82,7 +79,7 @@
 }
 
 table {
-    width: 700px;
+    width: 70%;
     margin: 40px 200px;
     border: 1px solid  #dbd4bc;
     border-radius:6px;
@@ -171,4 +168,11 @@ td {
     color: #004445;
     background-color: #004445;
   }
+}
+
+.circle {
+  background-color: $calm-yellow;
+  border-radius: 150px;
+  width: 60px;
+  text-align: right;
 }

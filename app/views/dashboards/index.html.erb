@@ -1,6 +1,6 @@
-<body style="background-color:#;">
+<body>
 
-<div class="dashboard-banner">
+<div class="dashboard-banner mb-5">
   <div class ="dashboard-headings">
     <h1 class ="crazshadow"><i>Happy to see you, <%= current_user.first_name %>.</i></h1>
     <p class="under">.</p>
@@ -9,8 +9,8 @@
 
 <!--------------------- UPCOMING BOOKINGS ----------------------->
 
-<div class="container dashboard-page">
-  <div class="d-flex">
+<div class="container dashboard-page mt-5">
+  <div class="d-flex mt-4">
       <h2>Upcoming Plantscapes</h2>
       <p class="barre">.</p>
       <%#= render "shared/underline" %>
@@ -43,9 +43,9 @@
 
     <div class="dashboard-bookings">
      <div class="row">
-      <div style="width: 900px" class="d-flex flex-column">
+      <div class="d-flex flex-column">
         <% if @upcoming_bookings.blank? %>
-        <p>No Plantscape planned yet!</p>
+        <p class="text-left m-4">No Plantscape planned yet!</p>
         <%else%>
           <table class="">
             <thead class= "bookings-head">
@@ -96,7 +96,7 @@
       </div>
     </div>
 
-    <div class="row d-flex booking-buttons">
+    <div class="d-flex">
       <button class="btn gray-button" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
         Past Bookings
       </button>
@@ -120,7 +120,7 @@
 
     <div class="dashboard-bookings mb-5">
          <div class="row d-flex mt-5">
-          <div style="width: 900px" class="d-flex flex-column">
+          <div class="d-flex flex-column">
             <% if @past_bookings.blank? %>
             <p>No past Plantscape!</p>
             <%else%>
@@ -177,29 +177,29 @@
   </div>
 </div>
 
-<!--------------------- JUNGLES ----------------------->
+<!--------------------- Jungle with plants ----------------------->
 
 <div class="container dashboard-page jungle">
-    <h2>Your Jungles</h2>
+    <h2>Your UrbanJungle</h2>
     <p class="barre">.</p>
     <%#= render "shared/underline" %>
-  <div class ="dashboard-jungles">
-    <div class="row d-flex mt-5">
-
+  <div>
       <% if  @jungles.count == 0%>
-        <div>
-          <p>You do not have a jungle yet! If you create a Jungle and add your plants, you can upload pictures and a status to your plants! </p>
+          <p>You do not have a jungle yet!</p>
+          <br>
+          <p>If you create a Jungle and add your plants, you can upload pictures and a status to your plants!</p>
+          <%= link_to " Create a new Jungle",new_jungle_path, class: "btn btn-lg small-yellow-button mb-5 mt-5" %>
         </div>
       <% else  @jungles.count >= 1 %>
-        <div style="width: 900px" class="d-flex flex-column">
-          <%= render "shared/card-jungles" %>
-        </div>
-      <% end %>
-    </div>
-  </div>
+          <div>
+            <p class="circle font-weight-bold text-right">
+              <%= @jungle.jungleplants.length %> Plants
+            </p>
+          </div>
 
-  <div class="container">
-  <%= link_to " Create a new Jungle",new_jungle_path, class: "btn btn-lg small-yellow-button mb-5 mt-5" %>
+          <%= render "shared/jungleplants" %>
+          <%= link_to " + Add a plant ", new_jungle_jungleplant_path(@jungle), class: "btn small-yellow-button shadow mb-5"%>
+      <% end %>
   </div>
 </div>
 

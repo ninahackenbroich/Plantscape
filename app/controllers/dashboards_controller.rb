@@ -6,6 +6,7 @@ class DashboardsController < ApplicationController
     @user = current_user
     @bookings = Booking.where(user_id: @user)
     @jungles = Jungle.where(user_id: @user)
+    @jungle = current_user.jungles.first
     authorize @bookings
   end
 end
