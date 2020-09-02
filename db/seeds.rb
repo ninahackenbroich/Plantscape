@@ -14,8 +14,8 @@ Chatroom.destroy_all
 puts "Creating a user"
 user = User.create!(
   email: "hackenbroich.nina@gmail.com",
-  first_name:"Nina",
-  last_name: "Hackenbroich",
+  first_name:"Flora",
+  last_name: "from Plantscape",
   password: "123456",
   admin: true,
   )

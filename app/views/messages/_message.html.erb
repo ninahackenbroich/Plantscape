@@ -1,17 +1,25 @@
-<div class="message-container" id="message-<%= message.id %>">
+
+
+<div class="message-container green-border-left shadow p-3 my-3" id="message-<%= message.id %>">
   <i class="author">
-    <% if current_user.admin %>
-      <span>Flora from Plantscape</span>
-      <small><%= message.created_at.strftime("%a %b %e at %l:%M%p") %></small>
-    <% else %>
-      <span><%= message.user.first_name %></span>
-      <small><%= message.created_at.strftime("%a %b %e at %l:%M%p") %></small>
-    <% end %>
+    <span class="font-weight-bold"><%= message.user.first_name %></span>
+    <small><%= message.created_at.strftime("%a %b %e at %l:%M%p") %></small>
   </i>
-  <p><%= emojify message.content %></p>
-  <% if message.photo.attached? %>
-    <div> 
-      <%= cl_image_tag message.photo.key %>
-    </div>
-  <% end %>
+  <div class="d-flex mt-3">
+    <% if current_user.admin %>
+      <% if message.photo.attached? %>
+        <div> 
+          <%= cl_image_tag(message.photo.key, :width=>200, :crop=>"scale") %>
+        </div>
+      <% end %>
+      <p class="pl-3"><%= emojify message.content %></p>
+    <% else %>
+      <% if message.photo.attached? %>
+        <div> 
+          <%= cl_image_tag(message.photo.key, :width=>200, :crop=>"scale", class: "rounded border shadow") %>
+        </div>
+      <% end %>
+      <p class="pl-3"><%= emojify message.content %></p>
+    <% end %>
+  </div>
 </div>
