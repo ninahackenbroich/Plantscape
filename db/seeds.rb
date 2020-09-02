@@ -8,6 +8,7 @@ Booking.destroy_all
 Message.destroy_all
 User.destroy_all
 Plant.destroy_all
+Review.destroy_all
 Chatroom.destroy_all
 
 puts "Creating a user"
@@ -28,14 +29,14 @@ user2 = User.create!(
   admin: false,
   )
 
-# puts "Creating a user"
-# user3 = User.create!(
-#   email: "chambre.celine@gmail.com",
-#   first_name:"Celine",
-#   last_name: "Chambre",
-#   password: "123456",
-#   admin: true,
-#   )
+puts "Creating a user"
+user3 = User.create!(
+  email: "chambre.celine@gmail.com",
+  first_name:"Celine",
+  last_name: "Chambre",
+  password: "123456",
+  admin: true,
+  )
 
 puts "Creating the BEST USER OF ALL TIMES"
 user4 = User.create!(

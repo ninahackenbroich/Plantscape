@@ -1,26 +1,114 @@
-.yellow-button {
+
+// **************** BIG YELLOW BUTTON ****************
+
+.big-yellow-button {
   color: white;
   background-color: $calm-yellow;
   font-family: $body-font;
   font-weight: bold;
+  font-size: 23px;
   border-radius: 10px;
+  border: none;
+  border-radius: 10px;
+  padding: 10px 30px;
+  letter-spacing: 1px;
 }
 
-.yellow-button:hover {
+.big-yellow-button:hover {
+  color: black;
+  background-color: #f9c03b;
+  transition: 1s;
+}
+
+// **************** BIG TRANSPARENT BUTTON ****************
+
+.big-transparant-button {
+  color: white;
+  opacity: 0.8;
+  background-color: #2C786C;
+  font-family: $body-font;
+  font-weight: bold;
+  font-size: 23px;
+  border-radius: 10px;
+  border-radius: 10px;
+  padding: 10px 30px;
+  letter-spacing: 1px;
+  margin-left: 5px;
+}
+
+.big-transparant-button:hover {
+  opacity: 1;
+  transition: 0.5s;
+  color: white;
+  background-color: #2C786C;
+}
+
+// **************** LONG YELLOW BUTTON ****************
+
+.long-yellow-button {
+  color: white;
+  background-color: $calm-yellow;
+  font-family: $body-font;
+  font-weight: bold;
+  font-size: 25px;
+  border-radius: 10px;
+  border: none;
+  border-radius: 10px;
+  padding: 10px 30px;
+  width: 500px;
+  letter-spacing: 3px;
+  margin-top: 20px;
+}
+
+.long-yellow-button:hover {
   opacity: 0.8;
   color: white;
 }
 
-.back-button {
+// **************** SMALL YELLOW BUTTON ****************
+
+.small-yellow-button {
+  color: white;
+  background-color: $calm-yellow;
+  font-family: $body-font;
+  font-size: 17px;
+  border-radius: 10px;
+  margin-left: 20px;
+  padding: 10px 20px;
+}
+
+.small-yellow-button:hover {
+  opacity: 0.8;
+  color: white;
+}
+
+// **************** GRAY BUTTON ****************
+
+.gray-button {
 	color: white;
   	background-color: lightgray;
   	font-family: $body-font;
-  	font-weight: bold;
+    font-size: 17px;
   	border-radius: 10px;
   	margin-left: 20px;
+    padding: 10px 20px;
 }
 
-.back-button:hover {
+.gray-button:hover {
   opacity: 0.8;
   color: white;
+}
+
+// **************** MODAL BUTTON ****************
+
+.modal-button {
+    height: 30px;
+    font-size: 15px;
+    font-weight: bold;
+    margin-top: 2%;
+    margin-left: 52%;
+    background-color: #dbd4bc;
+    z-index: 3;
+    border-radius: 10px;
+    color: white;
 }
