@@ -1,4 +1,4 @@
-<div class="container-fluid bg-white">
+<div class="container-fluid">
   <div class="container">
 
   <!-- the next is a ROW DIV for the PLANT IMAGE as Banner -->
@@ -9,7 +9,7 @@
           <!-- <%#= cl_image_tag @plant.photo.key, :transformation=>{:width=>1200, :height=>500, :crop=>"fill"} %> -->
           <%#= cl_image_tag @plant.photo.key %>
           <!-- here I want a black H1 title with a square white background -->
-          <h1 class="text-center bg-white rounded-lg"><%= @plant.name %></h1>
+          <h1 class="text-center banner-plant-text rounded-lg"><%= @plant.name %></h1>
         </div>
 
         <!-- here we are going to have an H2 -->
