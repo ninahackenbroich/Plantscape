@@ -4,6 +4,12 @@
   <title>The page you were looking for doesn't exist (404)</title>
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <style>
+    @import url('https://fonts.googleapis.com/css?family=Nunito:400,700|Work+Sans:400,700&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Cardo:wght@400;700&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,200;0,300;1,100;1,200;1,300&display=swap');
+
+
+
     body,
     html {
       padding: 0;
@@ -12,7 +18,7 @@
       height: 100%;
       overflow: hidden;
       background-color: #b8dbd8;
-      font-family: 'Montserrat', sans-serif;
+      font-family: 'Cardo', sans-serif;
       color: #fff
     }
 
@@ -29,54 +35,33 @@
       margin: -10px 0 -30px;
       font-size: calc(17vw + 40px);
       opacity: .8;
-      letter-spacing: -17px;
     }
 
     p {
       opacity: .8;
       font-size: 20px;
       margin: 8px 0 38px 0;
+      font-weight: bold;
+      font-family: 'Josefin Sans', "sans-serif";
+      font-weight: bold;
+    }
+
+    a {
+      padding: 20px 60px;
+      text-decoration: none;
+      border-radius: 10px;
+      color: white;
+      background: #004445;
+      cursor: pointer;
+      font-family: 'Josefin Sans', "sans-serif";
       font-weight: bold
     }
 
-    input,
-    button,
-    input:focus,
-    button:focus {
-      border: 0;
-      outline: 0!important;
-    }
-
-    input {
-      width: 300px;
-      padding: 14px;
-      max-width: calc(100% - 80px);
-      border-radius: 6px 0 0 6px;
-      font-weight: 400;
-    }
-
-    button {
-      padding: 14.5px 16px 14.5px 12.5px;
-      vertical-align: top;
-      border-radius: 0 6px 6px 0;
-      color: grey;
-      background: silver;
-      cursor: pointer;
-      transition: all 0.4s
-    }
-
-    button:hover {
+    a:hover {
       color: white;
-      background: #9A5C32
-    }
-
-    .fa-arrow-left {
-      position: fixed;
-      top: 30px;
-      left: 30px;
-      font-size: 2em;
-      color:white;
-      text-decoration:none
+      background: #2C786C;
+      text-decoration: none;
+      cursor: pointer;
     }
   </style>
 </head>
@@ -86,6 +71,8 @@
   <div class="error">
     <h1>404</h1>
     <p>We're sorry but it looks like that page doesn't exist anymore.</p>
+    <a href="http://plantscape.me">Back</a>
   </div>
+  
 </body>
 </html>
