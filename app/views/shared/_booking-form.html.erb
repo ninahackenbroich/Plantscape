@@ -26,13 +26,6 @@
 			<p class="question">How do you want to handle your house key? *</p>
 			<div class="radio-button margin-below">
 
-<!-- 			<%#= f.label :key, 'Let at your favorite späti', :value => 'spati', class: "key-choice"%>
- 		 	<%#= f.radio_button :key, 'spati' %> 
- 		    <%#= f.label :key, 'Bring it to our PlantScape Office', :value => 'office', class: "key-choice" %>
-  			<%#= f.radio_button :key, 'office', class: "key-choice" %>
-  			<%#= f.label :key, 'Call us to find other options', :value => 'other', class: "key-choice" %>
-  			<%#= f.radio_button :key, 'other', class: "key-choice" %> -->
-
 				<input class="checkbox-key" type="radio" name="booking[key]" id="key-1" value="spati" checked>
 				<label class="for-checkbox-key" for="key-1">
 					<span data-hover="Store the key at your favorite Späti nearby">Store the key at your favorite Späti nearby</span>
@@ -45,8 +38,25 @@
 				<input class="checkbox-key" type="radio" name="booking[key]" id="key-3" value="other">
 				<label class="for-checkbox-key" for="key-3">							
 					<span data-hover="Contact us for more options">Contact us for more options</span>
-			</label>
+				</label>
+
+
+				<p class="" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+        			Details on the keys
+      			</p>
+      			<div class="collapse row" id="collapseExample">
+			    	<div class="col-sm-4 mt-4">
+			    	<p>Spati: we all have our favorite and trustful local store, please let us know the adress and contact name of the person in the chat later</p>
+					</div>
+    			<div class="col-sm-4 mt-4">
+    				<p>Our office: Berlinstrasse 43, 12345 Berlin, opening hours...</p>
+    			</div>
+    			<div class="col-sm-4 mt-4">
+    				<p>Other: let us know in the chat after the booking confirmation</p>
+    			</div>
+  				</div>
 			</div>
+
 			<button type="button" class="next d-inline-flex flex-sm-row justify-content-around align-items-center arrow-3">
 				<p class="p-2 flex-grow-1">Next  </p>
 				<p><i class="fas fa-long-arrow-alt-right"></i></p>
