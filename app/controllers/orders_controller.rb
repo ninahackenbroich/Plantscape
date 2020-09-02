@@ -1,7 +1,7 @@
 class OrdersController < ApplicationController
   def create
-    booking = Booking.find(params[:booking_id])
-    order = Order.create!(booking: booking, amount: booking.price, state: 'pending', user: current_user)
+    # booking = Booking.find(params[:booking_id])
+    order = Order.create!(booking: @booking, amount: @booking.price, state: 'pending', user: current_user)
     authorize order
     session = Stripe::Checkout::Session.create(
       payment_method_types: ['card'],
@@ -23,5 +23,6 @@ class OrdersController < ApplicationController
   def show
     @order = current_user.orders.find(params[:id])
     authorize @order
+    # redirect_to dashboards_index_path(order: @order)
   end
 end
