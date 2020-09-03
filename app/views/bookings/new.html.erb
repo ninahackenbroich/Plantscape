@@ -1,4 +1,4 @@
-<div class="container booking-new my-5">
+<div class="booking-new">
 
 	<div class="booking-title-box">
 		<div class="box-title">
@@ -6,12 +6,25 @@
        	 	<p class="barre">.</p>
       	</div>
 
-		<div class="background-price">
+		<div class="background-price d-flex">
 			<div class="finalprice price-tag">
 				15.99 €
 			</div>
-		</div>
 
+			<!-- Large modal -->
+			<p type="button" class="" data-toggle="modal" data-target=".bd-example-modal-lg">
+				<i class="fas fa-info-circle"></i>
+			</p>
+
+			<div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+  				<div class="modal-dialog modal-lg">
+    				<div class="modal-content">
+     					 My content
+    				</div>
+  				</div>
+			</div>
+
+		</div>
 	</div>
 
 	<div class="booking-options">
@@ -19,6 +32,9 @@
 			<%= render "shared/booking-form" %>
 		</div>
 	</div>
-
 </div>
 
+
+<!-- 				<p class="" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+        			<i class="fas fa-info-circle"></i>
+      			</p> -->
