@@ -9,11 +9,51 @@
 
 
 .green-border-left {
-  background-color: $beige;
+  background-color: white;
   border-left: 6px solid #004445;
+      border-radius: 5px;
 }
 
 .scrollchat {
   height: 40vh;
   width: 100%;
+  background-color: #dbd4bc;
+  border-radius: 10px;
+  padding: 10px 0;
 }
+
+.message-container {
+	margin: 0 30px;
+}
+
+.chat-title {
+	font-size: 50px !important;
+	margin-left: -10%;
+	.underline {
+		height: 30px;
+		width: 80%;
+		margin-left: -42%;
+		margin-top: -5%;
+	}
+}
+
+.new-message {
+  background-color: #dbd4bc;
+  border-radius: 10px;
+  padding: 10px 15px 10px 0;
+  margin-left: 8px;
+
+}
+
+.my-message {
+	background-color: white;
+  	border-left: 6px solid #F8B400 ;
+    border-radius: 5px;
+    margin-left: 10px;
+}
+
+.form-control-file {
+	color: white;
+}
+
+

@@ -1,11 +1,12 @@
 <div class="container mt-2 mb-5 col-10">
   <div class="row justify-content-center">
     <div class="col-8">
-      <h1 class="text-left">PLANTSCAPE || Chat</h1>
-      <div class="position-line">
+      <h1 class="text-left mt-4 chat-title">Chat with us</h1>
+      <div class="position-line chat-title">
         <%= render "shared/underline" %>
       </div>
     </div>
+    <p>You can contact our plantsitters directly in this chat. If you booked the photo service, this is where you will receive update images of your plants in real time!.</p>
   </div>
 
 
@@ -21,16 +22,15 @@
   </div>
 
 
-  <div>
-    <p class="text-left font-weight-bold p-2">Write Your Message</p>
+  <div class="new-message mt-4">
         <!-- <div class="chatroom"> -->
     <%= simple_form_for [ @chatroom, @message ] do |f| %>
-      <div class="d-flex justify-content-around align-items-center">
-        <div class="col-8 p-2 flex-grow-1">
-          <%= f.input :content, label: false, placeholder: "Start writing...", input_html: {rows: "5"} %>
+      <div class="d-flex justify-content-around align-items-center ml-4">
+        <div class="col-8 p-2 flex-grow-1 my-message">
+          <%= f.input :content, label: false, placeholder: "Write your message here...", input_html: {rows: "5"} %>
         </div>
         <div class="col-4 p-2">
-          <%= f.input :photo, as: :file, label: false, class: "btn btn-outline-secondary" %>
+          <%= f.input :photo, as: :file, label: false, class: "btn gray-button" %>
         </div>
       </div>
     <% end %>
