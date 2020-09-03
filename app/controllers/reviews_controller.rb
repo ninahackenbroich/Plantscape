@@ -19,7 +19,7 @@ class ReviewsController < ApplicationController
     @review = Review.create(review_params)
     @user = current_user
     @review.user = @user
-    @review.save
+    @review.save!
     redirect_to root_path
     authorize @review
   end
