@@ -44,7 +44,7 @@
     <!-- <div class="dashboard-bookings"> -->
      <div class="row dashboard-bookings">
       <!-- <div class="d-flex flex-column"> -->
-        <div class="col-12">
+        <div class="col-10">
           <% if @upcoming_bookings.blank? %>
           <p class="text-left m-4">No Plantscape planned yet!</p>
           <%else%>
@@ -91,24 +91,26 @@
                   </tr>
                 <% end %>
               </tbody>
+              
             </table>
           <% end %>
+              <div class="d-flex">
+                <button class="btn gray-button" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+                  Past Bookings
+                </button>
+                <%= link_to " New booking", new_booking_path, class: "btn btn-lg small-yellow-button shadow" %>
+              </div>
           </div>
         </div>
       </div>
     <!-- </div> -->
 
-    <div class="d-flex mt-5">
-      <button class="btn gray-button" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
-        Past Bookings
-      </button>
-      <%= link_to " New booking", new_booking_path, class: "btn btn-lg small-yellow-button shadow" %>
-    </div>
+
 </div>
 
 <!--------------------- PAST BOOKINGS ----------------------->
 
-<div class="container dashboard-page past-bookings">
+<div class="container dashboard-page past-bookings mt-5">
 
 
 <div class="collapse" id="collapseExample">
@@ -122,11 +124,11 @@
 
     <div class="dashboard-bookings mb-5">
          <div class="row d-flex mt-5">
-          <div class="d-flex flex-column">
+          <div class="d-flex flex-column col-10">
             <% if @past_bookings.blank? %>
             <p>No past Plantscape!</p>
             <%else%>
-              <table class="">
+              <table class="col-12">
                 <thead class= "bookings-head">
                   <tr>
                     <th scope="col">Booking Number</th>
