@@ -1,5 +1,5 @@
 class JungleplantsController < ApplicationController
-  before_action :set_jungle, only: [:show, :edit, :update, :destroy]
+  before_action :set_jungle, only: [:new, :show, :create, :edit, :update, :destroy]
 
   def index
     @jungleplants = Jungleplant.all
@@ -17,15 +17,15 @@ class JungleplantsController < ApplicationController
     @plants = Plant.all
     # authorize @jungleplant
     authorize @plants
-    authorize @jungle
+    authorize @jungleplant
   end
 
   def create
     @jungleplant = Jungleplant.new(jungleplant_params)
     @jungleplant.jungle = @jungle
     @jungleplant.save
-    if @jungleplant.save
-      redirect_to dashboards_index_path
+    if @jungleplant.save!
+      redirect_to dashboards_index_path(@jungle)
     else
       render :new
     end
@@ -34,13 +34,15 @@ class JungleplantsController < ApplicationController
   end
 
   def edit
-    authorize @jungleplant
+    @jungleplant = Jungleplant.find(params[:id])
     @plant = @jungleplant.plant
+    authorize @jungleplant
   end
 
   def update
+    @jungleplant = Jungleplant.find(params[:id])
     if @jungleplant.update(jungleplant_params)
-      redirect_to @dashboard, notice: 'Your plant was successfully updated.'
+      redirect_to dashboards_index_path, notice: 'Your plant was successfully updated.'
     else
       render :edit
     end
@@ -49,13 +51,16 @@ class JungleplantsController < ApplicationController
   end
 
   def destroy
+    @jungleplant = Jungleplant.find(params[:id])
     authorize @jungleplant
+    @jungleplant.destroy!
+    redirect_to dashboards_index_path, notice: ' Your Jungleplan was successfully destroyed.'
   end
 
   private
 
   def set_jungle
-    @jungle = Jungle.find(params[:jungle_id])
+    @jungle = current_user.jungles.first
   end
 
   def jungleplant_params
