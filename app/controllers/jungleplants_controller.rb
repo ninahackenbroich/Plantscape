@@ -1,5 +1,6 @@
 class JungleplantsController < ApplicationController
-  before_action :set_jungle, only:[:new, :create]
+  before_action :set_jungle, only: [:show, :edit, :update, :destroy]
+  before_action :set_user, only: [:show, :edit, :update, :destroy]
 
   def index
     @jungleplants = Jungleplant.all
@@ -25,7 +26,7 @@ class JungleplantsController < ApplicationController
     @jungleplant.jungle = @jungle
     @jungleplant.save
     if @jungleplant.save
-      redirect_to jungle_path(@jungle)
+      redirect_to dashboards_index_path
     else
       render :new
     end
@@ -39,6 +40,12 @@ class JungleplantsController < ApplicationController
   end
 
   def update
+    if @jungleplant.update(jungleplant_params)
+      redirect_to @dashboard, notice: 'Your plant was successfully updated.'
+    else
+      render :edit
+    end
+  	authorize @jungle
     authorize @jungleplant
   end
 
