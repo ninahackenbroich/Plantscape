@@ -27,7 +27,7 @@ user5 = User.create!(
   first_name:"Nina",
   last_name: "Hackenbroich",
   password: "123456",
-  admin: true,
+  admin: false,
   )
 
 
