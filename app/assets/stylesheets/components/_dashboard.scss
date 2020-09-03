@@ -81,14 +81,17 @@
 table {
     width: 70%;
     margin: 40px 200px;
-    border: 1px solid  #dbd4bc;
+
     border-radius:6px;
     -moz-border-radius:6px;
-    background-color: white;
+    background-color: $beige;
 }
 
 .bookings-head {
-  background-color: white;
+  background-color: $beige;
+  border-bottom: 1px solid  $dark-green;
+  border-radius:6px;
+  box-shadow: $dark-green;
   opacity: 0.6;
   color: black;
   font-weight: 300;
@@ -98,7 +101,7 @@ table {
 }
 
 .bookings-body {
-  background-color: white;
+  background-color: $beige;
 }
 
 .booking-buttons {
