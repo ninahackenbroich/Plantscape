@@ -1,8 +1,9 @@
 .reviews{
   border-style: solid 10px;
   padding: 15px 15px 0px 15px;
-  margin: 20px;
   box-shadow: 6px 6px 6px 7px #e8e2ce;
+  width: 50%;
+  margin: 2px auto;
 
   h4{
     padding-top: 15px;
@@ -23,6 +24,10 @@
     p {
     font-size: 18px
     }
+
+    i{
+      font-size: 20px
+    }
     .qmark{
       text-align:right;
     }
@@ -36,12 +41,13 @@
 .rev-name {
   text-align: right;
   padding-right: 10px;
+  width: 100%;
   p {
-    font-size: 20px;
+    font-size: 25px;
   }
 
   i {
-    font-size: 22px
+    font-size: 25px
   }
 }
 
@@ -49,6 +55,9 @@
   color: grey;
 }
 
+.greeny {
+  color: $light-green;
+}
 .modal-content {
   background-color: $beige;
   border-radius: 20px;
@@ -72,4 +81,8 @@
 
 #review_rating {
   width:100%;
+}
+
+.carousel-control-next{
+  color:black;
 }
