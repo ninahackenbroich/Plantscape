@@ -4,15 +4,15 @@
     <p class="barre">.</p>
   </div>
 
-  <div class="row mt-5 mb-5 mr-5 ml-5">
+  <div class="row mt-5 mb-5 mr-5 ml-5" >
     <div class="col-md-6 booking-summary">
       <!-- <div class="col"> -->
         <!-- <div class="col"> -->
-          <div class="row mt-2 mb-2 justify-content-center">
+          <div class="row mt-4 mb-2 justify-content-center">
             <h3>Order summary</h3>
           </div>
 
-          <div class="row mt-2 mb-2 p-2">
+          <div class="row mb-2 pt-4 pl-4">
             <ul class="list-unstyled order-list">
             <li><strong><i class="fab fa-pagelines"></i>     Number of plants - </strong> <%= @order.booking.number_of_plants %></li>
             <li><strong><i class="fas fa-calendar-day"></i>  Watering days - </strong><%= @order.booking.waterings.count %>
@@ -48,8 +48,8 @@
           <div class="row justify-content-center">
             <p class="total"><i><strong>Your total is </strong><%= humanized_money_with_symbol @order.amount %></i> </p>
           </div>
-          <div class="row mt-2 mb-2 justify-content-center">
-          <button id="pay" class="btn btn-lg small-yellow-button shadow mb-5">Pay now!</button>
+          <div class="row justify-content-center">
+          <button id="pay" class="btn btn-lg small-yellow-button shadow mb-2">Pay now!</button>
           </div>
           <script src="https://js.stripe.com/v3/"></script>
           <script>
@@ -65,8 +65,10 @@
       <!-- </div> -->
     </div>
 
-    <div class="col-md-6 pl-5 mt-2">
-      <iframe src="https://giphy.com/embed/ZNn2OLYWJYDC60OKuo" width="400" height="400" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
-    </div>
+    <!-- <div class="col-md-6 pl-2 mt-2"> -->
+    <!-- <div class="col-md-6 border"> -->
+      <!-- <div class="gif-proportion"> text</div> -->
+      <iframe src="https://giphy.com/embed/ZNn2OLYWJYDC60OKuo" height="500px" width="400px" frameBorder="0" class=" col-md-6 giphy-embed" allowFullScreen></iframe>
+    <!-- </div> -->
   </div>
 </div>
