@@ -11,13 +11,13 @@
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto nav-list">
       <li class="nav-item active">
-        <a class="nav-link" href="#"><%= link_to "Plantscape", root_path%> <span class="sr-only">(current)</span></a>
+        <a class="nav-link" href="#"><strong><%= link_to "Plantscape", root_path%></strong> <span class="sr-only">(current)</span></a>
       </li>
       <li class="nav-item active">
-        <a class="nav-link" href="#"><%= link_to "Hire a plantsitter", new_booking_path%> <span class="sr-only">(current)</span></a>
+        <a class="nav-link" href="#"><strong><%= link_to "Hire a plantsitter", new_booking_path%></strong> <span class="sr-only">(current)</span></a>
       </li>
       <li class="nav-item active">
-        <a class="nav-link" href="#"><%= link_to "Plant Library", plants_path%> <span class="sr-only">(current)</span></a>
+        <a class="nav-link" href="#"><strong><%= link_to "Plant Library", plants_path%></strong> <span class="sr-only">(current)</span></a>
       </li>
     </ul>
     <% if user_signed_in? %>
