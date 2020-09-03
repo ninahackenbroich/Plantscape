@@ -141,7 +141,7 @@
 </div>
 </div>
 </div>
-<div class=" d-flex justify-content-center"><button type="button" class="btn big-transparant-button shadow mt-3" data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo">Tell us of your Plantscape</button></div>
+<div class=" d-flex justify-content-center"><button type="button" class="btn green-small-button shadow mt-3" data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo">Tell us of your Plantscape</button></div>
 </div>
 
 
@@ -150,7 +150,7 @@
 
 <div class=" container-hiw container-fluid mb-4" >
   <!-- HOW IT WORKS HEADLINE -->
-  <div class="row mt-4 ml-2 mr-2">
+  <div class="row mt-4 ml-2 mr-2 column">
     <div class="subtitle1 col-sm-12 p-3 mb-0 htw-container home-page">
       <div class="box-title">
         <h2 >The Team</h2>
@@ -159,46 +159,54 @@
       <!-- <p class="mission-text">Our mission is to provide plants-care in urban areas. We provide plant-care at its best and we treat your plants like if they were ours.</p> -->
     </div>
   </div>
-  <div class="d-flex justify-content-around">
-    <div class="row ml-3 mr-2 d-flex justify-content-around">
-      <div class="hiw-cards d-flex flex-column" style="width: 15rem;">
-         <%= image_tag image_path("celine.jpg"), class: "card-img-top rounded presentationphoto"%>
-          <br>
-          <h5 class="text-center">Celine</h5>
-          <p class="text-center">Let Celine water your plants!</p>
-      </div>
+
+  <div class="d-flex justify-content-around row">
+      <div class="ml-3 mr-2 d-flex justify-content-around">
+    <div class="hiw-cards d-flex flex-column column" style="width: 10rem;">
+       <%= image_tag image_path("avatar.jpg"), class: "card-img-top rounded presentationphoto"%>
+        <br>
+        <h5 class="text-center">Flora</h5>
+        <p class="text-center">"Let me water your plants!"</p>
     </div>
+  </div>
+
     <div class="row ml-3 mr-2 d-flex justify-content-around">
-      <div class="hiw-cards d-flex flex-column" style="width: 15rem;">
-         <%= image_tag image_path("nina.jpg"), class: "card-img-top rounded presentationphoto"%>
-          <br>
-          <h5 class="text-center">Nina</h5>
-          <p class="text-center">Let Celine water your plants!</p>
-      </div>
-    </div>
-    <div class="row ml-3 mr-2 d-flex justify-content-around">
-      <div class="hiw-cards d-flex flex-column" style="width: 15rem;">
+      <div class="hiw-cards d-flex flex-column column" style="width: 10rem;">
          <%= image_tag image_path("raffa.png"), class: "card-img-top rounded presentationphoto"%>
           <br>
           <h5 class="text-center">Kim</h5>
-          <p class="text-center">Let Celine water your plants!</p>
+          <p class="text-center">"I'm a very into details."</p>
+      </div>
+    </div>
+
+    <div class="row ml-3 mr-2 d-flex justify-content-around">
+      <div class="hiw-cards d-flex flex-column column" style="width: 10rem;">
+         <%= image_tag image_path("celine.jpg"), class: "card-img-top rounded presentationphoto"%>
+          <br>
+          <h5 class="text-center">Céline</h5>
+          <p class="text-center">"I like sun and colors!"</p>
       </div>
     </div>
     <div class="row ml-3 mr-2 d-flex justify-content-around">
-      <div class="hiw-cards d-flex flex-column" style="width: 15rem;">
-         <%= image_tag image_path("avatar.jpg"), class: "card-img-top rounded presentationphoto"%>
+      <div class="hiw-cards d-flex flex-column column" style="width: 10rem;">
+         <%= image_tag image_path("nina.jpg"), class: "card-img-top rounded presentationphoto"%>
           <br>
-          <h5 class="text-center">Raffa</h5>
-          <p class="text-center">Let Celine water your plants!</p>
+          <h5 class="text-center">Nina</h5>
+          <p class="text-center">"Happy to water your garden."</p>
       </div>
     </div>
+
+    <div class="ml-3 mr-2 d-flex justify-content-around">
+      <div class="hiw-cards d-flex flex-column column" style="width: 10rem;">
+         <%= image_tag image_path("guy.jpg"), class: "card-img-top rounded presentationphoto"%>
+          <br>
+          <h5 class="text-center">Raffa</h5>
+          <p class="text-center">"Running in the fields is the best."</p>
+      </div>
+    </div>
+
   </div>
 </div>
-
-
-
-
-
 
 
 
