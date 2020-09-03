@@ -78,56 +78,52 @@
 </div>
  -->
 
-
 <!-- --------CAROUSEL FOR REVIEW -------------------->
 
 <div class=" rev-point container-fluid mb-4" id="rev-point">
-  <div class="row mt-4 ml-2 mr-2">
-  <div class="subtitle1 col-sm-12 p-3 mb-0 htw-container home-page">
-    <div class="box-title">
-    <h2>Stories</h2>
-    <p class="barre">.</p>
-  </div>
-  <div class=" rev-point container-fluid mb-4 d-flex justify-content-center " id="rev-point">
-    <div id="mycarousel" class="carousel slide" data-ride="carousel">
-      <div class="carousel-inner">
-        <% counter = 0 %>
-        <% @reviews.each do |rev| %>
-          <% if counter == 0  %>
-            <div class="carousel-item active">
-              <% counter += 1  %>
-          <% else %>
-            <div class="carousel-item">
-              <% counter += 1  %>
-          <% end %>
-          <div class="d-block w-100 ">
-              <div class=" reviews mt-5" >
-                <div class="comment">
-                  <i class="fas fa-quote-right"></i>
-                  <h4><strong><%= rev.title %></strong></h4>
-                  <div class="comment-text p-2"><p><%= rev.comment %></p></div>
-                  <div class="qmark"><i class="fas fa-quote-left"></i></div>
-                </div>
-              <div class="rev-name d-flex justify-content-between mt-auto p-2 ">
-                <div class="flowerrating ">
-                  <% if rev.rating == "1"%>
-                    <p><i class="fas fa-spa greeny"></i> <i class="fas fa-spa grey"></i> <i class="fas fa-spa grey"></i> <i class="fas fa-spa grey"></i> <i class="fas fa-spa grey"></i></p>
-                  <% elsif rev.rating == "2" %>
-                    <p><i class="fas fa-spa greeny"></i> <i class="fas fa-spa greeny"></i> <i class="fas fa-spa grey"></i> <i class="fas fa-spa grey"></i> <i class="fas fa-spa grey"></i></p>
-                  <% elsif rev.rating == "3" %>
-                    <p><i class="fas fa-spagreeny"></i> <i class="fas fa-spa greeny"></i> <i class="fas fa-spa greeny"></i> <i class="fas fa-spa grey"></i> <i class="fas fa-spa grey"></i></p>
-                  <% elsif rev.rating == "4" %>
-                    <p><i class="fas fa-spa greeny"></i><i class="fas fa-spa greeny"></i> <i class="fas fa-spa greeny"></i> <i class="fas fa-spa greeny"></i> <i class="fas fa-spa grey"></i></p>
-                  <% elsif rev.rating == "5" %>
-                    <p><i class="fas fa-spa greeny"></i> <i class="fas fa-spa greeny"></i> <i class="fas fa-spa greeny"></i> <i class="fas fa-spa greeny"></i> <i class="fas fa-spa greeny"></i> </p>
-                  <% end %>
-                </div>
-                <div class="d-flex align-items-end"><p><%= rev.user.first_name %></p></div>
-              </div>
+<div class="row mt-4 ml-2 mr-2">
+<div class="subtitle1 col-sm-12 p-3 mb-0 htw-container home-page">
+  <div class="box-title">
+  <h2>Stories</h2>
+  <p class="barre">.</p>
+</div>
+<div class=" rev-point container-fluid mb-4 d-flex justify-content-center " id="rev-point">
+<div id="mycarousel" class="carousel slide" data-ride="carousel">
+  <div class="carousel-inner">
+    <% counter = 0 %>
+    <% @reviews.each do |rev| %>
+      <% if counter == 0  %>
+        <div class="carousel-item active">
+          <% counter += 1  %>
+      <% else %>
+        <div class="carousel-item">
+          <% counter += 1  %>
+      <% end %>
+      <div class="d-block w-100 ">
+          <div class=" reviews mt-5" >
+            <div class="comment">
+              <i class="fas fa-quote-right"></i>
+              <h4><strong><%= rev.title %></strong></h4>
+              <div class="comment-text p-2"><p><%= rev.comment %></p></div>
+              <div class="qmark"><i class="fas fa-quote-left"></i></div>
             </div>
+          <div class="rev-name d-flex justify-content-between mt-auto p-2 ">
+            <div class="flowerrating ">
+              <% if rev.rating == "1"%>
+                <p><i class="fas fa-spa greeny"></i> <i class="fas fa-spa grey"></i> <i class="fas fa-spa grey"></i> <i class="fas fa-spa grey"></i> <i class="fas fa-spa grey"></i></p>
+              <% elsif rev.rating == "2" %>
+                <p><i class="fas fa-spa greeny"></i> <i class="fas fa-spa greeny"></i> <i class="fas fa-spa grey"></i> <i class="fas fa-spa grey"></i> <i class="fas fa-spa grey"></i></p>
+              <% elsif rev.rating == "3" %>
+                <p><i class="fas fa-spagreeny"></i> <i class="fas fa-spa greeny"></i> <i class="fas fa-spa greeny"></i> <i class="fas fa-spa grey"></i> <i class="fas fa-spa grey"></i></p>
+              <% elsif rev.rating == "4" %>
+                <p><i class="fas fa-spa greeny"></i><i class="fas fa-spa greeny"></i> <i class="fas fa-spa greeny"></i> <i class="fas fa-spa greeny"></i> <i class="fas fa-spa grey"></i></p>
+              <% elsif rev.rating == "5" %>
+                <p><i class="fas fa-spa greeny"></i> <i class="fas fa-spa greeny"></i> <i class="fas fa-spa greeny"></i> <i class="fas fa-spa greeny"></i> <i class="fas fa-spa greeny"></i> </p>
+              <% end %>
+            </div>
+            <div class="d-flex align-items-end"><p><%= rev.user.first_name %></p></div>
           </div>
         </div>
-
       </div>
   </div>
     <% end %>
@@ -144,9 +140,7 @@
 </div>
 </div>
 </div>
-<div class=" d-flex justify-content-center"><button type="button" class="btn green-small-button shadow mt-3" data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo">Tell us of your Plantscape</button></div>
-
-
+</div>
 
 
 <!-- --------------- WEEEEEEE -->
