@@ -8,6 +8,19 @@
     </div>
   </div>
 
+
+  <div>
+    <div class="scrollchat m-2 overflow-auto" id="messages" data-chatroom-id="<%= @chatroom.id %>">
+      <% counter = 0 %>
+      <% @chatroom.messages.each do |message| %>
+        <% break if counter > 9 %>
+          <%= render "messages/message", message: message %>
+          <% counter += 1 %>
+      <% end %>
+    </div>
+  </div>
+
+
   <div>
     <p class="text-left font-weight-bold p-2">Write Your Message</p>
         <!-- <div class="chatroom"> -->
@@ -21,17 +34,5 @@
         </div>
       </div>
     <% end %>
-  </div>
-
-  <div>
-    <p class="text-left font-weight-bold p-2">Latest Messages</p>
-    <div class="m-2" id="messages" data-chatroom-id="<%= @chatroom.id %>">
-      <% counter = 0 %>
-      <% @chatroom.messages.reverse.each do |message| %>
-        <% break if counter > 9 %>
-          <%= render "messages/message", message: message %>
-          <% counter += 1 %>
-      <% end %>
-    </div>
   </div>
 </div>
