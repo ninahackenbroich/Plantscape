@@ -1,27 +1,37 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Plantscape - We take your plants on vacation, while you are. Book a plantsitte now!</title>
-    <meta name="description" content="We take your plants on vacation, while you are. Book a plantsitte now!">
+    <%= favicon_link_tag 'logo.png' %>
+    <title><%= meta_title %></title>
     <meta http-equiv="content-type" content="text/html; charset=utf-8">
     <meta name="robots" content="index, follow">
 
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 
-    <link rel="icon" href="https://res.cloudinary.com/dwmwaf1jp/image/upload/v1599043825/Logo_Plantscape_lda6iy.png" type="image/png">
-    <link rel="apple-touch-icon" href="https://res.cloudinary.com/dwmwaf1jp/image/upload/v1599043825/Logo_Plantscape_lda6iy.png">
+   
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta property="og:site_name" content="Plantscape - We take your plants on vacation, while you are. Book a plantsitter now!">
-    <meta property="og:title" content="Plantscape - We take your plants on vacation, while you are.">
-    <meta property="og:type" content="article">
-    <meta property="og:url" content="http://www.plantscape.me">
-    <meta property="og:image" content="https://res.cloudinary.com/dwmwaf1jp/image/upload/c_crop,e_auto_contrast,g_center,h_630,w_1200/v1599046705/photo-1521488556596-d319e686bfa5_tn8f1b.jpg">
-    <meta property="og:description" content="Plantscape - We take your plants on vacation, while you are. Book a plantsitter now!">
+    
+    <meta name="description" content="<%= meta_description %>">
 
+    <!-- Facebook Open Graph data -->
+    <meta property="og:title" content="<%= meta_title %>" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="<%= request.original_url %>" />
+    <meta property="og:image" content="<%= meta_image %>" />
+    <meta property="og:description" content="<%= meta_description %>" />
+    <meta property="og:site_name" content="<%= meta_title %>" />
+
+
+    <!-- Twitter Card data -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="<%= DEFAULT_META["twitter_account"] %>">
+    <meta name="twitter:title" content="<%= meta_title %>">
+    <meta name="twitter:description" content="<%= meta_description %>">
+    <meta name="twitter:creator" content="<%= DEFAULT_META["twitter_account"] %>">
+    <meta name="twitter:image:src" content="<%= meta_image %>">
 
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
 
