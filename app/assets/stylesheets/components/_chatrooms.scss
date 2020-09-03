@@ -11,19 +11,21 @@
 .green-border-left {
   background-color: white;
   border-left: 6px solid #004445;
-      border-radius: 5px;
+  border-radius: 5px;
 }
 
 .scrollchat {
+  margin: 10px auto;
   height: 40vh;
-  width: 100%;
+  width: 80%;
   background-color: #dbd4bc;
   border-radius: 10px;
   padding: 10px 0;
 }
 
 .message-container {
-	margin: 0 30px;
+	margin: 10px 50px;
+
 }
 
 .chat-title {
@@ -40,20 +42,29 @@
 .new-message {
   background-color: #dbd4bc;
   border-radius: 10px;
-  padding: 10px 15px 10px 0;
-  margin-left: 8px;
-
+  padding: 15px 15px 0 15px;
+  width: 80%;
+  margin: 10px auto;
+  .form-group {
+      margin-left: 20px;
+  }
 }
 
 .my-message {
-	background-color: white;
-  	border-left: 6px solid #F8B400 ;
     border-radius: 5px;
-    margin-left: 10px;
 }
 
 .form-control-file {
 	color: white;
 }
 
+#message_content.form-control.string.optional {
+    border-left: 6px solid #F8B400 ;
+    border-radius: 5px;
+}
+
+#file-upload-button {
+  background: blue;
+  margin-left: 50px;
+}
 

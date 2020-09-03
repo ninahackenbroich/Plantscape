@@ -11,7 +11,7 @@
 
 
   <div>
-    <div class="scrollchat m-2 overflow-auto" id="messages" data-chatroom-id="<%= @chatroom.id %>">
+    <div class="scrollchat overflow-auto" id="messages" data-chatroom-id="<%= @chatroom.id %>">
       <% counter = 0 %>
       <% @chatroom.messages.each do |message| %>
         <% break if counter > 9 %>
@@ -25,12 +25,12 @@
   <div class="new-message mt-4">
         <!-- <div class="chatroom"> -->
     <%= simple_form_for [ @chatroom, @message ] do |f| %>
-      <div class="d-flex justify-content-around align-items-center ml-4">
-        <div class="col-8 p-2 flex-grow-1 my-message">
-          <%= f.input :content, label: false, placeholder: "Write your message here...", input_html: {rows: "5"} %>
+      <div class="d-flex justify-content-around align-items-center">
+        <div class="col-8 flex-grow-1">
+          <%= f.input :content, label: false, placeholder: "Write your message here...", input_html: {rows: "5"}%>
         </div>
         <div class="col-4 p-2">
-          <%= f.input :photo, as: :file, label: false, class: "btn gray-button" %>
+          <%= f.input :photo, as: :file, label: false, class: "" %>
         </div>
       </div>
     <% end %>
