@@ -17,7 +17,7 @@ export {initAnchorOne};
 
 const initAnchorTwo = () => {
   const arrowTwo = document.querySelector('.arrow-2');
-  const key = document.querySelector('#key');
+  const key = document.querySelector('.arrow-3');
   if (arrowTwo) {
       arrowTwo.addEventListener('click', function () {
       key.scrollIntoView({
