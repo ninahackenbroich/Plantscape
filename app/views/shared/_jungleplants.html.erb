@@ -3,26 +3,29 @@
 <div class="row mt-5">
   <% @jungle.jungleplants.each do |jp| %>
     <div class="col-sm-6 col-md-6 col-lg-4 mb-4 link-style">
+      
 
       <!-- CREATING THE CARD CONTAINER -->
       <div class="card card-plant-style card-dynamic pos-relative card-plant-style-hover">
+      <%#= link_to plant_path(jp) do%>
         <!-- TOP IMAGE part of CARD PLANT -->
         <div class="jp-overlay d-flex justify-content-between w-100">
           <div class="icon-status mt-2 ml-2 text-center">
             <strong><%= jp.status %></strong>
           </div>
-          <p class="mt-2 mr-5">
+          <div class="dropdown mt-2 mr-5">
               <button id="btnGroupDrop1" type="button" class="btn btn-link dropdown-toggle no-border color-beige" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                <i class="fas fa-cog"></i>
-                <div class="dropdown-menu" aria-labelledby="btnGroupDrop1">
-                  <%= link_to "Edit", edit_jungle_jungleplant_path(@jungle, jp), class: "dropdown-item"%>
-                  <%= link_to "Delete", dashboards_index_path, method: :delete, class:"dropdown-item"%>
-                </div>
+                More
               </button>
-          </p>
+              <div class="dropdown-menu" aria-labelledby="btnGroupDrop1">
+                <%= link_to "Details", plant_path(jp), class: "dropdown-item"%>
+                <%= link_to "Edit", edit_jungleplant_path(jp), class: "dropdown-item"%>
+                <%= link_to "Delete", jungleplant_path(jp), method: :delete, class:"dropdown-item"%>
+              </div>
+          </div>
         </div>
+        
         <div class="card-plant-img">
-        <%= link_to jungle_jungleplant_path(@jungle, jp) do%>
         <%= cl_image_tag jp.plant.photo.key, class: "card-plant-img rounded"%>
         </div>
         <!-- bottom part of CARD PLANT -->
@@ -35,7 +38,7 @@
           </div>
         </div>
       </div>
-    <% end %>
+    <%# end %>
     </div>
   <% end %>
 </div>

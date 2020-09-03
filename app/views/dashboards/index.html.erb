@@ -191,9 +191,10 @@
           <%= link_to " Create a new Jungle",new_jungle_path, class: "btn btn-lg small-yellow-button mb-5 mt-5" %>
         </div>
       <% else  @jungles.count >= 1 %>
-          <div>
-            <p class="circle font-weight-bold text-right">
-              <%= @jungle.jungleplants.length %> Plants
+          <div class="text-right">
+            <p class="circle font-weight-bold text-center">
+              <%= @jungle.jungleplants.length %>
+              Plants
             </p>
           </div>
 

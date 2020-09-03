@@ -140,8 +140,6 @@ table {
 
 // ******************** JUNGLES ********************
 
-.dashboard-jungles {
-}
 td {
   text-align: center;
   justify-content: center;
@@ -171,8 +169,15 @@ td {
 }
 
 .circle {
-  background-color: $calm-yellow;
-  border-radius: 150px;
-  width: 60px;
-  text-align: right;
+  border-radius: 50%;
+  color:white;
+  width: 80px;
+  height: 80px; 
+  background-color: #004445;
+  opacity: 0.6;
+  margin-left: 90%;
+  margin-top: -80px;
+  display: flex; /* or inline-flex */
+  align-items: center; 
+  justify-content: center;
 }

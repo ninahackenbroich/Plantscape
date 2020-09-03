@@ -4,11 +4,16 @@ Rails.application.routes.draw do
   root to: 'pages#home'
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
   resources :jungles do
-    resources :jungleplants, only:[:new, :create, :show, :edit, :update, :destroy]
-    # do
+    resources :jungleplants, only:[:show, :new, :create]
       # resources :plants, only:[:show, :index]
     # end
   end
+
+  # resources :dashboards, only:[:index] do
+  #   resources :jungleplants, only:[:edit, :update, :destroy]
+  # end
+
+  resources :jungleplants, only:[:edit, :update, :destroy]
 
   # plants routes they exists indipendently
   # we only nest routes when we want to pass prior elements to the url in order to access that instance
