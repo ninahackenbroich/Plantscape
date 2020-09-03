@@ -43,6 +43,29 @@
   background-color: #2C786C;
 }
 
+// **************** SMALL GREEN BUTTON ****************
+
+.green-small-button  {
+  color: white;
+  opacity: 0.8;
+  background-color: #2C786C;
+  font-family: $body-font;
+  font-weight: bold;
+  font-size: 17px;
+  border-radius: 10px;
+  border-radius: 10px;
+  padding: 10px 20px;
+  letter-spacing: 1px;
+  margin-left: 5px;
+}
+
+.green-small-button :hover {
+  opacity: 1;
+  transition: 0.5s;
+  color: white;
+  background-color: #2C786C;
+}
+
 // **************** LONG YELLOW BUTTON ****************
 
 .long-yellow-button {
