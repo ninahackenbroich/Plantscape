@@ -81,14 +81,17 @@
 table {
     width: 70%;
     margin: 40px 200px;
-    border: 1px solid  #dbd4bc;
+
     border-radius:6px;
     -moz-border-radius:6px;
-    background-color: white;
+    background-color: $beige;
 }
 
 .bookings-head {
-  background-color: white;
+  background-color: $beige;
+  border-bottom: 1px solid  $dark-green;
+  border-radius:6px;
+  box-shadow: $dark-green;
   opacity: 0.6;
   color: black;
   font-weight: 300;
@@ -98,7 +101,7 @@ table {
 }
 
 .bookings-body {
-  background-color: white;
+  background-color: $beige;
 }
 
 .booking-buttons {
@@ -140,8 +143,6 @@ table {
 
 // ******************** JUNGLES ********************
 
-.dashboard-jungles {
-}
 td {
   text-align: center;
   justify-content: center;
@@ -171,8 +172,15 @@ td {
 }
 
 .circle {
-  background-color: $calm-yellow;
-  border-radius: 150px;
-  width: 60px;
-  text-align: right;
+  border-radius: 50%;
+  color:white;
+  width: 80px;
+  height: 80px; 
+  background-color: #004445;
+  opacity: 0.6;
+  margin-left: 90%;
+  margin-top: -80px;
+  display: flex; /* or inline-flex */
+  align-items: center; 
+  justify-content: center;
 }
