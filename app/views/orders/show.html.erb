@@ -9,15 +9,15 @@
  <div class="row mt-5">
     <div class="col-sm-6">
       <p>See your dashboard</p>
-      <p>Le lorem ipsum est, en imprimerie, une suite de mots sans signification utilisée à titre provisoire pour calibrer une mise en page, le texte définitif venant remplacer le faux-texte dès qu'il est prêt ou que la mise en page est achevée. Généralement, on utilise un texte en faux latin, le Lorem ipsum ou Lipsum</p>
+      <p>There you can see your upcoming and previous bookings. You can add some plants to give individual information on them or even contact the Plantscape-Team via Chat for help.</p>
       <%= link_to "My Dashboard", dashboards_index_path, class: "btn btn-lg small-yellow-button shadow mb-5" %>
     </div>
 
     <div class="col-sm-6">
-      <p>Create your urban jungle</p>
-      <p>What is it? Le lorem ipsum est, en imprimerie, une suite de mots sans signification utilisée à titre provisoire pour calibrer une mise en page, le texte définitif venant remplacer le faux-texte dès qu'il est prêt ou que la mi</p>
-      <p>Why doing it? Le lorem ipsum est, en imprimerie, une suite de mots sans signification utilisée à titre provisoire pour calibrer une mise en page, le texte définitif venant remplacer le faux-texte dès qu'il est prêt ou que la mi</p>
-      <%= link_to "Create my urban jungle", new_jungle_path, class: "btn small-yellow-button shadow mb-5" %>
+      <p>Add some plants</p>
+      <p>Your plants need special care? You need somebody to sing to it, dust it, repott it or even talk to it?</p>
+      <p>Add the plants you have at home and give specific information about each plant to our gardeners!</p>
+      <%= link_to "+ add a plant", new_jungle_jungleplant_path(@jungle), class: "btn small-yellow-button shadow mb-5" %>
 
     </div>
   </div>
