@@ -41,60 +41,62 @@
   </div>
   </div>
 
-    <div class="dashboard-bookings">
-     <div class="row">
-      <div class="d-flex flex-column">
-        <% if @upcoming_bookings.blank? %>
-        <p class="text-left m-4">No Plantscape planned yet!</p>
-        <%else%>
-          <table>
-            <thead class= "bookings-head mb-5">
-              <tr>
-                <th scope="col">Booking Number</th>
-                <th scope="col">Watering Dates</th>
-                <th scope="col">Number of Plants</th>
-                <th scope="col">Extras</th>
-                <th scope="col">Total Price</th>
-              </tr>
-            </thead>
-            <tbody class= "bookings-body pt-5">
-              <% @upcoming_bookings.each do |booki| %>
+    <!-- <div class="dashboard-bookings"> -->
+     <div class="row dashboard-bookings">
+      <!-- <div class="d-flex flex-column"> -->
+        <div class="col-12">
+          <% if @upcoming_bookings.blank? %>
+          <p class="text-left m-4">No Plantscape planned yet!</p>
+          <%else%>
+            <table class="col-12">
+              <thead class= "bookings-head mb-5">
                 <tr>
-                  <th scope="row"> # <%= booki.id %> </th>
-
-                  <th scope="row" class="hover"><%= booki.waterings.count %> days
-                    <div class="tooltipp"> <% booki.days.each do |date| %>
-                      <ul>
-                        <li><%= date %></li>
-                      </ul>
-                      <% end %>
-                    </div>
-                  </th>
-
-                  <td><%= booki.number_of_plants %></td>
-                  <td >
-                    <% if booki.dusting_service %>
-                      <i class="far fa-gem"></i>
-                    <% end %>
-                    <% if booki.cutting_service %>
-                      <i class="far fa-hand-scissors"></i>
-                    <% end %>
-                    <% if booki.repotting_service %>
-                      <i class="fas fa-exchange-alt"></i>
-                    <% end %>
-                    <% if booki.picture_service %>
-                      <i class="fas fa-camera"></i>
-                    <% end %>
-                  </td>
-                  <td><%= booki.price %>€</td>
+                  <th scope="col">Booking Number</th>
+                  <th scope="col">Watering Dates</th>
+                  <th scope="col">Number of Plants</th>
+                  <th scope="col">Extras</th>
+                  <th scope="col">Total Price</th>
                 </tr>
-              <% end %>
-            </tbody>
-          </table>
-        <% end %>
+              </thead>
+              <tbody class= "bookings-body pt-5">
+                <% @upcoming_bookings.each do |booki| %>
+                  <tr>
+                    <th scope="row"> # <%= booki.id %> </th>
+
+                    <th scope="row" class="hover"><%= booki.waterings.count %> days
+                      <div class="tooltipp"> <% booki.days.each do |date| %>
+                        <ul>
+                          <li><%= date %></li>
+                        </ul>
+                        <% end %>
+                      </div>
+                    </th>
+
+                    <td><%= booki.number_of_plants %></td>
+                    <td >
+                      <% if booki.dusting_service %>
+                        <i class="far fa-gem"></i>
+                      <% end %>
+                      <% if booki.cutting_service %>
+                        <i class="far fa-hand-scissors"></i>
+                      <% end %>
+                      <% if booki.repotting_service %>
+                        <i class="fas fa-exchange-alt"></i>
+                      <% end %>
+                      <% if booki.picture_service %>
+                        <i class="fas fa-camera"></i>
+                      <% end %>
+                    </td>
+                    <td><%= booki.price %>€</td>
+                  </tr>
+                <% end %>
+              </tbody>
+            </table>
+          <% end %>
+          </div>
         </div>
       </div>
-    </div>
+    <!-- </div> -->
 
     <div class="d-flex mt-5">
       <button class="btn gray-button" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
