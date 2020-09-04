@@ -46,7 +46,7 @@ x<div class="container final-booking-page">
             </ul>
           </div>
           <div class="row justify-content-center">
-            <p class="total"><i><strong>Your total is </strong><%= humanized_money_with_symbol @order.amount %></i> </p>
+            <p class="total"><i><strong>Your total is </strong><%= number_to_currency @order.amount, :unit => "€", format: "%n %u", precision: 2, separator: ',', delimiter: '' %></i> </p>
           </div>
           <div class="row mt-2 mb-2 justify-content-center">
           <button id="pay" class="btn btn-lg small-yellow-button shadow mb-5">Pay now!</button>
