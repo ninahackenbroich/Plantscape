@@ -182,26 +182,31 @@ plant6 = Plant.create!(
 
 puts "Create Review 1"
 Review.create!(
-  title: "SWEET CARE & People",
+  title: "SWEET CARE & PEOPLE",
   comment: "I was four weeks on holiday in Cuba and lovely Celine did take care of my planties. When i came back they were looking amzing, happy and even got a new haircut;)",
   rating: 5,
   user_id: user4.id,
   )
 
 Review.create!(
-  title: "no worries for my keys",
+  title: "SAFETY FOR MY KEYS",
   comment: "i was a bit scared because if how to handover the keys safely but Bobby Brown contacted me right after my booking to confirm the key handover at my favorite späti. They came the 2 times and fertilized two of my plants as well. Happy!!",
   rating: 4,
   user_id: user3.id,
   )
 
 Review.create!(
-  title: "New favorits for VACAYs",
+  title: "MY NEW FAVORITE FOR VACATIONS ",
   comment: "I was four weeks on holiday in Cuba and lovely Celine did take care of my planties. When i came back they were looking amzing, happy and even got a new haircut;)",
   rating: 5,
   user_id: user2.id,
   )
 
-
+Review.create!(
+  title: "MY PLANTS LOVE THEM",
+  comment: "I was four weeks on holiday in Cuba and lovely Celine did take care of my planties. When i came back they were looking amzing, happy and even got a new haircut;)",
+  rating: 5,
+  user_id: user2.id,
+  )
 puts "All GOOD, all DONE "
 
