@@ -34,4 +34,6 @@ Rails.application.routes.draw do
   end
 
   resources :reviews, only:[:new, :create, :index]
+
+  mount StripeEvent::Engine, at: '/stripe-webhooks'
 end
