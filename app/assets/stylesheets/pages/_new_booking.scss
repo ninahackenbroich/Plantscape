@@ -1,10 +1,5 @@
 
-.price-tag {
-	color: black;
-	font-weight: bold;
-	font-family: $body-font;
-	font-size: 40px;
-}
+
 
 .booking-title-box {
 	background-color: $beige;
@@ -12,19 +7,14 @@
     z-index: 3;
     margin-top: -200px;
     padding-top: 40px;
-    width: 1100px;
-    padding-bottom: 0px;
-	.background-price {
-		margin-left: 800px;
-		margin-top: -40px;
+    width: 100%;
+
 		.fa-info-circle {
 			color: #b8dbd8;
-			font-size: 30px;
-			margin: 0px -20px 0px 0px;
+			font-size: 4vw;
 		}
-	}
 	h2 {
-		font-size: 50px !important;
+		font-size: 4vw !important;
 		margin-left: 22%;
 	}
 	.barre {
@@ -32,11 +22,17 @@
 		margin-left: 0%;
 		margin-top: -3.4%;
 	}
+	.price-tag {
+		color: black;
+		font-weight: bold;
+		font-family: $body-font;
+		font-size: 4vw;
+	}
 }
 
 .booking-question {
-	height: 50vh;
-	width: 700px;
+	height: 80vh;
+	width: 100%;
 	margin: auto;
 	text-align: center;
 	.form-check {
@@ -55,7 +51,7 @@
 }
 
 .question {
-	margin-top: 180px;
+	margin-top: 200px;
 	font-size: 20px;
 }
 
@@ -66,7 +62,7 @@
 .next,
 .next:hover {
 	text-align: right;
-	margin-left: 700px;
+	margin-left: 80%;
 	color:  #004445;
 	text-decoration: none;
 	border: none;

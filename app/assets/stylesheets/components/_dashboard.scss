@@ -4,32 +4,26 @@
 .dashboard-banner {
   // background: asset-url("banner-dashboard.jpg");
   position: relative;
-  height: 35vh;
+  height: 30vh;
   padding-top: 5%;
   text-align: right;
-  margin-bottom: 40px;
 
   .under {
-    height: 50px;
+    height: 5vw;
     width: 80%;
-    margin-left: 26%;
     margin-top: -3%;
     background-color: #F8B400;
+    margin-left: 20%;
   }
 
   .dashboard-headings {
-    padding-right: 80px;
     opacity: 0.8;
     color: black;
 
     h1 {
-      font-size: 50px;
+      font-size: 6vw;
     }
 
-    h3 {
-      text-align:center;
-      padding-top: 80px;
-    }
     .btn-lg, .btn-group-lg {
       font-size: 0.5rem !important;
     }
@@ -40,7 +34,7 @@
 
 .dashboard-page {
   h2 {
-    font-size: 35px !important;
+    font-size: 5vw !important;
     z-index: 2;
     position:relative;
     padding-left: 0;
@@ -54,8 +48,8 @@
     z-index: 1;
     position: absolute;
     margin-left: -10%;
-    margin-top: 1.7%;
-    // width: 40%;
+    margin-top:-2%;
+    width: 50%;
     color: #004445;
     background-color: #004445;
     opacity: 0.6;
@@ -79,7 +73,7 @@
 }
 
 table {
-    width: 70%;
+    width: 90%;
     margin: 40px;
 
     border-radius:6px;
@@ -102,10 +96,6 @@ table {
 
 .bookings-body {
   background-color: $beige;
-}
-
-.booking-buttons {
-    margin: 5px 200px;
 }
 
 .past-bookings {
@@ -135,8 +125,6 @@ table {
   /* display tooltip on hover */
   display: block;
   opacity: 1;
-  left: 180px;
-  width: 200px;
   margin-top: -9%;
 }
 
@@ -151,7 +139,6 @@ td {
 .img-for-junglecards{
     height: 600px;
     object-fit: cover;
-    height: 200px;
   }
 
 .hover {
@@ -178,7 +165,7 @@ td {
   height: 80px; 
   background-color: #004445;
   opacity: 0.6;
-  margin-left: 90%;
+  margin-left: 75%;
   margin-top: -80px;
   display: flex; /* or inline-flex */
   align-items: center; 

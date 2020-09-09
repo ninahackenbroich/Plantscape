@@ -1,5 +1,5 @@
 .text-area {
-  width: 50%;;
+  width: 50%;
 }
 
 .background-green {
@@ -15,18 +15,14 @@
 }
 
 .scrollchat {
-  margin: 10px auto;
   height: 40vh;
-  width: 80%;
-  background-color: #dbd4bc;
+  width: 100%;
+  background-color: $beige;
   border-radius: 10px;
-  padding: 10px 0;
+  display:flex; 
+  flex-direction:column;
 }
 
-.message-container {
-	margin: 10px 50px;
-
-}
 
 .chat-title {
 	font-size: 50px !important;
@@ -44,10 +40,7 @@
   border-radius: 10px;
   padding: 15px 15px 0 15px;
   width: 80%;
-  margin: 10px auto;
-  .form-group {
-      margin-left: 20px;
-  }
+
 }
 
 .my-message {
@@ -65,6 +58,66 @@
 
 #file-upload-button {
   background: blue;
-  margin-left: 50px;
 }
 
+@media (max-width: 767px) {
+  .text-area {
+    width: 90%;;
+  }
+  
+  .background-green {
+    background-color: #b8dbd8;
+    border-radius: 10px;
+  }
+  
+  
+  .green-border-left {
+    background-color: white;
+    border-left: 6px solid #004445;
+    border-radius: 5px;
+  }
+  
+  .scrollchat {
+    height: 50vh;
+    width: 100%;
+    border-radius: 10px;
+    background-color: $beige;
+  }
+  .message-container {
+    margin-top: 5px;
+    padding-left: 5px;
+  }
+  
+  .chat-title {
+    font-size: 5vw !important;
+    margin-left: -10%;
+    .underline {
+      height: 5vw;
+      width: 70%;
+      margin-top: -10%;
+    }
+  }
+  
+  .new-message {
+    background-color: $beige;
+    border-radius: 10px;
+    width: 100%;
+  }
+  
+  .my-message {
+    border-radius: 5px;
+  }
+  
+  .form-control-file {
+    color: white;
+  }
+  
+  #message_content.form-control.string.optional {
+      border-left: 6px solid #F8B400 ;
+      border-radius: 5px;
+  }
+  
+  #file-upload-button {
+    background: blue;
+  }
+}

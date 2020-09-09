@@ -78,7 +78,7 @@
   border: none;
   border-radius: 10px;
   padding: 10px 30px;
-  width: 500px;
+  width: 80vw;
   letter-spacing: 3px;
   margin-top: 20px;
 }
@@ -109,17 +109,15 @@
 .gray-button {
 	color: white;
   	background-color: lightgray;
-  	font-family: $body-font;
+    font-family: $body-font;
     font-size: 17px;
-  	border-radius: 10px;
-    margin-left: 10px;
-    margin-right: 10px;
+    border-radius: 10px;
     padding: 10px 20px;
 }
 
+
 .gray-button:hover {
   opacity: 0.8;
-  color: white;
 }
 
 // **************** MODAL BUTTON ****************
