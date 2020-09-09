@@ -11,7 +11,7 @@
 
 
 
-  <div class="scrollchat overflow-auto" id="messages" data-chatroom-id="<%= @chatroom.id %>">
+  <div class="scrollchat my-sm-4 overflow-auto" id="messages" data-chatroom-id="<%= @chatroom.id %>">
     <% counter = 0 %>
     <% @chatroom.messages.each do |message| %>
       <% break if counter > 9 %>
@@ -22,14 +22,14 @@
 
 
 
-  <div class="new-message mt-4">
+  <div class="my-4">
         <!-- <div class="chatroom"> -->
     <%= simple_form_for [ @chatroom, @message ] do |f| %>
-      <div class="d-flex justify-content-around align-items-center row">
-        <div class="col-md-8 col-sm-12 flex-grow-1 px-2">
+      <div class="row">
+        <div class="col-md-9 col-sm-12">
           <%= f.input :content, label: false, placeholder: "Write your message here...", input_html: {rows: "5"}%>
         </div>
-        <div class="col-md-4 col-sm-12">
+        <div class="col-md-3 col-sm-12 text-right">
           <%= f.input :photo, as: :file, label: false, class: "" %>
         </div>
       </div>
