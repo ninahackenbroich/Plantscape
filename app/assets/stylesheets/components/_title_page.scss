@@ -1,18 +1,19 @@
 .box-title { 
   width: 100%;
   h2 {
-    font-size: 50px !important;
+    font-size: 5vw !important;
     z-index: 2;
     position:relative;
-    width: 50%;
+    width: 80%;
     padding-left: 0;
     margin-left: 12%;
   }
-  .underline {
-    z-index: 1;
-    position: absolute;
-    margin-left: -10%;
-    margin-top: 2.7%;
-    width: 40%;
-  }
+}
+
+.barre {
+	color: #b8dbd8;
+	background-color: #b8dbd8;
+  margin-top: -4.2%;
+  margin-left: -10vw;
+	width: 70%;
 }

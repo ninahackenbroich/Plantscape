@@ -1,28 +1,28 @@
-<div class="booking-new">
+<div class="container">
 
 	<div class="booking-title-box">
-		<div class="box-title">
-        	<h2 >Design Your Plantcare</h2>
+		<div class="row box-title">
+        	<h2>Design Your Plantcare</h2>
        	 	<p class="barre">.</p>
-      	</div>
+    </div>
 
-		<div class="background-price d-flex">
-			<div class="finalprice price-tag">
+		<div class="row background-price d-flex justify-content-sm-around align-items-center">
+			<div class="col-9 text-right finalprice price-tag">
 				15.99 €
 			</div>
 
 	    	<!-- Button trigger modal -->
-	    	<button type="button" class="btn" data-toggle="modal" data-target=".bd-example-modal-lg"><i class="fas fa-info-circle"></i></button>
+	    <button type="button" class="col-1 btn text-left" data-toggle="modal" data-target=".bd-example-modal-lg"><i class="fas fa-info-circle"></i></button>
 
 		</div>
 	</div>
 
-	<div class="booking-options">
-		<div class="booking-option">
+
+		<div class="container-fluid">
 			<%= render "shared/booking-form" %>
 		</div>
-	</div>
-</div>
+
+
 
     <!-- Modal -->
     <div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
@@ -49,3 +49,4 @@
       </div>
     </div>
   </div>
+</div>

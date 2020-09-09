@@ -86,3 +86,11 @@
   font-size: 30px !important;
   color: #2C786C !important;
 }
+
+
+@media (max-width: 767px) {
+  .navbar-collapse
+    {
+        background-color: #FAF5E4;
+    }
+}
