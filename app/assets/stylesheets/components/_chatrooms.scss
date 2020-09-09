@@ -24,8 +24,8 @@
 }
 
 .message-container {
-	margin: 10px 50px;
-
+  margin: 5px 5px;
+  padding-left: 5px;
 }
 
 .chat-title {
@@ -68,3 +68,60 @@
   margin-left: 50px;
 }
 
+@media (max-width: 767px) {
+  .text-area {
+    width: 90%;;
+  }
+  
+  .background-green {
+    background-color: #b8dbd8;
+    border-radius: 10px;
+  }
+  
+  
+  .green-border-left {
+    background-color: white;
+    border-left: 6px solid #004445;
+    border-radius: 5px;
+  }
+  
+  .scrollchat {
+    height: 50vh;
+    width: 100%;
+    border-radius: 10px;
+  }
+  
+  
+  .chat-title {
+    font-size: 5vw !important;
+    margin-left: -10%;
+    .underline {
+      height: 5vw;
+      width: 70%;
+      margin-top: -10%;
+    }
+  }
+  
+  .new-message {
+    background-color: #dbd4bc;
+    border-radius: 10px;
+    width: 100%;
+  }
+  
+  .my-message {
+      border-radius: 5px;
+  }
+  
+  .form-control-file {
+    color: white;
+  }
+  
+  #message_content.form-control.string.optional {
+      border-left: 6px solid #F8B400 ;
+      border-radius: 5px;
+  }
+  
+  #file-upload-button {
+    background: blue;
+  }
+}

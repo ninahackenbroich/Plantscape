@@ -1,4 +1,4 @@
-<div class="container mt-2 mb-5 col-10">
+<div class="container mt-2 col-10">
   <div class="row justify-content-center">
     <div class="col-8">
       <h1 class="text-left mt-4 chat-title">Chat with us</h1>
@@ -10,26 +10,26 @@
   </div>
 
 
-  <div>
-    <div class="scrollchat overflow-auto" id="messages" data-chatroom-id="<%= @chatroom.id %>">
-      <% counter = 0 %>
-      <% @chatroom.messages.each do |message| %>
-        <% break if counter > 9 %>
-          <%= render "messages/message", message: message %>
-          <% counter += 1 %>
-      <% end %>
-    </div>
+
+  <div class="scrollchat overflow-auto" id="messages" data-chatroom-id="<%= @chatroom.id %>">
+    <% counter = 0 %>
+    <% @chatroom.messages.each do |message| %>
+      <% break if counter > 9 %>
+        <%= render "messages/message", message: message %>
+        <% counter += 1 %>
+    <% end %>
   </div>
+
 
 
   <div class="new-message mt-4">
         <!-- <div class="chatroom"> -->
     <%= simple_form_for [ @chatroom, @message ] do |f| %>
-      <div class="d-flex justify-content-around align-items-center">
-        <div class="col-8 flex-grow-1">
+      <div class="d-flex justify-content-around align-items-center row">
+        <div class="col-md-8 col-sm-12 flex-grow-1 px-2">
           <%= f.input :content, label: false, placeholder: "Write your message here...", input_html: {rows: "5"}%>
         </div>
-        <div class="col-4 p-2">
+        <div class="col-md-4 col-sm-12">
           <%= f.input :photo, as: :file, label: false, class: "" %>
         </div>
       </div>
