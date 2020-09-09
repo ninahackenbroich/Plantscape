@@ -23,7 +23,6 @@ require("channels")
 // ----------------------------------------------------
 
 // External imports
-import "bootstrap";
 
 // Internal imports, e.g:
 import { initSlider } from '../components/slider';
