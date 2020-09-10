@@ -150,13 +150,17 @@ td {
   .dashboard-banner {
     // background: asset-url("banner-dashboard.jpg");
     position: relative;
-    height: 10vh;
+    height: 5vh;
     text-align: right;
+
+    h1 {
+      font-size: 25px;
+    }
 
     .under {
       height: 5vw;
       width: 80%;
-      margin-top: -3%;
+      margin-top: -5%;
       background-color: #F8B400;
       margin-left: 20%;
     }
@@ -175,7 +179,7 @@ td {
       color: black;
     }
     i {
-      padding: 0 5px;
+      padding: 0px;
     }
     .barre {
       z-index: 1;

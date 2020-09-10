@@ -28,7 +28,7 @@ class JunglesController < ApplicationController
     authorize @jungle
     if @jungle.save!
       # jungle.create!(title: life_params.title, description: life_params.description, user_id: current_user.id)
-      redirect_to jungle_path(@jungle)
+      redirect_to dashboards_index_path
     else
       render :new
     end
@@ -40,7 +40,7 @@ class JunglesController < ApplicationController
 
   def update
     if @jungle.update(jungle_params)
-      redirect_to @jungle, notice: 'Your jungle was successfully updated.'
+      redirect_to dashboards_index_path, notice: 'Your jungle was successfully updated.'
     else
       render :edit
     end
