@@ -29,6 +29,42 @@
     justify-content: space-between;
   }
 
+@media (max-width: 767px) {
+  .banner {
+    background: linear-gradient(rgba($beige,0.3),rgba($beige,0.01)), asset-url("newplant.jpg") center center;
+    background-size: cover;
+    /* position: relative; */
+    /* background-position: bottom; */
+    background-position: center;
+    height: 70vh;
+    padding-top: 10%;
+    width: 100%;
+  
+    h1{
+      margin-top: 100px !important;
+      margin-bottom: 100px;
+      font-size: 40px  !important;
+      text-shadow: 2px 2px 5px white;
+    }
+    .display-mobile {
+      display: none;
+    }
+  }
+  
+  .color-black {
+    color: black;
+  }
+  
+  .margin-bottom {
+    margin-bottom: 50px;
+  }
+  
+  .banner-body {
+      display: flex;
+      flex-direction: column;
+    }
+}
+
 
 
 
