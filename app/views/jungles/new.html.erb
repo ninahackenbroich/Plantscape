@@ -8,7 +8,8 @@
         <br>
         <p class="text-center">Hey <%= current_user.first_name %> create a jungle that has all the plants you have!</p>
         <br>
-        <div class="text-left">
+        <div class="d-md-flex justify-content-md-between">
+          <%= image_tag "jungle.jpg", class: "jungle-picture"%>
           <%= render "shared/new-jungle-form" %>
         </div> 
     </div>

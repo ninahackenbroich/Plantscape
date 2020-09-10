@@ -1,13 +1,18 @@
-.next-to{
-  display:flex;
-  flex-direction: row;
-  justify-content: space-around;
-}
+
 
 
 .jungle-picture {
-  width: 600px;
-  background-image: asset-url('jungle.jpg');
+  width: 50%;
   background-position: center;
   background-size: cover;
+}
+
+@media (max-width: 767px) {
+
+  
+  .jungle-picture {
+    width: 100%;
+    background-position: center;
+    background-size: cover;
+  }
 }
