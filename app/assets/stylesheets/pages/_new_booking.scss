@@ -6,12 +6,13 @@
     position: fixed;
     z-index: 3;
     margin-top: -200px;
-    padding-top: 40px;
+    padding-top: 30px;
     width: 100%;
 
 		.fa-info-circle {
 			color: #b8dbd8;
-			font-size: 4vw;
+			font-size: 3vw;
+			text-align: left;
 		}
 	h2 {
 		font-size: 4vw !important;
@@ -19,22 +20,24 @@
 	}
 	.barre {
 		width: 50%;
-		margin-left: 0%;
+		margin-left: -5%;
 		margin-top: -3.4%;
 	}
 	.price-tag {
 		color: black;
-		font-weight: bold;
-		font-family: $body-font;
-		font-size: 4vw;
+		font-family: $headers-font;
+		font-size: 3vw;
 	}
 }
 
+.background-price {
+	margin-top: -15px;
+}
+
 .booking-question {
-	height: 80vh;
-	width: 100%;
-	margin: auto;
 	text-align: center;
+	margin: 0 auto;
+	width: 80%;
 	.form-check {
 		background-color: #e5e0cc;
 		text-align: left;
@@ -50,6 +53,11 @@
 	}
 }
 
+.fa-info-circle {
+	color: #b8dbd8;
+	font-size: 3vw;
+}
+
 .question {
 	margin-top: 200px;
 	font-size: 20px;
@@ -58,6 +66,8 @@
 .slider {
 	margin-top: 80px;
 }
+
+
 
 .next,
 .next:hover {
@@ -80,14 +90,108 @@
 	margin-top: 80px;
 }
 
-.fa-info-circle {
-	color: #c1bba4;
-	font-size: 20px;
-}
 
 #key {
 	margin-bottom: 10%;
 }
+
+/****************** Mobile *******************/
+
+@media (max-width: 767px) {
+
+	.booking-title-box {
+		background-color: $beige;
+			position: fixed;
+			z-index: 3;
+			margin-top: -200px;
+			padding-top: 30px;
+			width: 100%;
+	
+			.fa-info-circle {
+				color: #b8dbd8;
+				font-size: 3vw;
+				text-align: left;
+			}
+		h2 {
+			font-size: 4vw !important;
+			margin-left: 22%;
+		}
+		.barre {
+			width: 50%;
+			margin-left: -5%;
+			margin-top: -3.4%;
+		}
+		.price-tag {
+			color: black;
+			font-family: $headers-font;
+			font-size: 3vw;
+		}
+	}
+	
+	.background-price {
+		margin-top: -15px;
+	}
+	
+	.booking-question {
+		text-align: center;
+		.form-check {
+			background-color: #e5e0cc;
+			text-align: left;
+			padding: 5px 50px;
+			border-radius: 10px;
+			margin: 0 auto;	
+		}
+		&.last-element {
+			height: auto;
+		}
+		iframe {
+			border-radius: 10px;
+		}
+	}
+	
+	.fa-info-circle {
+		color: #b8dbd8;
+		font-size: 3vw;
+	}
+	
+	.question {
+		margin-top: 200px;
+		font-size: 20px;
+	}
+	
+	.slider {
+		margin-top: 80px;
+	}
+	#addon-select {
+		margin: 0 auto;
+		width: 100%;
+	}
+	.next,
+	.next:hover {
+		text-align: right;
+		margin-left: 80%;
+		color:  #004445;
+		text-decoration: none;
+		border: none;
+		background: none;
+		button {
+			border: none;
+		}
+	}
+	.margin-below {
+		margin-bottom: 80px;
+	}
+
+	.margin-ontop {
+		margin-top: 80px;
+	}
+
+
+	#key {
+		margin-bottom: 10%;
+	}
+}
+
 /****************** CHECKBOXES *******************/
 
 

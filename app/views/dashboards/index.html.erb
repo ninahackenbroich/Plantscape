@@ -10,46 +10,45 @@
 <!--------------------- UPCOMING BOOKINGS ----------------------->
 
 <div class="container dashboard-page jungle mt-5">
-  <div class="d-flex mt-4">
-      <h2>Upcoming Plantscapes</h2>
-      <p class="barre">.</p>
-      <%#= render "shared/underline" %>
-
-    <!-- Button trigger modal -->
-    <button type="button" class="btn modal-button" data-toggle="modal" data-target="#exampleModal">
-    <i class="fas fa-question"></i>
+    <button type="button" class="btn modal-button text-right" data-toggle="modal" data-target="#exampleModal">
+      <i class="fas fa-question"></i>
     </button>
-  </div>
+    <h2>Upcoming Plantscapes</h2>
+    <p class="barre">.</p>
+
+
     <!-- Modal -->
     <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
       <div class="modal-dialog" role="document">
         <div class="modal-content extras-details">
           <div class="modal-header">
             <h5 class="modal-title" id="exampleModalLabel">Details</h5>
-              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-              </button>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
           </div>
-        <div class="modal-body extras-details">
+          <div class="modal-body extras-details">
             <div class="d-flex"><i class="far fa-gem"></i><p> - Dusting - we clean your plants</p></div>
             <div class="d-flex"><i class="far fa-hand-scissors"></i><p> - Cutting - we give your plants a hairstyle</p></div>
             <div class="d-flex"><i class="fas fa-exchange-alt"></i><p> - Repotting - we help one of your plants growing</p></div>
             <div class="d-flex"><i class="fas fa-camera"></i><p> - Picture - receive updates from your plants</p></div>
+          </div>
         </div>
       </div>
     </div>
-  </div>
-  </div>
+ 
 
     <!-- <div class="dashboard-bookings"> -->
-     <div class="row dashboard-bookings">
-      <!-- <div class="d-flex flex-column"> -->
-        <div class="col-10">
+
+    
+   
+      <div class="dashboard-bookings">
+ 
           <% if @upcoming_bookings.blank? %>
-          <p class="text-left m-4">No Plantscape planned yet!</p>
+          <p class="text-left mt-5 mb-5">No Plantscape planned yet!</p>
           <%else%>
             <table class="col-12">
-              <thead class= "bookings-head mb-5">
+              <thead class= "bookings-head mb-4">
                 <tr>
                   <th scope="col">Booking No.</th>
                   <th scope="col">Dates</th>
@@ -94,15 +93,17 @@
               
             </table>
           <% end %>
-    <div class="d-flex justify-content-sm-between">
-      <%= link_to "New booking", new_booking_path, class: "btn small-yellow-button shadow mb-5" %>
-      <button class="btn gray-button shadow mb-5" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
-        Past Bookings
-      </button>
-    </div>
-          </div>
-        </div>
+    
       </div>
+  <div class="d-flex">
+    <%= link_to "New booking", new_booking_path, class: "btn small-yellow-button shadow mb-5 mr-4" %>
+    <button class="btn gray-button shadow mb-5" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+      Past Bookings
+    </button>
+  </div> 
+ </div>
+
+
     <!-- </div> -->
 
 
@@ -189,11 +190,10 @@
     <%#= render "shared/underline" %>
   <div>
       <% if  @jungles.count == 0%>
-          <p>You do not have a jungle yet!</p>
+          <p class="text-left mt-5">You do not have a jungle yet!</p>
           <br>
           <p>If you create a Jungle and add your plants, you can upload pictures and a status to your plants!</p>
           <%= link_to " Create a new Jungle",new_jungle_path, class: "btn btn-lg small-yellow-button mb-5 mt-5" %>
-        </div>
       <% else  @jungles.count >= 1 %>
           <div class="text-right">
             <p class="circle font-weight-bold text-center">

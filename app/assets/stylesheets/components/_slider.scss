@@ -48,7 +48,7 @@
 /* TRACK */
 
 .slider::-webkit-slider-runnable-track {
-  width: 100%;
+  width: 80vw;
   height: 5px;
   cursor: pointer;
   background: lightgray;
@@ -60,7 +60,7 @@
 }
 
 .slider::-moz-range-track {
-  width: 100%;
+  width: 80vw;
   height: 5px;
   cursor: pointer;
   background: lightgray;

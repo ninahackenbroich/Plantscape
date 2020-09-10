@@ -9,51 +9,20 @@
   text-align: right;
 
   .under {
-    height: 5vw;
-    width: 80%;
     margin-top: -3%;
     background-color: #F8B400;
-    margin-left: 20%;
   }
 
   .dashboard-headings {
     opacity: 0.8;
     color: black;
-
-    h1 {
-      font-size: 6vw;
-    }
-
-    .btn-lg, .btn-group-lg {
-      font-size: 0.5rem !important;
-    }
   }
 }
 
 // ******************** CONTAINERS ********************
 
 .dashboard-page {
-  h2 {
-    font-size: 5vw !important;
-    z-index: 2;
-    position:relative;
-    padding-left: 0;
-    margin-left: 12%;
-    color: black;
-  }
-  i {
-    padding: 0 5px;
-  }
-  .barre {
-    z-index: 1;
-    position: absolute;
-    margin-left: -10%;
-    margin-top:-2%;
-    width: 50%;
-    color: #004445;
-    background-color: #004445;
-    opacity: 0.6;
-  }
+  width: 100%;
 }
 
 
@@ -70,16 +39,12 @@
 
 .dashboard-bookings {
   text-align: center;
+  padding-top: 50px;
+  padding-bottom: 50px;
+  margin: auto;
+  width: 80%;
 }
 
-table {
-    width: 90%;
-    margin: 40px;
-
-    border-radius:6px;
-    -moz-border-radius:6px;
-    background-color: $beige;
-}
 
 .bookings-head {
   background-color: $beige;
@@ -148,13 +113,16 @@ td {
 .jungle {
   margin-top: 70px;
   h2 {
-      width: 40%;
       padding-left: 0;
     }
   .barre {
     margin-top: -2.2%;
+    z-index: 1;
+    position: absolute;
+    width: 60%;
     color: #004445;
     background-color: #004445;
+    opacity: 0.6;
   }
 }
 
@@ -170,4 +138,145 @@ td {
   display: flex; /* or inline-flex */
   align-items: center; 
   justify-content: center;
+}
+
+/****************** Mobile *******************/
+/****************** Mobile *******************/
+
+  @media (max-width: 767px) {
+
+    // ******************** BANNER ********************
+
+  .dashboard-banner {
+    // background: asset-url("banner-dashboard.jpg");
+    position: relative;
+    height: 10vh;
+    text-align: right;
+
+    .under {
+      height: 5vw;
+      width: 80%;
+      margin-top: -3%;
+      background-color: #F8B400;
+      margin-left: 20%;
+    }
+  }
+
+  // ******************** CONTAINERS ********************
+
+  .dashboard-page {
+    width: 100%;
+    h2 {
+      z-index: 2;
+      font-size: 6vw;
+      position:relative;
+      padding-left: 0;
+      margin-left: 12%;
+      color: black;
+    }
+    i {
+      padding: 0 5px;
+    }
+    .barre {
+      z-index: 1;
+      position: absolute;
+      margin-left: -10%;
+      margin-top:-5%;
+      width: 70%;
+      color: #004445;
+      background-color: #004445;
+      opacity: 0.6;
+    }
+  }
+
+
+  // ******************** MODAL ********************
+
+  .extras-details,
+  .modal.header {
+    font-family: 'Josefin Sans', "sans-serif" !important;
+    background-color: $beige;
+  }
+
+
+  // ******************** BOOKINGS TABLES ********************
+  .dashboard-bookings {
+    text-align: center;
+    margin: auto;
+    width: 100%;
+  }
+
+
+  .bookings-head {
+    background-color: $beige;
+    border-bottom: 1px solid  $dark-green;
+    border-radius:6px;
+    box-shadow: $dark-green;
+    opacity: 0.6;
+    color: black;
+    font-weight: 300;
+    th {
+      height: 30px;
+    }
+  }
+
+  .bookings-body {
+    background-color: $beige;
+  }
+
+  // ******************** TOOLTIP ********************
+
+  .tooltipp {
+    /* hide and position tooltip */
+    display: none;
+    background-color: white;
+    color: black;
+    border-radius: 5px;
+    position: absolute;
+    -webkit-transition: opacity 0.5s;
+    -moz-transition: opacity 0.5s;
+    -ms-transition: opacity 0.5s;
+    -o-transition: opacity 0.5s;
+    transition: opacity 0.5s;
+    padding: 6px 0px;
+  }
+
+  .hover:hover .tooltipp {
+    /* display tooltip on hover */
+    display: block;
+    opacity: 1;
+    margin-top: -9%;
+  }
+
+
+  // ******************** JUNGLES ********************
+
+  td {
+    text-align: center;
+    justify-content: center;
+  }
+
+  .img-for-junglecards{
+      height: 600px;
+      object-fit: cover;
+    }
+
+  .hover {
+    position: relative;
+  }
+
+  .circle {
+    border-radius: 50%;
+    color:white;
+    width: 80px;
+    height: 80px; 
+    background-color: #004445;
+    opacity: 0.6;
+    margin-left: 75%;
+    margin-top: -80px;
+    display: flex; /* or inline-flex */
+    align-items: center; 
+    justify-content: center;
+  }
+
 }
