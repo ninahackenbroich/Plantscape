@@ -1,5 +1,11 @@
 class BookingsController < ApplicationController
+
+  before_action :set_user, only: [:index, :show, :create, :edit, :update, :destroy]
+
   def index
+    @bookings = policy_scope(Booking)
+    @bookings = Booking.all
+    authorize @bookings
   end
 
   def show
@@ -16,8 +22,10 @@ class BookingsController < ApplicationController
     booking_params[:number_of_plants] = booking_params[:number_of_plants].to_i
     @booking = Booking.new(booking_params)
     redirect_to new_booking_path, notice: "Make sure you choose a day" if params[:watering_dates].empty?
-    @booking.user = current_user
+    @booking.user = @user
     @booking.price = params[:booking][:price].to_i
+    @booking.save
+    authorize @booking
     if @booking.save!
       watering_dates = params[:watering_dates].split(", ")
       watering_dates.each { |date| Watering.create(date: date, booking: @booking) }
@@ -57,6 +65,10 @@ class BookingsController < ApplicationController
   end
 
   private
+
+  def set_user
+    @user = current_user
+  end
 
   def booking_params
     params.require(:booking).permit(:number_of_plants, :key, :dusting_service, :cutting_service, :repotting_service, :picture_service, :price)
