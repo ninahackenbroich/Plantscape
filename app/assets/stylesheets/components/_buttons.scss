@@ -15,7 +15,7 @@
 }
 
 .big-yellow-button:hover {
-  color: black;
+  color: white;
   background-color: #f9c03b;
   transition: 1s;
 }
@@ -113,11 +113,15 @@
     font-size: 17px;
     border-radius: 10px;
     padding: 10px 20px;
+    text-decoration: none;
 }
 
 
 .gray-button:hover {
   opacity: 0.8;
+  text-decoration: none;
+  color: white;
+  background-color: lightgray;
 }
 
 // **************** MODAL BUTTON ****************
